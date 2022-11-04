@@ -1,0 +1,24 @@
+<nav>
+    <ul class="sidebar-nav">
+        {{ range .Site.Sections.ByTitle }}
+        {{ $section := . }}
+            {{ range .Site.Params.menu }}
+                {{ if eq $section.Title .Name }}
+                    <li class="heading">
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                    {{ if .HasChildren }}
+                        <li class="sub-heading">
+                            {{ .Pre }}
+                        </li>
+                        {{ range (first .Limit $section.Pages) }}
+                            <li class="bullet">
+                                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                            </li>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    </ul>
+</nav>

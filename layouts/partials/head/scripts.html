@@ -14,3 +14,7 @@
     <!-- Personal/custom script to use KaTeX -->
     <script defer language="javascript" type="text/javascript" src="{{ "js/katex.js" | absURL }}"></script>
 {{ end }}
+{{ if .Site.Params.table_of_contents }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+    <script defer language="javascript" type="text/javascript" src="{{ "js/toc.js" | absURL }}"></script>
+{{ end }}

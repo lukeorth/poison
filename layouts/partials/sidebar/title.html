@@ -1,0 +1,9 @@
+<div class="sidebar-about">
+    <h1 class="brand">
+        <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Params.brand }}</h1></a>
+        <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.Params.profile_pic }}" alt="profile picture"></a>
+    </h1>
+    <p class="lead">
+        {{ with .Site.Params.description }} {{.}} {{ else }}An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.{{end}}
+    </p>
+</div>

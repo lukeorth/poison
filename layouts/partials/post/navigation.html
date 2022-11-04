@@ -1,0 +1,36 @@
+<hr>
+<div class="footer">
+    {{ if .Params.series }}
+    {{ $Site := .Site }}
+    {{ $postTitle := .Title }}
+    <p>
+    This is a post in the <b><a href="{{ $Site.BaseURL }}/series/{{ .Params.series | urlize }}">{{ .Params.series }}</a></b> series.
+        <br>Other posts in this series:
+        <ul class="series">
+            {{ $seriesUrl := print "series/" (.Params.series | urlize) }}
+            {{ $series := .Site.GetPage $seriesUrl }}
+            {{ range $series.Pages }}
+            <li>
+                {{ .Date.Format "Jan 01, 2006" }} -
+                {{ if ne .Title $postTitle }}
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ else }}
+                    {{ .Title }}
+                {{ end }}
+            </li>
+            {{ end }}
+        </ul>
+    </p>
+    {{ else }}
+	    {{ if .PrevPage }}
+            {{ if eq .PrevPage.Section "posts" }}
+	            <a class="previous-post" href="{{ .PrevPage.Permalink }}?ref=footer">« {{ .PrevPage.Title | truncate 50 "..."}}</a>
+	        {{ end }}
+        {{ end }}
+	    {{ if .NextPage }}
+            {{ if eq .NextPage.Section "posts" }}
+	            <a class="next-post" href="{{ .NextPage.Permalink }}?ref=footer">{{ .NextPage.Title | truncate 50 "..." }} »</a>
+	        {{ end }}
+        {{ end }}
+    {{ end }}
+</div>

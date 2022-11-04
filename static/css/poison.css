@@ -97,13 +97,17 @@ h1, h2, h3, h4, h5, strong {
     background-color: var(--list-color);
 }
 /* ************************** */
+.sidebar-about {
+    text-align: center;
+}
 .sidebar-about img {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     border: 2px solid #515151;
     border-radius: 50%;
     height: 180px;
     width: 180px;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
 }
 .social {
     margin-right: 0.5em;
@@ -112,14 +116,14 @@ h1, h2, h3, h4, h5, strong {
 .heading {
     margin-top: 1em;
 }
-.meta span {
+.info span {
     display: inline-block;
 }
-.meta ul {
+.info ul {
     display: inline-block;
     float: right;
 }
-.meta ul li {
+.info ul li {
     margin-left: 0.5em;
 }
 .tags {
