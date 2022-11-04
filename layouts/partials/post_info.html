@@ -1,0 +1,22 @@
+{{ if .Params.tags }}
+<ul class="tags">
+    {{ range .Params.tags }}
+    <li class="tag-{{ . }}">
+        <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+
+{{ $Site := .Site }}
+{{ if .Params.series }}
+    <p class="seriesname">
+        Series: <a href="{{ $Site.BaseURL }}/series/{{ .Params.series | urlize }}">{{ .Params.series }}</a>
+    </p>
+{{ end }}
+
+{{ if .Params.featuredImage }}
+<p>
+    <img src="{{.Params.featuredImage}}"><br>
+</p>
+{{ end }}
