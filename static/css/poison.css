@@ -186,7 +186,7 @@ h1, h2, h3, h4, h5, strong {
     color: var(--text-color);
     text-decoration: none;
 }
-.article-toc li a.active {
+.article-toc li.active {
     font-weight: bold;
 }
 #TableOfContents {

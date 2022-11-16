@@ -1,34 +1,29 @@
-(function() {
-    var $toc = $('#TableOfContents');
-    if ($toc.length > 0) {
-        var $window = $(window);
+/*
+    Original Author: Bramus Van Damme
+    Link to original: https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/
 
-        function onScroll(){
-            var currentScroll = $window.scrollTop();
-            var h = $('.article-entry h1, .article-entry h2, .article-entry h3, .article-entry h4, .article-entry h5, .article-entry h6');
-            var id = "";
-            h.each(function (i, e) {
-                e = $(e);
-                if (e.offset().top - 10 <= currentScroll) {
-                    id = e.attr('id');
-                }
-            });
-            var active = $toc.find('a.active');
-            if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
-    
-            active.each(function (i, e) {
-                $(e).removeClass('active').siblings('ul').hide();
-            });
-            $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
-                $(e).children('a').addClass('active').siblings('ul').show();
-            });
-        }
+    Most of this code comes courtesy of Bramus Van Damme, with some minor tweaks
+    to get it working for my use case.  Thanks, Bramus!
+*/
 
-        $window.on('scroll', onScroll);
-        $(document).ready(function() {
-            $toc.find('a').parent('li').find('ul').hide();
-            onScroll();
-            document.getElementsByClassName('article-toc')[0].style.display = '';
+let activeElement = null;
+window.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (activeElement) {
+                document.querySelector("nav li[class='active']").classList.remove('active');
+            }
+            if (entry.intersectionRatio > 0) {
+                activeElement = entry.target.getAttribute('id');
+            }
+            if (activeElement) {
+                document.querySelector(`nav li a[href="#${activeElement}"]`).parentElement.classList.add('active');
+            }
         });
-    }
-})();
+    });
+
+    const post = document.querySelector(".post");
+    post.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]").forEach((section) => {
+        observer.observe(section);
+    });
+});
