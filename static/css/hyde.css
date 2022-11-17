@@ -62,7 +62,6 @@ pre {
   text-align: center;
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
-  background-color: #4A0404;
 }
 @media (min-width: 48em) {
   .sidebar {
@@ -77,14 +76,19 @@ pre {
 
 /* Sidebar links */
 .sidebar a {
-  color: #fff;
+  color: var(--sidebar-a-color);
 }
 
 /* About section */
+.sidebar-about {
+  text-align: center;
+  color: var(--sidebar-p-color);
+}
 .sidebar-about h1 {
-  color: #fff;
+  color: var(--sidebar-h1-color);
   margin-top: 0;
   font-weight:300;
+  font-size: 1.5em;
 }
 
 /* Sidebar nav */
@@ -157,6 +161,7 @@ a.sidebar-nav-item:focus {
 .footnote {
   font-size: 0.7em;
   margin-top: 0.5rem;
+  color: var(--sidebar-p-color);
 }
 
 .go {

@@ -1,9 +1,17 @@
 <div class="sidebar-about">
     <h1 class="brand">
-        <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Params.brand }}</h1></a>
-        <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.Params.profile_pic }}" alt="profile picture"></a>
+        {{ if .Site.Params.brand_image }}
+            <a href="{{ .Site.BaseURL }}">
+                <img src="{{ .Site.Params.brand_image }}" alt="brand image">
+            </a>
+        {{ end }}
+        {{ if .Site.Params.brand }}
+            <a href="{{ .Site.BaseURL }}">
+                <h1>{{ .Site.Params.brand }}</h1>
+            </a>
+        {{ end }}
     </h1>
     <p class="lead">
-        {{ with .Site.Params.description }} {{.}} {{ else }}An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.{{end}}
+    {{ with .Site.Params.description }} {{.}} {{ else }}A pragmatic Hugo theme for bloggers based on the original <a href="https://github.com/poole/hyde">Hyde</a> theme from <a href="https://github.com/mdo">@mdo<a/>.{{end}}
     </p>
 </div>
