@@ -1,0 +1,10 @@
+{{ $tabName := .Get "tabName" }}
+{{ $tabContent := .Inner }}
+{{ $tabID := delimit (shuffle (slice "a" "b" "c" "d" "e" "f")) "" }}
+{{ .Parent.Scratch.Add "tabName" (slice $tabName) }}
+{{ .Parent.Scratch.Add "tabContent" (slice $tabContent) }}
+{{ .Parent.Scratch.Add "tabID" (slice $tabID) }}
+
+<div id="{{ $tabID }}">
+    {{ $.Inner | markdownify }}
+</div>

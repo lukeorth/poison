@@ -11,13 +11,16 @@ window.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (activeElement) {
-                document.querySelector("nav li[class='active']").classList.remove('active');
+                document.querySelectorAll("nav[id='TableOfContents'] li").forEach((node) => {
+                    node.classList.add('inactive');
+                    node.classList.replace('active', 'inactive');
+                });
             }
             if (entry.intersectionRatio > 0) {
                 activeElement = entry.target.getAttribute('id');
             }
             if (activeElement) {
-                document.querySelector(`nav li a[href="#${activeElement}"]`).parentElement.classList.add('active');
+                document.querySelector(`nav[id='TableOfContents'] li a[href="#${activeElement}"]`).parentElement.classList.replace('inactive', 'active');
             }
         });
     });

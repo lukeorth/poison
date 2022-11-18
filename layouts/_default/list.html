@@ -1,7 +1,4 @@
 {{ define "main" -}}
-{{ if .Site.Params.light_dark }}
-    {{ partial "light_dark.html" . }}
-{{ end }}
 <h1 class="title">{{ .Title }}</h1>
 <ul class="entries">
     {{ range .Pages.GroupByDate "2006" }}

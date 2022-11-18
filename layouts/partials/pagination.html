@@ -1,0 +1,22 @@
+{{ $pag := .Paginate (where .Pages "Type" "posts") }}
+{{ if gt $pag.TotalPages 1 }}
+<hr>
+<div class="footer">
+<nav id="page-nav">
+
+    {{ if $pag.HasPrev }}
+    <a href="{{ $pag.Prev.URL }}" rel="prev" class="extend prev">&laquo; Previous{{ T "Prev" }}</a>
+    {{ end }}
+    {{ range $pag.Pagers }}
+    {{ if eq . $pag }}
+    <span class="page-number current">{{ $pag.PageNumber }}</span>
+    {{ else }}
+    <a href="{{ .URL }}">{{ .PageNumber }}</a>
+    {{ end }}
+    {{ end }}
+
+    {{ if $pag.HasNext }}
+    <a href="{{ $pag.Next.URL }}" rel="next" class="extend next">{{ T "Next" }} Next &raquo;</a>
+    {{ end }}
+</div>
+{{ end }}

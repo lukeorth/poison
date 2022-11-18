@@ -11,10 +11,11 @@
         --post-title-color: {{ with .Site.Params.post_title_color }}{{ . }}{{ else }}#303030{{ end }};
         --list-color: {{ with .Site.Params.list_color }}{{ . }}{{ else }}#5a5a5a{{ end }};
         --link-color: {{ with .Site.Params.link_color }}{{ . }}{{ else }}#268bd2{{ end }};
+        --date-color: {{ with .Site.Params.date_color }}{{ . }}{{ else }}#515151{{ end }};
         --code-color: #bf616a;
         --code-background-color: #f9f9f9;
-        --moon-color: #121212;
-        --sun-color: #FFF9A6;
+        --moon-sun-color: {{ with .Site.Params.moon_sun_color }}{{ . }}{{ else }}#FFF{{ end }};
+        --moon-sun-background-color: {{ with .Site.Params.moon_sun_background_color }}{{ . }}{{ else }}#515151{{ end }};
     }
     body.dark-theme {
         --text-color: {{ with .Site.Params.text_color_dark }}{{ . }}{{ else }}#eee{{ end }};
@@ -22,10 +23,9 @@
         --post-title-color: {{ with .Site.Params.post_title_color_dark }}{{ . }}{{ else }}#DBE2E9{{ end }};
         --list-color: {{ with .Site.Params.list_color_dark }}{{ . }}{{ else }}#9d9d9d{{ end }};
         --link-color: {{ with .Site.Params.link_color_dark }}{{ . }}{{ else }}#268bd2{{ end }};
+        --date-color: {{ with .Site.Params.date_color_dark }}{{ . }}{{ else }}#9a9a9a{{ end }};
         --code-color: #ff7f7f;
         --code-background-color: #393D47;
-        --moon-color: #FFF9A6;
-        --sun-color: #121212;
     }
     body {
         background-color: var(--bkg-color);

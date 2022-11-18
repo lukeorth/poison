@@ -1,19 +1,12 @@
-{{ if .Site.Params.light_dark }}
-    <script defer language="javascript" type="text/javascript" src="{{ "js/light_dark.js" | absURL }}"></script>
-{{ end }}
-{{ if .Site.Params.tabs }}
-    <script defer language="javascript" type="text/javascript" src="{{ "js/tabs.js" | absURL }}"></script>
-{{ end }}
-{{ if .Site.Params.katex }}
-    <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script defer language="javascript" type="text/javascript" src="{{ "js/katex.min.js" | absURL }}"></script>
+<script defer language="javascript" type="text/javascript" src="{{ "js/light_dark.js" | absURL }}"></script>
+<script defer language="javascript" type="text/javascript" src="{{ "js/tabs.js" | absURL }}"></script>
 
-    <!-- To automatically render math in text elements, include the auto-render extension: -->
-    <script defer language="javascript" type="text/javascript" src="{{ "js/auto-render.min.js" | absURL }}"></script>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer language="javascript" type="text/javascript" src="{{ "js/katex.min.js" | absURL }}"></script>
 
-    <!-- Personal/custom script to use KaTeX -->
-    <script defer language="javascript" type="text/javascript" src="{{ "js/katex.js" | absURL }}"></script>
-{{ end }}
-{{ if .Site.Params.table_of_contents }}
-    <script defer language="javascript" type="text/javascript" src="{{ "js/toc.js" | absURL }}"></script>
-{{ end }}
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer language="javascript" type="text/javascript" src="{{ "js/auto-render.min.js" | absURL }}"></script>
+
+<!-- Personal/custom script to use KaTeX -->
+<script defer language="javascript" type="text/javascript" src="{{ "js/katex.js" | absURL }}"></script>
+<script defer language="javascript" type="text/javascript" src="{{ "js/toc.js" | absURL }}"></script>

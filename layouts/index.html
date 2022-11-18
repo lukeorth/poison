@@ -1,7 +1,4 @@
 {{ define "main" -}}
-{{ if .Site.Params.light_dark }}
-    {{ partial "light_dark.html" . }}
-{{ end }}
 <div class="posts">
     {{ range where .Paginator.Pages "Section" "eq" "posts" }}
     <article class="post">
@@ -19,4 +16,5 @@
     </article>
     {{- end }}
 </div>
+{{ partial "pagination.html" . }}
 {{- end }}

@@ -12,8 +12,7 @@
         width: 1.4em;
         height: 1.4em;
         color: black;
-        margin: 0.08em 0.2em;
-        padding-top: 0.1em;
+        margin: 0 0.36em;
     }
 }
 
@@ -28,8 +27,7 @@
         width: 1.7em;
         height: 1.7em;
         color: black;
-        margin: 0.08em 0.2em;
-        padding-top: 0.1em;
+        margin: 0 0.25em;
     }
 }
 
@@ -51,20 +49,25 @@ h1, h2, h3, h4, h5, strong {
     background-color: var(--code-background-color);
 }
 .btn-light-dark .moon {
-    color: var(--moon-color);
+    color: var(--moon-sun-color);
 }
 .btn-light-dark .sun {
-    color: var(--sun-color);
+    color: var(--moon-sun-color);
 }
 .btn-light-dark {
-    border-radius: 5em;
+    border-radius: 50%;
     border: none;
     cursor: pointer;
     overflow: hidden;
     outline: none;
-    background-color: var(--list-color);
+    width: 3em;
+    height: 3em;
+    background-color: var(--moon-sun-background-color);
 }
 /* ************************** */
+.layout-reverse .content {
+    margin-left: 20em;
+}
 .sidebar {
     background-color: var(--sidebar-bg-color);
 }
@@ -84,6 +87,9 @@ h1, h2, h3, h4, h5, strong {
 }
 .heading {
     margin-top: 1em;
+}
+.post-date {
+    color: var(--date-color);
 }
 .info span {
     display: inline-block;
@@ -143,8 +149,29 @@ h1, h2, h3, h4, h5, strong {
     line-height: 1.4em;
     max-height: 85%;
 }
+.article-toc nav {
+    margin-left: 5em;
+}
+.article-toc.layout-reverse {
+    display: none;
+    position: fixed;
+    left: 0%;
+    top: 110px;
+    font-size: 0.9em;
+    width: 20em;
+    margin-left: 0;
+    overflow-y: auto;
+    line-height: 1.4em;
+    max-height: 85%;
+}
+.article-toc.layout-reverse nav {
+    margin-left: 0;
+}
 .article-toc h4 {
     margin-left: 6em;
+}
+.article-toc ul {
+    margin-bottom: 0;
 }
 .article-toc li {
     list-style: none;
@@ -158,11 +185,14 @@ h1, h2, h3, h4, h5, strong {
 .article-toc li.active {
     font-weight: bold;
 }
-#TableOfContents {
-    margin-left: 5em;
+.article-toc li.inactive {
+    font-weight: 300;
 }
 @media screen and (min-width: 100em) {
     .article-toc {
+        display: block;
+    }
+    .article-toc.layout-reverse {
         display: block;
     }
 }
@@ -175,4 +205,24 @@ h1, h2, h3, h4, h5, strong {
 }
 div.highlight pre {
     overflow-x: scroll;
+}
+#page-nav {
+    text-align: center;
+}
+#page-nav a {
+    margin: 0 0.2em;
+}
+#page-nav span {
+    margin: 0 0.2em;
+}
+.next {
+    float: right;
+    display: inline;
+}
+.prev {
+    float: left;
+    display: inline;
+}
+.current {
+    color: var(--text-color);
 }
