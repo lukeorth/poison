@@ -1,7 +1,7 @@
 name = "Poison"
 license = "GPL-3.0 License"
 licenselink = "https://github.com/LukeOrth/poison/blob/master/LICENSE.md"
-description = "A pragmatic, minimalist Hugo theme for bloggers.  Based on the classic \"Hyde\" design by mdo."
+description = "A pragmatic Hugo theme for bloggers.  Based on the classic \"Hyde\" design by mdo."
 min_version = "0.41.0"
 
 # The home page of the theme, where the source can be found.
