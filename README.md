@@ -1,4 +1,4 @@
-# Hyde
+# Poison
 
 Hyde is a brazen two-column [hugo](https://gohugo.io) theme based on the [Jekyll](http://jekyllrb.com) theme of the same name.
 It pairs a prominent sidebar with uncomplicated content.
