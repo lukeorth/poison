@@ -1,11 +1,19 @@
 # Poison
 
-![Poison screenshot](https://f.cloud.github.com/assets/98681/1831228/42af6c6a-7384-11e3-98fb-e0b923ee0468.png)
+![Poison screenshot](https://github.com/LukeOrth/poison/blob/master/images/screenshot.png)
 
+### DEMO - https://poison-theme.netlify.app/
+
+---
 
 ## Contents
 
-- [Installation](#installation)
+- [Features](#features)
+  - [Built-in shortcodes](#built-in-shortcodes)
+  - [Light/Dark mode](#light/dark-mode)
+  - [Table of contents](#table-of-contents)
+  - [Tabs](#tabs)
+  - [Tag posts by "Series"](#tag-by-series)
 - [Options](#options)
   - [Sidebar menu](#sidebar-menu)
   - [Sidebar description](#sidebar-description)
@@ -14,10 +22,10 @@
   - [Reverse layout](#reverse-layout)
   - [Disqus](#disqus)
   - [Google Analytics](#google-analytics)
+- [Installation](#installation)
 - [Author](#author)
 - [Ported by](#ported-by)
 - [License](#license)
-
 
 ## Installation
 
