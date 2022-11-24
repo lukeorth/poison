@@ -1,14 +1,21 @@
-name = "Hyde"
-license = "MIT"
-licenselink = "https://github.com/spf13/hyde/blob/master/LICENSE.md"
-description = "An elegant open source and mobile first theme"
-tags = ["blog", "company"]
-features = ["blog", "themes", "disqus"]
-min_version = 0.53
+name = "Poison"
+license = "GPL-3.0 License"
+licenselink = "https://github.com/LukeOrth/poison/blob/master/LICENSE.md"
+description = "A pragmatic, minimalist Hugo theme for bloggers.  Based on the classic \"Hyde\" design by mdo."
+min_version = "0.41.0"
+
+# The home page of the theme, where the source can be found.
+homepage = "https://github.com/LukeOrth/poison"
+
+# If you have a running demo of the theme.
+demosite = "https://poison-theme.netlify.app"
+
+tags = ["blog", "personal", "dark", "dark-mode", "light", "minimal"]
+features = ["blog", "katex", "table-of-contents", "tabs", "dark-mode", "series"]
 
 [author]
-    name = "spf13"
-    homepage = "http://spf13.com"
+    name = "Luke Orth"
+    homepage = "https://lukeorth.com"
 
 # If Porting existing theme
 [original]
