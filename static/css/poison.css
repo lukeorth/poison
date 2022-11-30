@@ -89,6 +89,7 @@ h1, h2, h3, h4, h5, strong {
     margin-top: 1em;
 }
 .post-date {
+    display: inline-block;
     color: var(--date-color);
 }
 .info span {
