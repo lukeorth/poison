@@ -5,10 +5,10 @@ tabs.forEach(tab => {
         const tablist = tab.parentElement.children
         for (let i = 0; i < tablist.length; i++) {
             if (tablist[i].id == e.target.id) {
-                tablist[i].className += " active";
+                tablist[i].classList.add('active');
             }
             else {
-                tablist[i].className = tabs[i].className.replace(" active", "");
+                tablist[i].classList.remove('active');
             }
         }
         const container = tab.parentElement.parentElement.children
