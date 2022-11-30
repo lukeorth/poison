@@ -14,7 +14,7 @@
             <button class="tab" id="{{ (index $tabID $i) }}">
             {{ end }}
 
-                {{ (replaceRE "(\\s)" "" (index $tabName $i)) }}
+                {{ index $tabName $i }}
             </button>
 
 	    {{ end }}
