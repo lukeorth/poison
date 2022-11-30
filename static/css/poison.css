@@ -9,6 +9,8 @@
         margin-left: 1em;
     }
     .btn-light-dark svg {
+        padding: 0;
+        margin: 0;
         width: 1.4em;
         height: 1.4em;
         color: black;
@@ -23,6 +25,8 @@
         padding-left: 0em;
     }
     .btn-light-dark svg {
+        padding: 0;
+        margin: 0;
         width: 1.7em;
         height: 1.7em;
         color: black;
@@ -62,10 +66,6 @@ h1, h2, h3, h4, h5, strong {
     width: 3em;
     height: 3em;
     background-color: var(--moon-sun-background-color);
-}
-button svg {
-    padding: 0;
-    margin: 0;
 }
 /* ************************** */
 .layout-reverse .content {
