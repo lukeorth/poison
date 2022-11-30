@@ -56,6 +56,7 @@ h1, h2, h3, h4, h5, strong {
 }
 .btn-light-dark {
     border-radius: 50%;
+    text-align: center;
     border: none;
     cursor: pointer;
     overflow: hidden;
@@ -63,6 +64,10 @@ h1, h2, h3, h4, h5, strong {
     width: 3em;
     height: 3em;
     background-color: var(--moon-sun-background-color);
+}
+button svg {
+    padding: 0;
+    margin: 0;
 }
 /* ************************** */
 .layout-reverse .content {
