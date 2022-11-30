@@ -9,10 +9,9 @@
         margin-left: 1em;
     }
     .btn-light-dark svg {
-        padding: 0;
-        margin: 0;
-        width: 1.4em;
-        height: 1.4em;
+        margin: auto;
+        width: 20px;
+        height: 20px;
         color: black;
     }
 }
@@ -25,10 +24,9 @@
         padding-left: 0em;
     }
     .btn-light-dark svg {
-        padding: 0;
-        margin: 0;
-        width: 1.7em;
-        height: 1.7em;
+        margin: auto;
+        width: 20px;
+        height: 20px;
         color: black;
     }
 }
@@ -57,14 +55,14 @@ h1, h2, h3, h4, h5, strong {
     color: var(--moon-sun-color);
 }
 .btn-light-dark {
+    padding: 0;
+    margin: 1em;
     border-radius: 50%;
-    text-align: center;
     border: none;
     cursor: pointer;
-    overflow: hidden;
-    outline: none;
-    width: 3em;
-    height: 3em;
+    text-align: center;
+    width: 40px;
+    height: 40px;
     background-color: var(--moon-sun-background-color);
 }
 /* ************************** */
