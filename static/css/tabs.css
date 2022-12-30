@@ -56,7 +56,7 @@
 /* Create an active/current tablink class */
 .tabs button.active {
   background-color: #ccc;
-  color: var(--bkg-color);
+  color: #000;
 }
 
 /* Style the tabs content */
