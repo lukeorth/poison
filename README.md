@@ -1,6 +1,6 @@
 # Poison
 
-![Poison screenshot](https://github.com/LukeOrth/poison/blob/master/images/screenshot.png)
+![Poison screenshot](https://github.com/lukeorth/poison/blob/master/images/screenshot.png)
 
 ### DEMO - https://poison-theme.netlify.app/
 
