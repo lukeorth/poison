@@ -38,7 +38,11 @@ All of the static assets for the site (JS files, CSS, and fonts) are located wit
 In addition to the standard Built-in templates and shortcodes that come with Hugo, *Poison* offers some unique features of its own.
 
 - **Light & dark mode** -- Give readers the choice to read in light or dark mode.  The user's preference is stored in local storage.  Light mode is the default for first time visitors, but you can change this in your config file.
+![image](https://user-images.githubusercontent.com/35306887/210615342-ab3e0b88-fbd2-405a-bad1-2fa8b21982be.png)
+![image](https://user-images.githubusercontent.com/35306887/210615432-7484c310-0b0d-46eb-b491-4b50c2e8a2aa.png)
+
 - **Table of contents** -- Provide a floating table of contents for readers with large enough screens (i.e. *screen-width > 1600 pixels*).
+
 - **Series** -- Sensibly link and display content into "series" (i.e. *Tutorial One*, *Tutorial Two*, etc.).
    
    This is done with a custom taxonomy, so just add `series` to the frontmatter on the content you'd like to group together.
