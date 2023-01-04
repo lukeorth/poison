@@ -35,8 +35,66 @@ All of the static assets for the site (JS files, CSS, and fonts) are located wit
 
 ## Features
 
-Testing
+In addition to the standard Built-in templates and shortcodes that come with Hugo, *Poison* offers some unique features of its own.
 
+- **Light & dark mode** -- Give readers the choice to read in light or dark mode.  The user's preference is stored in local storage.  Light mode is the default for first time visitors, but you can change this in your config file.
+- **Table of contents** -- Provide a floating table of contents for readers with large enough screens (i.e. *screen-width > 1600 pixels*).
+- **Series** -- Sensibly link and display content into "series" (i.e. *Tutorial One*, *Tutorial Two*, etc.).
+   
+   This is done with a custom taxonomy, so just add `series` to the frontmatter on the content you'd like to group together.
+
+    ```yaml
+    ---
+    title: "Example to demonstrate how to use series"
+    date: 2022-10-04
+    draft: false
+    series: "How to use poison"
+    tags: ["Hugo"]
+    ---
+    ```
+
+- **KaTeX** -- Make your mathematical notations pop.
+
+    For notations that should appear on their own line, use the block quotes `$$ ... $$`
+    
+    $$ 5 \times 5 = 25 $$
+
+    For notations that should appear on the same line, use the inline quotes `$ ... $`
+    
+- **Tabs** -- Some content is just better viewed in tabs.  Luckily we have a shortcode for that.
+    {{< tabs tabTotal="2" >}}
+
+    {{% tab tabName="First Tab" %}}
+This is **markdown** content.
+    {{% /tab %}}
+
+    {{< tab tabName="Second Tab" >}}
+    {{< highlight text >}}
+    This is a code block.
+    {{</ highlight >}}
+    {{< /tab >}}
+
+    {{< /tabs >}}
+
+    ---
+    Here's the code for the tabs above...
+
+    ```
+    {{</* tabs tabTotal="2" */>}}
+
+    {{%/* tab tabName="First Tab" */%}}
+    This is markdown content.
+    {{%/* /tab */%}}
+
+    {{</* tab tabName="Second Tab" */>}}
+    {{</* highlight text */>}}
+    This is a code block.
+    {{</* highlight */>}}
+    {{</* /tab */>}}
+
+    {{</* /tabs */>}}
+    ```
+ 
 ### Quick Start
 
 To give you a running start this installation puts a fully configured [starter repo](https://github.com/forestryio/hyde-hugo-starter) into your Git account and sets it up in a content manager / CMS. 
