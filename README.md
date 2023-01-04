@@ -62,22 +62,11 @@ In addition to the standard Built-in templates and shortcodes that come with Hug
     For notations that should appear on the same line, use the inline quotes `$ ... $`
     
 - **Tabs** -- Some content is just better viewed in tabs.  Luckily we have a shortcode for that.
-    {{< tabs tabTotal="2" >}}
-
-    {{% tab tabName="First Tab" %}}
-This is **markdown** content.
-    {{% /tab %}}
-
-    {{< tab tabName="Second Tab" >}}
-    {{< highlight text >}}
-    This is a code block.
-    {{</ highlight >}}
-    {{< /tab >}}
-
-    {{< /tabs >}}
+![image](https://user-images.githubusercontent.com/35306887/210614932-5b2e53e7-8f8e-436a-b3c6-905f33018688.png)
+![image](https://user-images.githubusercontent.com/35306887/210615011-b9d4e670-1713-43fe-b285-a33ca285df73.png)
 
     ---
-    Here's the code for the tabs above...
+    Here's the code for the tabs shown above...
 
     ```
     {{</* tabs tabTotal="2" */>}}
