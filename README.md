@@ -181,6 +181,7 @@ pluralizelisttitles = false
 [params]
     brand = "Poison"                    # name of your site - appears in the sidebar
     # brand_image = "/images/test.jpg"    # path to the image shown in the sidebar
+    description = "Update this description..."
     dark_mode = true                    # optional - defaults to false
 
     # MENU PLACEHOLDER
