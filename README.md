@@ -75,24 +75,23 @@ Some content is just better viewed in tabs.  Luckily we have a shortcode for tha
   <img src="https://user-images.githubusercontent.com/35306887/210615011-b9d4e670-1713-43fe-b285-a33ca285df73.png" width="700" />
 </p>
 
-    ---
-    Here's the code for the tabs shown above...
+Here's the code for the tabs shown above...
 
-    ```
-    {{</* tabs tabTotal="2" */>}}
+```
+{{</* tabs tabTotal="2" */>}}
 
-    {{%/* tab tabName="First Tab" */%}}
-    This is markdown content.
-    {{%/* /tab */%}}
+{{%/* tab tabName="First Tab" */%}}
+This is markdown content.
+{{%/* /tab */%}}
 
-    {{</* tab tabName="Second Tab" */>}}
-    {{</* highlight text */>}}
-    This is a code block.
-    {{</* highlight */>}}
-    {{</* /tab */>}}
+{{</* tab tabName="Second Tab" */>}}
+{{</* highlight text */>}}
+This is a code block.
+{{</* highlight */>}}
+{{</* /tab */>}}
 
-    {{</* /tabs */>}}
-    ```
+{{</* /tabs */>}}
+```
  
 ## Installation
 
@@ -136,7 +135,7 @@ There are two types of menu items:
 
 The sidebar menu items are configured with a dictionary value in your *config.toml* file.  I've included an example below.  Additionally, there is a placeholder for this in the *config.toml* file shown in the next section.
 
-**Remember**: You must have a markdown file present at the path specified for the menu item to be displayed.
+**Important**: You *must* have a markdown file present at the path specified in order for your menu item to be displayed.
 
 ```toml
 menu = [
