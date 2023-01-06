@@ -1,6 +1,6 @@
 # Poison
 
-![Poison screenshot](https://github.com/lukeorth/poison/blob/master/images/screenshot.png)
+![Poison screenshot](https://raw.githubusercontent.com/lukeorth/poison/master/images/screenshot.png)
 
 ### DEMO - https://poison-theme.netlify.app/
 
@@ -99,7 +99,7 @@ Some content is just better viewed in tabs.  Luckily we have a shortcode for tha
 First, clone this repository into your `themes` directory:
 
 ```
-git clone https://github.com/LukeOrth/poison.git themes/poison --depth=1
+git clone https://github.com/lukeorth/poison.git themes/poison --depth=1
 ```
 
 Next, specify `poison` as the default theme in your config.toml file by adding the following line:
