@@ -206,7 +206,7 @@ h1, h2, h3, h4, h5, strong {
     white-space: pre;
 }
 div.highlight pre {
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 #page-nav {
     text-align: center;
