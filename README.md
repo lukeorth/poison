@@ -87,7 +87,7 @@ This is markdown content.
 {{</* tab tabName="Second Tab" */>}}
 {{</* highlight text */>}}
 This is a code block.
-{{</* highlight */>}}
+{{</* /highlight */>}}
 {{</* /tab */>}}
 
 {{</* /tabs */>}}
