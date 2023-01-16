@@ -71,6 +71,7 @@ pre {
     bottom: 0;
     width: 18rem;
     text-align: left;
+    overflow-y: auto;
   }
 }
 
