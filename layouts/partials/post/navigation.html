@@ -4,10 +4,10 @@
     {{ $Site := .Site }}
     {{ $postTitle := .Title }}
     <p>
-    This is a post in the <b><a href="{{ $Site.BaseURL }}/series/{{ .Params.series | urlize }}">{{ .Params.series }}</a></b> series.
+    This is a post in the <b><a href="{{ $Site.BaseURL }}/series/{{ index .Params.series 0 | urlize }}">{{ .Params.series }}</a></b> series.
         <br>Other posts in this series:
         <ul class="series">
-            {{ $seriesUrl := print "series/" (.Params.series | urlize) }}
+            {{ $seriesUrl := print "series/" (index .Params.series 0| urlize) }}
             {{ $series := .Site.GetPage $seriesUrl }}
             {{ range $series.Pages }}
             <li>
