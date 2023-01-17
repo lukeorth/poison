@@ -11,7 +11,7 @@
             {{ $series := .Site.GetPage $seriesUrl }}
             {{ range $series.Pages }}
             <li>
-                {{ .Date.Format "Jan 01, 2006" }} -
+                {{ .Date | time.Format ":date_long" }} -
                 {{ if ne .Title $postTitle }}
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 {{ else }}
