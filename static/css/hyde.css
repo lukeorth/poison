@@ -87,6 +87,10 @@ pre {
   ::-webkit-scrollbar-thumb {
     background-color:rgb(70, 70, 70);
   }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color:rgb(150, 150, 150);
+  }
 }
 
 /* Sidebar links */
