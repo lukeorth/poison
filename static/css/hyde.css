@@ -72,6 +72,27 @@ pre {
     width: 18rem;
     text-align: left;
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(70, 70, 70) auto;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color:rgb(70, 70, 70);
+    border-radius: 10px;
+  }
+
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color:rgb(150, 150, 150);
   }
 }
 
