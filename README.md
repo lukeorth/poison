@@ -176,13 +176,13 @@ baseURL = "/"
 languageCode = "en-us"
 theme = "poison"
 paginate = 10
-pluralizelisttitles = false
+pluralizelisttitles = false   # removes the automatically appended "s" on sidebar entries
 
 [params]
-    brand = "Poison"                    # name of your site - appears in the sidebar
+    brand = "Poison"                      # name of your site - appears in the sidebar
     # brand_image = "/images/test.jpg"    # path to the image shown in the sidebar
     description = "Update this description..."
-    dark_mode = true                    # optional - defaults to false
+    dark_mode = true                      # optional - defaults to false
 
     # MENU PLACEHOLDER
     # Menu dict keys:
