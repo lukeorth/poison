@@ -197,6 +197,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
 
     # Links to your socials.  Delete any you don't need/use. 
     github_url = "https://github.com"
+    gitlab_url = "https://gitlab.com"
     linkedin_url = "https://linkedin.com"
     twitter_url = "https://twitter.com"
     mastodon_url = "https://mastodon.social"
