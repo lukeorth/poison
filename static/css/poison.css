@@ -35,7 +35,7 @@
 h1, h2, h3, h4, h5, strong {
     color: var(--text-color);
 }
-.content p {
+.content p, table {
     color: var(--text-color);
 }
 .page-title, .post-title, .post-title a {
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, strong {
 }
 .content code {
     color: var(--code-color);
-    background-color: var(--code-background-color);
+    background-color: var(--code-background-color) !important;
 }
 .btn-light-dark .moon {
     color: var(--moon-sun-color);
@@ -119,6 +119,23 @@ h1, h2, h3, h4, h5, strong {
     background-color: var(--list-color);
     border-radius: 0.2em;
 }
+/* Tables */
+table {
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid var(--table-border-color);
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: .25rem .5rem;
+  border: 1px solid var(--table-border-color);
+}
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: var(--table-stripe-color);
+}
+
 .entries li {
     display: flex;
 }
