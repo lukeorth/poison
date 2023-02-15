@@ -12,6 +12,8 @@
         --list-color: {{ with .Site.Params.list_color }}{{ . }}{{ else }}#5a5a5a{{ end }};
         --link-color: {{ with .Site.Params.link_color }}{{ . }}{{ else }}#268bd2{{ end }};
         --date-color: {{ with .Site.Params.date_color }}{{ . }}{{ else }}#515151{{ end }};
+        --table-border-color: {{ with .Site.Params.table_border_color }}{{ . }}{{ else }}#E5E5E5{{ end }};
+        --table-stripe-color: {{ with .Site.Params.table_stripe_color }}{{ . }}{{ else }}#F9F9F9{{ end }};
         --code-color: #bf616a;
         --code-background-color: #f9f9f9;
         --moon-sun-color: {{ with .Site.Params.moon_sun_color }}{{ . }}{{ else }}#FFF{{ end }};
@@ -24,6 +26,8 @@
         --list-color: {{ with .Site.Params.list_color_dark }}{{ . }}{{ else }}#9d9d9d{{ end }};
         --link-color: {{ with .Site.Params.link_color_dark }}{{ . }}{{ else }}#268bd2{{ end }};
         --date-color: {{ with .Site.Params.date_color_dark }}{{ . }}{{ else }}#9a9a9a{{ end }};
+        --table-border-color: {{ with .Site.Params.table_border_color_dark }}{{ . }}{{ else }}#515151{{ end }};
+        --table-stripe-color: {{ with .Site.Params.table_stripe_color_dark }}{{ . }}{{ else }}#202020{{ end }};
         --code-color: #ff7f7f;
         --code-background-color: #393D47;
     }
