@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, strong {
 }
 .content code {
     color: var(--code-color);
-    background-color: var(--code-background-color);
+    background-color: var(--code-background-color) !important;
 }
 .btn-light-dark .moon {
     color: var(--moon-sun-color);
