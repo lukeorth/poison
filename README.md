@@ -224,6 +224,8 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     list_color = "#5a5a5a"          # default is #5a5a5a
     link_color = "#268bd2"          # default is #268bd2
     date_color = "#515151"          # default is #515151
+    table_border_color = "#E5E5E5"  # default is #E5E5E5
+    table_stripe_color = "#F9F9F9"  # default is #F9F9F9
 
     # Hex colors for your content in dark mode
     text_color_dark = "#eee"            # default is #eee
@@ -232,6 +234,8 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     list_color_dark = "#9d9d9d"         # default is #9d9d9d
     link_color_dark = "#268bd2"         # default is #268bd2
     date_color_dark = "#9a9a9a"         # default is #9a9a9a
+    table_border_color_dark = "#515151" # default is #515151
+    table_stripe_color_dark = "#202020" # default is #202020
 
 [taxonomies]
     series = 'series'
