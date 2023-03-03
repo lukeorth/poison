@@ -195,7 +195,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
         {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
     ]
 
-    # Links to your socials.  Delete any you don't need/use. 
+    # Links to your socials.  Comment or delete any you don't need/use. 
     github_url = "https://github.com"
     gitlab_url = "https://gitlab.com"
     linkedin_url = "https://linkedin.com"
@@ -207,6 +207,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     instagram_url = "https://instagram.com"
     facebook_url = "https://facebook.com"
 
+    # NOTE: If you don't want to use RSS, comment or delete the following lines
     # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
     rss_icon = true
     # Which section the RSS icon links to, defaults to all content. See https://gohugo.io/templates/rss/#section-rss
