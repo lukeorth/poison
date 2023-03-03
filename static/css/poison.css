@@ -35,7 +35,7 @@
 h1, h2, h3, h4, h5, strong {
     color: var(--text-color);
 }
-.content p, table {
+.content div, p, table {
     color: var(--text-color);
 }
 .page-title, .post-title, .post-title a {
