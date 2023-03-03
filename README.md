@@ -207,6 +207,11 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     instagram_url = "https://instagram.com"
     facebook_url = "https://facebook.com"
 
+    # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
+    rss_icon = true
+    # Which section the RSS icon links to, defaults to all content. See https://gohugo.io/templates/rss/#section-rss
+    rss_section = "posts"
+
     # Hex colors for your sidebar.
     sidebar_bg_color = "#202020"            # default is #202020
     sidebar_img_border_color = "#515151"    # default is #515151
