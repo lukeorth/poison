@@ -14,8 +14,8 @@
         --date-color: {{ with .Site.Params.date_color }}{{ . }}{{ else }}#515151{{ end }};
         --table-border-color: {{ with .Site.Params.table_border_color }}{{ . }}{{ else }}#E5E5E5{{ end }};
         --table-stripe-color: {{ with .Site.Params.table_stripe_color }}{{ . }}{{ else }}#F9F9F9{{ end }};
-        --code-color: #bf616a;
-        --code-background-color: #E5E5E5;
+        --code-color: {{ with .Site.Params.code_color }}{{ . }}{{ else }}#bf616a{{ end }};
+        --code-background-color: {{ with .Site.Params.code_background_color }}{{ . }}{{ else }}#E5E5E5{{ end }};
         --moon-sun-color: {{ with .Site.Params.moon_sun_color }}{{ . }}{{ else }}#FFF{{ end }};
         --moon-sun-background-color: {{ with .Site.Params.moon_sun_background_color }}{{ . }}{{ else }}#515151{{ end }};
     }
@@ -28,8 +28,8 @@
         --date-color: {{ with .Site.Params.date_color_dark }}{{ . }}{{ else }}#9a9a9a{{ end }};
         --table-border-color: {{ with .Site.Params.table_border_color_dark }}{{ . }}{{ else }}#515151{{ end }};
         --table-stripe-color: {{ with .Site.Params.table_stripe_color_dark }}{{ . }}{{ else }}#202020{{ end }};
-        --code-color: #ff7f7f;
-        --code-background-color: #393D47;
+        --code-color: {{ with .Site.Params.code_color_dark }}{{ . }}{{ else }}#ff7f7f{{ end }};
+        --code-background-color: {{ with .Site.Params.code_background_color_dark }}{{ . }}{{ else }}#393D47{{ end }};
     }
     body {
         background-color: var(--bkg-color);
