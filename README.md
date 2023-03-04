@@ -130,7 +130,7 @@ Any items you want displayed in your sidebar menu *must* satisfy two requirement
 
 There are two types of menu items:
 
-1. **Single Page** -- The *About* menu item (to the left) is a good example of this.  It displays a direct link to an individual page.
+1. **Single Page** -- The *About* menu item (to the left) is a good example of this.  It displays a direct link to an individual page. For arbitrary single pages, the page content must be located at `content/<foo>/_index.md` and the front matter of `_index.md` must contain `layout: single`.
 2. **List** -- The *Posts* menu item is a good example of this.  It displays a directory and dynamically lists the contents (i.e. pages) contained by date.  List items have two optional configurations: a subheading (like the *Recent* subheading that appears on the menu to the left), and a maximum number of items to display.
 
 The sidebar menu items are configured with a dictionary value in your *config.toml* file.  I've included an example below.  Additionally, there is a placeholder for this in the *config.toml* file shown in the next section.
@@ -153,6 +153,9 @@ menu = [
         # ... /content/about/about.md
         {Name = "About", URL = "/about/", HasChildren = false},
         
+        # ... /content/foo/_index.md
+        # {Name = "Foo", URL = "/foo/", HasChildren = false},
+
         # LIST
         # This example has a subheading of "Recent"
         # and will display up to 5 items.
