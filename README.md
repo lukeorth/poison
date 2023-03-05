@@ -245,6 +245,10 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     date_color_dark = "#9a9a9a"         # default is #9a9a9a
     table_border_color_dark = "#515151" # default is #515151
     table_stripe_color_dark = "#202020" # default is #202020
+    code_color = "#bf616a"              # default is #bf616a
+    code_background_color = "#E5E5E5"   # default is #E5E5E5
+    code_color_dark = "##ff7f7f"        # default is #ff7f7f
+    code_background_color_dark = "#393D47" # default is #393D47
 
 [taxonomies]
     series = 'series'
