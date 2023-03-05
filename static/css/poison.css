@@ -72,6 +72,10 @@ h1, h2, h3, h4, h5, strong {
 .sidebar {
     background-color: var(--sidebar-bg-color);
 }
+.lead {
+  text-align: center;
+  color: var(--sidebar-p-color);
+}
 .sidebar-about img {
     margin-left: auto;
     margin-right: auto;
