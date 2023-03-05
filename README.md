@@ -237,18 +237,18 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     table_stripe_color = "#F9F9F9"  # default is #F9F9F9
 
     # Hex colors for your content in dark mode
-    text_color_dark = "#eee"            # default is #eee
-    content_bg_color_dark = "#121212"   # default is #121212
-    post_title_color_dark = "#DBE2E9"   # default is #DBE2E9
-    list_color_dark = "#9d9d9d"         # default is #9d9d9d
-    link_color_dark = "#268bd2"         # default is #268bd2
-    date_color_dark = "#9a9a9a"         # default is #9a9a9a
-    table_border_color_dark = "#515151" # default is #515151
-    table_stripe_color_dark = "#202020" # default is #202020
-    code_color = "#bf616a"              # default is #bf616a
-    code_background_color = "#E5E5E5"   # default is #E5E5E5
-    code_color_dark = "##ff7f7f"        # default is #ff7f7f
-    code_background_color_dark = "#393D47" # default is #393D47
+    text_color_dark = "#eee"                # default is #eee
+    content_bg_color_dark = "#121212"       # default is #121212
+    post_title_color_dark = "#DBE2E9"       # default is #DBE2E9
+    list_color_dark = "#9d9d9d"             # default is #9d9d9d
+    link_color_dark = "#268bd2"             # default is #268bd2
+    date_color_dark = "#9a9a9a"             # default is #9a9a9a
+    table_border_color_dark = "#515151"     # default is #515151
+    table_stripe_color_dark = "#202020"     # default is #202020
+    code_color = "#bf616a"                  # default is #bf616a
+    code_background_color = "#E5E5E5"       # default is #E5E5E5
+    code_color_dark = "#ff7f7f"             # default is #ff7f7f
+    code_background_color_dark = "#393D47"  # default is #393D47
 
 [taxonomies]
     series = 'series'
