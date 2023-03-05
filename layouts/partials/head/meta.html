@@ -1,0 +1,186 @@
+{{ .Scratch.Set "title" .Site.Title }}
+
+{{ .Scratch.Set "publisherIcon" .Site.Params.favicon }}
+{{ if .Site.Params.publisherIcon }}
+    {{ .Scratch.Set "publisherIcon" .Site.Params.publisher_icon }}
+{{ end }}
+
+{{ if eq .Kind "home" }}
+  {{ .Scratch.Set "title" .Site.Title }}
+  {{ .Scratch.Set "description" .Site.Params.Description }}
+{{ else }}
+  {{ .Scratch.Set "description" .Description }}
+{{ end }} 
+
+{{ if .IsSection }}
+  {{ .Scratch.Set "title" (.LinkTitle | humanize | title) }}
+  {{ .Scratch.Add "title" " - " }}
+  {{ .Scratch.Add "title" .Site.Title }}
+{{ end }} 
+
+{{ if .IsPage }}
+  {{ .Scratch.Set "title" (.Title | humanize | title) }}
+  {{ .Scratch.Add "title" " - " }}
+  {{ .Scratch.Add "title" .Site.Title }}
+{{ end }} 
+
+{{ $og_image := "" }}
+{{ if .Params.image }}
+  {{ $og_image = .Params.image }}
+{{ else if .Site.Params.og_image }}
+  {{ $og_image = .Site.Params.og_image }}
+{{ else }}
+  {{ $og_image = .Site.Params.brand_image }}
+{{ end }}
+
+<!-- Title Tags -->
+<title itemprop="name">{{ .Scratch.Get "title" }}</title>
+<meta property="og:title" content={{ .Scratch.Get "title" }} />
+<meta name="twitter:title" content={{ .Scratch.Get "title" }} />
+<meta itemprop="name" content={{ .Scratch.Get "title" }} />
+<meta name="application-name" content={{ .Scratch.Get "title" }} />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+
+<!-- Description Tags -->
+<meta name="description" content="{{ .Scratch.Get "description" }}" />
+<meta itemprop="description" content="{{ .Scratch.Get "description" }}" />
+<meta property="og:description" content="{{ .Scratch.Get "description" }}" />
+<meta name="twitter:description" content="{{ .Scratch.Get "description" }}" />
+
+<!-- Link Tags -->
+<base href="{{ .Permalink }}" />
+<link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
+<meta name="url" content="{{ .Permalink }}" />
+<meta name="twitter:url" content="{{ .Permalink }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+
+<!-- Image Tags -->
+{{ if $og_image }}
+<meta itemprop="image" content="{{ $og_image | absURL }}" />
+<meta property="og:image" content="{{ $og_image | absURL }}" />
+<meta name="twitter:image" content="{{ $og_image | absURL }}" />
+<meta name="twitter:image:src" content="{{ $og_image | absURL }}" />
+{{ end }}
+
+<!-- Date Tags -->
+<meta property="og:updated_time" content={{ .Lastmod.Format "2001-02-03T14:05:06Z0700" | safeHTML }} />
+
+<!-- Sitemap & Alternate Outputs -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href='{{ "sitemap.xml" | absURL }}' />
+{{ range .AlternativeOutputFormats -}}
+    {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />` .Permalink .Rel .MediaType.Type $.Site.Title | safeHTML }}
+{{ end -}}
+
+<!-- Search Engine Crawler Tags -->
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+
+<!-- Social Media Tags -->
+<meta name="twitter:site" content="{{ .Site.Params.twitter_url }}" />
+<meta name="twitter:creator" content="{{ .Site.Params.twitter_url }}" />
+<meta property="fb:admins" content="{{ .Site.Params.fb.admins }}" />
+
+<!-- Other Tags -->
+<meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<!-- Article Specific Tags -->
+<!-- To make sure this renders only in the article page, we check the section -->
+{{ if eq .Section "posts" }}
+<!-- Pagination meta tags for list pages only -->
+{{ $paginator := .Paginate (where .Pages "Type" "posts") }} 
+{{ if $paginator }}
+  <link rel="first" href="{{ $paginator.First.URL }}" />
+  <link rel="last" href="{{ $paginator.Last.URL }}" />
+  {{ if $paginator.HasPrev }}
+    <link rel="prev" href="{{ $paginator.Prev.URL }}" />
+  {{end }}
+  {{ if $paginator.HasNext }}
+    <link rel="next" href="{{ $paginator.Next.URL }}" />
+  {{end }}
+{{end }}
+
+<meta property="og:type" content="article" />
+<meta property="article:publisher" content="{{ .Site.Params.facebook_url }}" />
+<meta property="og:article:published_time" content={{ .Date.Format "2001-02-03T14:05:06Z0700" | safeHTML }} />
+<meta property="article:published_time" content={{ .Date.Format "2001-02-03T14:05:06Z0700" | safeHTML }} />
+
+{{ with.Params.author }}
+  <meta property="og:article:author" content="{{humanize . }}" />
+  <meta property="article:author" content="{{humanize . }}" />
+  <meta name="author" content="{{humanize . }}" />
+{{ end }}
+
+{{ with.Params.category }}
+  <meta name="news_keywords" content="{{ index . 0 }}" />
+  <meta property="article:section" content="{{ index . 0 }}" />
+{{ end }}
+
+<script defer type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": {{ .Title }},
+    "author": {
+      "@type": "Person",
+      "name": "{{ .Site.Params.github_url }}"
+    },
+    "datePublished": "{{ .Date.Format "2006-01-02" }}",
+    "description": {{ .Description }},
+    "wordCount": {{ .WordCount }},
+    "mainEntityOfPage": "True",
+    "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+    "image": {
+      "@type": "imageObject",
+      "url": "{{ with .Params.image }}{{ .Permalink }}{{ end }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ .Site.Title }}",
+      "logo": {
+        "@type": "imageObject",
+        "url": "{{ .Scratch.Get "publisherIcon" }}"
+      }
+    }
+  }
+</script>
+{{ else }}
+
+<!-- Content (non-blog/article) specific tags, for pages such as /contact or /about -->
+<meta property="og:type" content="website" />
+<meta name="author" content="{{ .Site.Params.author }}" />
+<script defer type="application/ld+json">
+  {
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": {{ .Title }},
+        "author": {
+            "@type": "Person",
+            "name": "{{ .Site.Params.github }}"
+        },
+        "datePublished": "{{ .Date.Format "2006-01-02" }}",
+        "description": {{ .Description }},
+        "wordCount": {{ .WordCount }},
+        "mainEntityOfPage": "True",
+        "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+        "image": {
+            "@type": "imageObject",
+            "url": "{{ with .Params.image }}{{ .Permalink }}{{ end }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ .Site.Title }}",
+            "logo": {
+            "@type": "imageObject",
+            "url": "{{ .Scratch.Get "publisherIcon" }}"
+            }
+        }
+    }
+  }
+</script>
+{{ end }}
+
+<!-- Hugo Generator Attribution -->
+{{ hugo.Generator }}
