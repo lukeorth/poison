@@ -188,7 +188,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     description = "Update this description..." # Used as default meta description if not specified in front matter
     dark_mode = true                      # optional - defaults to false
     
-    # The following three fields are optional.  They are used to create meta tags and enhance SEO.
+    # NOTE: The following three params are optional and are used to create meta tags + enhance SEO.
     # og_image = ""                       # path to social icon - front matter: image takes precedent, then og_image, then brand_url
     # publisher_icon = ""                 # path to publisher icon - defaults to favicon, used in schema
     # favicon = ""                        # path to favicon
