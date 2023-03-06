@@ -185,7 +185,10 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
 [params]
     brand = "Poison"                      # name of your site - appears in the sidebar
     # brand_image = "/images/test.jpg"    # path to the image shown in the sidebar
-    description = "Update this description..."
+    # og_image = ""                       # path to social icon - front matter: image takes precedent, then og_image, then brand_url
+    # publisher_icon = ""                 # path to publisher icon - defaults to favicon, used in schema
+    # favicon = ""                        # path to favicon
+    description = "Update this description..." # Used as default meta description if not specified in front matter
     dark_mode = true                      # optional - defaults to false
 
     # MENU PLACEHOLDER
