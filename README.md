@@ -26,6 +26,7 @@ All of the static assets for the site (JS files, CSS, and fonts) are located wit
 - [How to Configure](#how-to-configure)
   - [The Sidebar Menu](#the-sidebar-menu)
   - [Example Config](#example-config)
+  - [Custom CSS](#custom-css)
 - [Author](#author)
 - [Ported by](#ported-by)
 - [License](#license)
@@ -253,6 +254,19 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
 [taxonomies]
     series = 'series'
     tags = 'tags'
+```
+
+### Custom CSS
+
+You can override any setting in Poison's static CSS files by adding your own
+`/static/css/custom.css` file. For example, if you want to override the title font and
+font size, you could add this:
+
+```css
+.sidebar-about h1 {
+  font-size: 1.4em;
+  font-family: "Monaco", monospace;
+}
 ```
 
 ## Author
