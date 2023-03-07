@@ -24,13 +24,23 @@
   {{ .Scratch.Add "title" .Site.Title }}
 {{ end }} 
 
-{{ $og_image := "" }}
-{{ if .Params.image }}
-  {{ $og_image = .Params.image }}
-{{ else if .Site.Params.og_image }}
-  {{ $og_image = .Site.Params.og_image }}
-{{ else }}
-  {{ $og_image = .Site.Params.brand_image }}
+{{ $og_image := .Resources.Get .Params.image }}
+{{ if not ( $og_image ) }}
+  {{ $og_image_path := "" }}
+  {{ if .Site.Params.og_image }}
+    {{ $og_image_path = .Site.Params.og_image }}
+  {{ else }}
+    {{ $og_image_path = .Site.Params.brand_image }}
+  {{ end }}
+  {{ $og_image = resources.Get $og_image_path }}
+{{ end }}
+{{ with $og_image }}
+  {{ if or ( lt .Width 600 ) ( lt .Height 315 ) }}
+    {{ warnf "og:image less than recommended size of 600x315 to 1200x630" }}
+  {{ else if or ( gt .Width 1200 ) ( gt .Height 630 ) }}
+    {{ warnf "og:image over recommended size of 600x315 to 1200x630" }}
+    {{ $og_image = $og_image.Fit "1200x630" }}
+  {{ end }}
 {{ end }}
 
 <!-- Title Tags -->
@@ -56,10 +66,12 @@
 
 <!-- Image Tags -->
 {{ if $og_image }}
-<meta itemprop="image" content="{{ $og_image | absURL }}" />
-<meta property="og:image" content="{{ $og_image | absURL }}" />
-<meta name="twitter:image" content="{{ $og_image | absURL }}" />
-<meta name="twitter:image:src" content="{{ $og_image | absURL }}" />
+<meta itemprop="image" content="{{ $og_image.Permalink }}" />
+<meta property="og:image" content="{{ $og_image.Permalink }}" />
+<meta property="og:image:width" content="{{ $og_image.Width }}" />
+<meta property="og:image:height" content="{{ $og_image.Height }}" />
+<meta name="twitter:image" content="{{ $og_image.Permalink }}" />
+<meta name="twitter:image:src" content="{{ $og_image.Permalink }}" />
 {{ end }}
 
 <!-- Date Tags -->
@@ -133,7 +145,7 @@
     "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
     "image": {
       "@type": "imageObject",
-      "url": "{{ with .Params.image }}{{ .Permalink }}{{ end }}"
+      "url": "{{ with $og_image }}{{ .Permalink }}{{ end }}"
     },
     "publisher": {
       "@type": "Organization",
@@ -167,7 +179,7 @@
         "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
         "image": {
             "@type": "imageObject",
-            "url": "{{ with .Params.image }}{{ .Permalink }}{{ end }}"
+            "url": "{{ with $og_image }}{{ .Permalink }}{{ end }}"
         },
         "publisher": {
             "@type": "Organization",
