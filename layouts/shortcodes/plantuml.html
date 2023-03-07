@@ -1,13 +1,2 @@
-<img class="plantuml" id="plantuml-{{ .Get "id" }}"/>
-
-<script src="//code.jquery.com/jquery.min.js"></script>
-<script src="//cdn.rawgit.com/jmnote/plantuml-encoder/d133f316/dist/plantuml-encoder.min.js"></script>
-<script>
-    function encodeUML() {
-        const img = document.getElementById("plantuml-{{ .Get "id" }}");
-        img.src = "//www.plantuml.com/plantuml/img/" + window.plantumlEncoder.encode( {{ .Inner }} );
-    }
-encodeUML()
-</script>
-
-</img>
+<span id="plantuml-{{ .Get "id" }}" style="display:none">{{ .Inner }}</span>
+<img class="plantuml" id="plantuml-{{ .Get "id" }}">
