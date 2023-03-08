@@ -1,7 +1,8 @@
 <nav>
     <ul class="sidebar-nav">
-        
+
         {{ $sections := .Site.Sections.ByTitle }}
+        {{ $taxonomies := .Site.Taxonomies }}
         {{ range .Site.Params.menu }}
         {{ $menu_item := . }}
             {{ range $sections }}
@@ -19,6 +20,13 @@
                             </li>
                         {{ end }}
                     {{ end }}
+                {{ end }}
+            {{ end }}
+            {{ range $name, $taxonomy := $taxonomies }}
+                {{ if eq (lower $name) (lower $menu_item.Name) }}
+                    <li class="heading">
+                        <a href="{{$menu_item.URL }}">{{ $menu_item.Name }}</a>
+                    </li>
                 {{ end }}
             {{ end }}
         {{ end }}
