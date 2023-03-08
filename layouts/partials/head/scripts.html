@@ -7,9 +7,11 @@
 <script defer language="javascript" type="text/javascript" src="{{ "js/auto-render.min.js" | absURL }}"></script>
 
 <!-- Locally hosted code for PlantUML diagrams -->
+{{ if or (.Page.Store.Get "hasPlantUML") (.IsHome) }}
 <script language="javascript" type="text/javascript" src="{{ "js/plantuml-encoder.min.js" | absURL }}"></script>
 <!-- Personal/custom scripts for PlantUML diagrams -->
 <script language="javascript" type="text/javascript" src="{{ "js/plantuml-encoder.js" | absURL }}"></script>
+{{ end }}
 
 <!-- Personal/custom scripts for KaTeX and table of contents -->
 <script defer language="javascript" type="text/javascript" src="{{ "js/katex.js" | absURL }}"></script>
