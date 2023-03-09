@@ -22,6 +22,7 @@ All of the static assets for the site (JS files, CSS, and fonts) are located wit
   - [Series](#series)
   - [KaTeX](#katex)
   - [Tabs](#tabs)
+  - [PlantUML diagrams](#plantuml-diagrams)
 - [Installation](#installation)
 - [How to Configure](#how-to-configure)
   - [The Sidebar Menu](#the-sidebar-menu)
@@ -93,7 +94,17 @@ This is a code block.
 
 {{</* /tabs */>}}
 ```
- 
+
+### PlantUML diagrams
+You can add rendered PlantUML diagrams inline using the provided shortcode:
+
+```
+{{< plantuml id="foo" >}}
+a -> b
+b -> c
+{{< /plantuml >}}
+```
+
 ## Installation
 
 First, clone this repository into your `themes` directory:
