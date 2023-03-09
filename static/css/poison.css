@@ -211,7 +211,7 @@ tbody tr:nth-child(odd) th {
 .article-toc li.inactive {
     font-weight: 300;
 }
-@media screen and (min-width: 100em) {
+@media screen and (min-width: 80rem) {
     .article-toc {
         display: block;
     }
