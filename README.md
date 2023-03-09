@@ -22,6 +22,7 @@ All of the static assets for the site (JS files, CSS, and fonts) are located wit
   - [Series](#series)
   - [KaTeX](#katex)
   - [Tabs](#tabs)
+  - [Mermaid diagrams](#mermaid-diagrams)
   - [PlantUML diagrams](#plantuml-diagrams)
 - [Installation](#installation)
 - [How to Configure](#how-to-configure)
@@ -93,6 +94,24 @@ This is a code block.
 {{</* /tab */>}}
 
 {{</* /tabs */>}}
+```
+ 
+### Mermaid diagrams
+You can embed rendered Mermaid diagrams using the provided shortcode:
+```
+{{<mermaid>}}
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+{{</mermaid>}}
 ```
 
 ### PlantUML diagrams

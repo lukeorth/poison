@@ -16,3 +16,9 @@
 <!-- Personal/custom scripts for KaTeX and table of contents -->
 <script defer language="javascript" type="text/javascript" src="{{ "js/katex.js" | absURL }}"></script>
 <script defer language="javascript" type="text/javascript" src="{{ "js/toc.js" | absURL }}"></script>
+
+<!-- To automatically render mermaid diagrams -->
+{{ if or (.Page.Store.Get "hasMermaid") (.IsHome) }}
+<script defer language="javascript" type="text/javascript" src="{{ "js/mermaid.min.js" | absURL }}"></script>
+<script>mermaid.initialize({ startOnLoad: true });</script>
+{{ end }}
