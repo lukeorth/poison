@@ -23,6 +23,7 @@ All of the static assets for the site (JS files, CSS, and fonts) are located wit
   - [KaTeX](#katex)
   - [Tabs](#tabs)
   - [Mermaid diagrams](#mermaid-diagrams)
+  - [PlantUML diagrams](#plantuml-diagrams)
 - [Installation](#installation)
 - [How to Configure](#how-to-configure)
   - [The Sidebar Menu](#the-sidebar-menu)
@@ -111,6 +112,16 @@ sequenceDiagram
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
 {{</mermaid>}}
+```
+
+### PlantUML diagrams
+You can add rendered PlantUML diagrams inline using the provided shortcode:
+
+```
+{{< plantuml id="foo" >}}
+a -> b
+b -> c
+{{< /plantuml >}}
 ```
 
 ## Installation
