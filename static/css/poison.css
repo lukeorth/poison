@@ -66,6 +66,9 @@ h1, h2, h3, h4, h5, strong {
     background-color: var(--moon-sun-background-color);
 }
 /* ************************** */
+.container.content {
+ display: flex;
+}
 .layout-reverse .content {
     margin-left: 20em;
 }
@@ -161,19 +164,20 @@ tbody tr:nth-child(odd) th {
 }
 .article-toc {
     display: none;
-    position: fixed;
-    left: 50%;
     top: 110px;
     font-size: 0.9em;
     width: 20em;
-    margin-left: 400px;
     padding-left: 20px;
     overflow-y: auto;
     line-height: 1.4em;
     max-height: 85%;
+    margin-top: 5em;
 }
 .article-toc nav {
-    margin-left: 5em;
+    margin-left: 1em;
+}
+.article-toc .toc-wrapper {
+    position: fixed;
 }
 .article-toc.layout-reverse {
     display: none;
@@ -191,9 +195,10 @@ tbody tr:nth-child(odd) th {
     margin-left: 0;
 }
 .article-toc h4 {
-    margin-left: 6em;
+    margin-left: 0em;
 }
 .article-toc ul {
+    padding: 0;
     margin-bottom: 0;
 }
 .article-toc li {

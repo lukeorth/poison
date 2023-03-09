@@ -160,13 +160,13 @@ a.sidebar-nav-item:focus {
  * with a 25%-wide `.sidebar`.
  */
 
-.content {
+.content > article {
   padding-top:    2rem;
   padding-bottom: 2rem;
 }
 
 @media (min-width: 48em) {
-  .content {
+  .content > article {
     max-width: 38rem;
     margin-left: 20rem;
     margin-right: 2rem;
@@ -174,7 +174,7 @@ a.sidebar-nav-item:focus {
 }
 
 @media (min-width: 64em) {
-  .content {
+  .content > article {
     max-width: 44rem;
     margin-left: 20rem;
     margin-right: 2rem;

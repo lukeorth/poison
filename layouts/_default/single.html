@@ -1,9 +1,8 @@
 {{ define "main" -}}
-<div class="post">
+<article class="post">
   {{ partial "post/info.html" . }}
   {{ .Content }}
   {{ partial "post/navigation.html" . }}
-  {{ partial "table_of_contents.html" . }}
-</div>
-
+</article>
+{{ partial "table_of_contents.html" . }}
 {{- end }}
