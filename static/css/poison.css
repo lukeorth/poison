@@ -162,13 +162,13 @@ tbody tr:nth-child(odd) th {
 .article-toc {
     display: none;
     position: fixed;
-    left: 50%;
+    left: 75%;
     top: 110px;
     font-size: 0.9em;
-    width: 20em;
-    margin-left: 400px;
     padding-left: 20px;
-    overflow-y: auto;
+    padding-right: 20px;
+    overflow: auto;
+    width: 22rem;
     line-height: 1.4em;
     max-height: 85%;
 }
