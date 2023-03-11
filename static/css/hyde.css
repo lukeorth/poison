@@ -62,10 +62,10 @@ pre {
   text-align: center;
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
+  flex-shrink: 0;
 }
 @media (min-width: 48em) {
   .sidebar {
-    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -144,12 +144,14 @@ a.sidebar-nav-item:focus {
  * contents to the bottom of the sidebar in tablets and up.
  */
 
+.sidebar-sticky {
+    position: fixed;
+}
+
 @media (min-width: 48em) {
   .sidebar-sticky {
-    position: absolute;
-    right:  1rem;
     top: 1rem;
-    left:   1rem;
+    width: 16rem;
   }
 }
 
@@ -168,7 +170,7 @@ a.sidebar-nav-item:focus {
 @media (min-width: 48em) {
   .content {
     max-width: 38rem;
-    margin-left: 20rem;
+    margin-left: 2rem;
     margin-right: 2rem;
   }
 }
@@ -176,7 +178,7 @@ a.sidebar-nav-item:focus {
 @media (min-width: 64em) {
   .content {
     max-width: 44rem;
-    margin-left: 20rem;
+    margin-left: 2rem;
     margin-right: 2rem;
   }
 }

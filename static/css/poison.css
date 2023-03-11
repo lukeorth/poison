@@ -17,6 +17,12 @@
 }
 
 @media (max-width: 48em) {
+    body > .wrapper {
+       flex-direction: column;
+    }
+    .sidebar-sticky {
+       position: static;
+    }
     .heading {
         font-weight: 400;
     }
@@ -66,6 +72,27 @@ h1, h2, h3, h4, h5, strong {
     background-color: var(--moon-sun-background-color);
 }
 /* ************************** */
+body {
+    overflow: hidden;
+    height: 100vh;
+}
+body > .wrapper {
+    display: flex;
+    height: 100%;
+}
+.container.content {
+    overflow-y: auto;
+}
+.container.content::-webkit-scrollbar {
+   width: 3px;
+}
+.container.content::-webkit-scrollbar-thumb {
+   border-radius: 1.5px;
+}
+.container.content::-webkit-scrollbar-track {
+   margin-top: 5.5em;
+}
+
 .layout-reverse .content {
     margin-left: 20em;
 }
@@ -161,19 +188,19 @@ tbody tr:nth-child(odd) th {
 }
 .article-toc {
     display: none;
-    position: fixed;
-    left: 50%;
-    top: 110px;
     font-size: 0.9em;
     width: 20em;
-    margin-left: 400px;
+    margin-top: 5em;
     padding-left: 20px;
     overflow-y: auto;
     line-height: 1.4em;
     max-height: 85%;
 }
+.article-toc .toc-wrapper{
+    position: fixed;
+}
 .article-toc nav {
-    margin-left: 5em;
+    margin-left: 1em;
 }
 .article-toc.layout-reverse {
     display: none;
@@ -191,10 +218,11 @@ tbody tr:nth-child(odd) th {
     margin-left: 0;
 }
 .article-toc h4 {
-    margin-left: 6em;
+    margin-left: 0;
 }
 .article-toc ul {
     margin-bottom: 0;
+    padding: 0;
 }
 .article-toc li {
     list-style: none;
