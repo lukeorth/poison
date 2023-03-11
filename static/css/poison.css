@@ -1,3 +1,12 @@
+body.layout-reverse .container.content {
+   direction: rtl;
+}
+
+body.layout-reverse .wrapper {
+   justify-content: flex-end;
+   flex-direction: row-reverse;
+}
+
 @media (min-width: 48em) {
     .bullet {
         margin-left: 1em;
@@ -17,7 +26,7 @@
 }
 
 @media (max-width: 48em) {
-    body > .wrapper {
+    body > .wrapper, body.layout-reverse .wrapper {
        flex-direction: column;
     }
     .sidebar-sticky {
@@ -93,9 +102,6 @@ body > .wrapper {
    margin-top: 5.5em;
 }
 
-.layout-reverse .content {
-    margin-left: 20em;
-}
 .sidebar {
     background-color: var(--sidebar-bg-color);
 }
@@ -202,21 +208,6 @@ tbody tr:nth-child(odd) th {
 .article-toc nav {
     margin-left: 1em;
 }
-.article-toc.layout-reverse {
-    display: none;
-    position: fixed;
-    left: 0%;
-    top: 110px;
-    font-size: 0.9em;
-    width: 20em;
-    margin-left: 0;
-    overflow-y: auto;
-    line-height: 1.4em;
-    max-height: 85%;
-}
-.article-toc.layout-reverse nav {
-    margin-left: 0;
-}
 .article-toc h4 {
     margin-left: 0;
 }
@@ -241,9 +232,6 @@ tbody tr:nth-child(odd) th {
 }
 @media screen and (min-width: 100em) {
     .article-toc {
-        display: block;
-    }
-    .article-toc.layout-reverse {
         display: block;
     }
 }
