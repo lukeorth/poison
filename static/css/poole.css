@@ -240,13 +240,13 @@ img {
  * Center the page content.
  */
 
-/*.container {
-  max-width: 38rem;
+.container {
+/*  max-width: 38rem;*/
   padding-left:  1rem;
   padding-right: 1rem;
   margin-left:  auto;
   margin-right: auto;
-}*/
+}
 
 
 /*
