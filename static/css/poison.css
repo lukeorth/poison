@@ -91,6 +91,11 @@ body > .wrapper {
 }
 .container.content {
     overflow-y: auto;
+    padding-right: 2rem;
+}
+.layout-reverse .container.content {
+    padding-right: 0;
+    padding-left: 2rem;
 }
 .container.content::-webkit-scrollbar {
    width: 3px;
@@ -99,7 +104,7 @@ body > .wrapper {
    border-radius: 1.5px;
 }
 .container.content::-webkit-scrollbar-track {
-   margin-top: 5.5em;
+   margin: 5.5em 0;
 }
 
 .sidebar {
@@ -197,7 +202,6 @@ tbody tr:nth-child(odd) th {
     font-size: 0.9em;
     width: 20em;
     margin-top: 5em;
-    padding-left: 20px;
     overflow-y: auto;
     line-height: 1.4em;
     max-height: 85%;

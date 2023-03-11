@@ -171,7 +171,7 @@ a.sidebar-nav-item:focus {
   .content {
     max-width: 38rem;
     margin-left: 2rem;
-    margin-right: 2rem;
+    margin-right: 1.75rem;
   }
 }
 
@@ -179,7 +179,7 @@ a.sidebar-nav-item:focus {
   .content {
     max-width: 44rem;
     margin-left: 2rem;
-    margin-right: 2rem;
+    margin-right: 1.75rem;
   }
 }
 
@@ -205,6 +205,25 @@ a.sidebar-nav-item:focus {
 .brand {
   font-size: 4.0em;
   margin-bottom: 0;
+}
+
+/*
+ * Reverse layout
+ */
+@media (min-width: 48em) {
+  .content {
+    max-width: 38rem;
+    margin-left: 1.75rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .content {
+    max-width: 44rem;
+    margin-left: 1.75rem;
+    margin-right: 2rem;
+  }
 }
 
 /*
