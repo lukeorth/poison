@@ -3,7 +3,8 @@
   {{ partial "post/info.html" . }}
   {{ .Content }}
   {{ partial "post/navigation.html" . }}
-  {{ partial "table_of_contents.html" . }}
 </div>
-
 {{- end }}
+{{ define "sidebar" }}
+  {{ partial "table_of_contents.html" . }}
+{{ end }}
