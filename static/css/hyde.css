@@ -144,10 +144,6 @@ a.sidebar-nav-item:focus {
  * contents to the bottom of the sidebar in tablets and up.
  */
 
-.sidebar-sticky {
-    position: fixed;
-}
-
 @media (min-width: 48em) {
   .sidebar-sticky {
     top: 1rem;
