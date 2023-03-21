@@ -248,6 +248,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     youtube_url = "https://youtube.com"
     instagram_url = "https://instagram.com"
     facebook_url = "https://facebook.com"
+    email_url = "mailto://user@domain"
 
     # NOTE: If you don't want to use RSS, comment or delete the following lines
     # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
