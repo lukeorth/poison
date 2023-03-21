@@ -96,3 +96,73 @@ fill="#000000" stroke="none">
         </svg>
     </a>
 {{ end }}
+{{ if .Site.Params.email_url }}
+    <a target="_blank" class="social" href="{{ .Site.Params.email_url }}">
+        <svg
+            width="1.2em" height="1.2em" viewBox="-2 -2.5 448 512"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:ns1="http://sozi.baierouge.fr"
+            xmlns:cc="http://web.resource.org/cc/"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            version="1.1"
+        >
+            <g
+                id="Layer_2"
+                transform="scale(2.3,3)"
+            >
+                <path
+                    stroke="{{ .Site.Params.sidebar_bg_color }}"
+                    stroke-width="8"
+                    stroke-miterlimit="10"
+                    d="m194.77 146.09c0 6.627-5.373 12-12 12h-166c-6.627 0-12-5.373-12-12v-96.226c0-6.627 5.373-12 12-12h166c6.627 0 12 5.373 12 12v96.226z"
+                    fill="currentColor"
+                />
+            </g>
+            <g
+                id="Layer_3"
+                transform="scale(2.3,3)"
+                stroke="{{ .Site.Params.sidebar_bg_color }}"
+                stroke-width="8"
+                stroke-miterlimit="10"
+                fill="currentColor"
+            >
+                <polyline points="10.409 41.273 99.5 148 187.27 42.409"/>
+                <line
+                    y2="111.95"
+                    x1="9.318"
+                    x2="65.909"
+                    y1="153.32"
+                />
+                <line
+                    y2="153.32"
+                    x1="128.86"
+                    x2="189.32"
+                    y1="108.55"
+                />
+            </g>
+            <metadata>
+                <rdf:RDF>
+                    <cc:Work>
+                        <dc:format>image/svg+xml</dc:format>
+                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+                        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+                        <dc:publisher>
+                            <cc:Agent rdf:about="http://openclipart.org/">
+                                <dc:title>Openclipart</dc:title>
+                            </cc:Agent>
+                        </dc:publisher>
+                    </cc:Work>
+                    <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+                        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+                        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+                        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+                    </cc:License>
+                </rdf:RDF>
+            </metadata>
+        </svg>
+    </a>
+{{ end }}
