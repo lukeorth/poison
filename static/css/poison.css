@@ -93,6 +93,7 @@ body > .wrapper {
 .container.content {
     overflow-y: auto;
     padding-right: 2rem;
+    flex-grow: 1;
 }
 .layout-reverse .container.content {
     padding-right: 0;
