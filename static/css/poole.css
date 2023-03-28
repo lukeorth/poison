@@ -197,6 +197,9 @@ blockquote p:last-child {
     padding-right: 5rem;
     padding-left: 1.25rem;
   }
+  .container {
+    margin-right: auto;
+  }
 }
 
 img {
@@ -244,8 +247,7 @@ img {
   max-width: 38rem;
   padding-left:  1rem;
   padding-right: 1rem;
-  margin-left:  auto;
-  margin-right: auto;
+/*  margin-left:  auto;*/
 }
 
 
