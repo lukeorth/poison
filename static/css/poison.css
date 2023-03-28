@@ -23,6 +23,11 @@ body.layout-reverse .wrapper {
         height: 20px;
         color: black;
     }
+    .container.content {
+        overflow-y: auto;
+        padding-right: 2rem;
+        flex-grow: 1;
+    }
 }
 
 @media (max-width: 48em) {
@@ -92,7 +97,6 @@ body > .wrapper {
 }
 .container.content {
     overflow-y: auto;
-    padding-right: 2rem;
     flex-grow: 1;
 }
 .layout-reverse .container.content {
