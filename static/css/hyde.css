@@ -97,7 +97,7 @@ pre {
 }
 
 /* Sidebar links */
-.sidebar a {
+.sidebar a, li {
   color: var(--sidebar-a-color);
 }
 

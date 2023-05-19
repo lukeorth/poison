@@ -5,10 +5,18 @@
         {{ $taxonomies := .Site.Taxonomies }}
         {{ range .Site.Params.menu }}
         {{ $menu_item := . }}
+            {{ if eq (len $menu_item.URL) 0 }}
+                <li class="heading">{{ $menu_item.Name }}</li>
+            {{ else if $menu_item.External }}
+                <li class="bullet">
+                    <a href="{{ $menu_item.URL }}" target="_blank" rel="noopener noreferrer">{{ $menu_item.Name }}</a>
+                </li>
+            {{ end }}
+
             {{ range $sections }}
                 {{ if eq (lower .Title) (lower (strings.TrimSuffix "/" (strings.TrimPrefix "/" $menu_item.URL))) }}
                     <li class="heading">
-                        <a href="{{$menu_item.URL }}">{{ $menu_item.Name }}</a>
+                        <a href="{{ $menu_item.URL }}">{{ $menu_item.Name }}</a>
                     </li>
                     {{ if $menu_item.HasChildren }}
                         <li class="sub-heading">

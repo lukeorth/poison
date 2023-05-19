@@ -7,6 +7,10 @@ body.layout-reverse .wrapper {
    flex-direction: row-reverse;
 }
 
+.sub-heading {
+    color: var(--sidebar-p-color);
+}
+
 @media (min-width: 48em) {
     .bullet {
         margin-left: 1em;
