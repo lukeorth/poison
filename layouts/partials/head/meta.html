@@ -6,22 +6,22 @@
 {{ end }}
 
 {{ if eq .Kind "home" }}
-  {{ .Scratch.Set "title" .Site.Title }}
+  {{ .Scratch.Set "title" $.Site.Params.brand }}
   {{ .Scratch.Set "description" .Site.Params.Description }}
 {{ else }}
   {{ .Scratch.Set "description" .Description }}
 {{ end }} 
 
 {{ if .IsSection }}
-  {{ .Scratch.Set "title" (.LinkTitle | humanize | title) }}
+  {{ .Scratch.Set "title" ($.Site.Params.brand | humanize | title) }}
   {{ .Scratch.Add "title" " - " }}
-  {{ .Scratch.Add "title" .Site.Title }}
+  {{ .Scratch.Add "title" .LinkTitle }}
 {{ end }} 
 
 {{ if .IsPage }}
-  {{ .Scratch.Set "title" (.Title | humanize | title) }}
+  {{ .Scratch.Set "title" ($.Site.Params.brand | humanize | title) }}
   {{ .Scratch.Add "title" " - " }}
-  {{ .Scratch.Add "title" .Site.Title }}
+  {{ .Scratch.Add "title" .LinkTitle }}
 {{ end }} 
 
 {{ $og_image := .Resources.Get .Params.image }}
