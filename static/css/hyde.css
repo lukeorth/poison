@@ -62,20 +62,42 @@ pre {
   text-align: center;
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
+  flex-shrink: 0;
 }
 @media (min-width: 48em) {
   .sidebar {
-    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     width: 18rem;
     text-align: left;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(70, 70, 70) auto;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color:rgb(70, 70, 70);
+    border-radius: 10px;
+  }
+
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color:rgb(150, 150, 150);
   }
 }
 
 /* Sidebar links */
-.sidebar a {
+.sidebar a, li {
   color: var(--sidebar-a-color);
 }
 
@@ -124,10 +146,8 @@ a.sidebar-nav-item:focus {
 
 @media (min-width: 48em) {
   .sidebar-sticky {
-    position: absolute;
-    right:  1rem;
     top: 1rem;
-    left:   1rem;
+    width: 16rem;
   }
 }
 
@@ -146,16 +166,16 @@ a.sidebar-nav-item:focus {
 @media (min-width: 48em) {
   .content {
     max-width: 38rem;
-    margin-left: 20rem;
-    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-right: 1.75rem;
   }
 }
 
 @media (min-width: 64em) {
   .content {
     max-width: 44rem;
-    margin-left: 20rem;
-    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-right: 1.75rem;
   }
 }
 
@@ -185,29 +205,22 @@ a.sidebar-nav-item:focus {
 
 /*
  * Reverse layout
- *
- * Flip the orientation of the page by placing the `.sidebar` on the right.
  */
-
 @media (min-width: 48em) {
-  .layout-reverse .sidebar {
-    left: auto;
-    right: 0;
-  }
-  .layout-reverse .content {
-    margin-left: 2rem;
-    margin-right: 20rem;
+  .content {
+    max-width: 38rem;
+    margin-left: 1.75rem;
+    margin-right: 2rem;
   }
 }
 
 @media (min-width: 64em) {
-  .layout-reverse .content {
-    margin-left: 4rem;
-    margin-right: 22rem;
+  .content {
+    max-width: 44rem;
+    margin-left: 1.75rem;
+    margin-right: 2rem;
   }
 }
-
-
 
 /*
  * Themes

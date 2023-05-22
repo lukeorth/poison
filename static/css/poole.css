@@ -197,6 +197,9 @@ blockquote p:last-child {
     padding-right: 5rem;
     padding-left: 1.25rem;
   }
+  .container {
+    margin-right: auto;
+  }
 }
 
 img {
@@ -204,23 +207,6 @@ img {
   margin: 0 0 1rem;
   border-radius: 10px;
   max-width: 100%;
-}
-
-/* Tables */
-table {
-  margin-bottom: 1rem;
-  width: 100%;
-  border: 1px solid #e5e5e5;
-  border-collapse: collapse;
-}
-td,
-th {
-  padding: .25rem .5rem;
-  border: 1px solid #e5e5e5;
-}
-tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
-  background-color: #f9f9f9;
 }
 
 
@@ -261,8 +247,7 @@ tbody tr:nth-child(odd) th {
   max-width: 38rem;
   padding-left:  1rem;
   padding-right: 1rem;
-  margin-left:  auto;
-  margin-right: auto;
+/*  margin-left:  auto;*/
 }
 
 

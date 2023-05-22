@@ -22,10 +22,13 @@ All of the static assets for the site (JS files, CSS, and fonts) are located wit
   - [Series](#series)
   - [KaTeX](#katex)
   - [Tabs](#tabs)
+  - [Mermaid diagrams](#mermaid-diagrams)
+  - [PlantUML diagrams](#plantuml-diagrams)
 - [Installation](#installation)
 - [How to Configure](#how-to-configure)
   - [The Sidebar Menu](#the-sidebar-menu)
   - [Example Config](#example-config)
+  - [Custom CSS](#custom-css)
 - [Author](#author)
 - [Ported by](#ported-by)
 - [License](#license)
@@ -87,12 +90,40 @@ This is markdown content.
 {{</* tab tabName="Second Tab" */>}}
 {{</* highlight text */>}}
 This is a code block.
-{{</* highlight */>}}
+{{</* /highlight */>}}
 {{</* /tab */>}}
 
 {{</* /tabs */>}}
 ```
  
+### Mermaid diagrams
+You can embed rendered Mermaid diagrams using the provided shortcode:
+```
+{{<mermaid>}}
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+{{</mermaid>}}
+```
+
+### PlantUML diagrams
+You can add rendered PlantUML diagrams inline using the provided shortcode:
+
+```
+{{< plantuml id="foo" >}}
+a -> b
+b -> c
+{{< /plantuml >}}
+```
+
 ## Installation
 
 First, clone this repository into your `themes` directory:
@@ -130,7 +161,7 @@ Any items you want displayed in your sidebar menu *must* satisfy two requirement
 
 There are two types of menu items:
 
-1. **Single Page** -- The *About* menu item (to the left) is a good example of this.  It displays a direct link to an individual page.
+1. **Single Page** -- The *About* menu item (to the left) is a good example of this.  It displays a direct link to an individual page. For arbitrary single pages, the page content must be located at `content/<foo>/_index.md` and the front matter of `_index.md` must contain `layout: single`.
 2. **List** -- The *Posts* menu item is a good example of this.  It displays a directory and dynamically lists the contents (i.e. pages) contained by date.  List items have two optional configurations: a subheading (like the *Recent* subheading that appears on the menu to the left), and a maximum number of items to display.
 
 The sidebar menu items are configured with a dictionary value in your *config.toml* file.  I've included an example below.  Additionally, there is a placeholder for this in the *config.toml* file shown in the next section.
@@ -153,6 +184,9 @@ menu = [
         # ... /content/about/about.md
         {Name = "About", URL = "/about/", HasChildren = false},
         
+        # ... /content/foo/_index.md
+        # {Name = "Foo", URL = "/foo/", HasChildren = false},
+
         # LIST
         # This example has a subheading of "Recent"
         # and will display up to 5 items.
@@ -175,14 +209,22 @@ I recommend starting by copying/pasting the following code into your config.toml
 baseURL = "/"
 languageCode = "en-us"
 theme = "poison"
-paginate = 5
-pluralizelisttitles = false
+paginate = 10
+pluralizelisttitles = false   # removes the automatically appended "s" on sidebar entries
 
 [params]
-    brand = "Poison"                    # name of your site - appears in the sidebar
+    brand = "Poison"                      # name of your site - appears in the sidebar
     # brand_image = "/images/test.jpg"    # path to the image shown in the sidebar
-    description = "Update this description..."
-    dark_mode = true                    # optional - defaults to false
+    description = "Update this description..." # Used as default meta description if not specified in front matter
+    dark_mode = true                      # optional - defaults to false
+    
+    # NOTE: The following three params are optional and are used to create meta tags + enhance SEO.
+    # og_image = ""                       # path to social icon - front matter: image takes precedent, then og_image, then brand_url
+                                          # this is also used in the schema output as well. Image is resized to max 1200x630
+                                          # For this to work though og_image and brand_url must be a path inside the assets directory
+                                          # e.g. /assets/images/site/og-image.png becomes images/site/og-image.png
+    # publisher_icon = ""                 # path to publisher icon - defaults to favicon, used in schema
+    # favicon = ""                        # path to favicon
 
     # MENU PLACEHOLDER
     # Menu dict keys:
@@ -195,14 +237,24 @@ pluralizelisttitles = false
         {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
     ]
 
-    # Links to your socials.  Delete any you don't need/use. 
+    # Links to your socials.  Comment or delete any you don't need/use. 
     github_url = "https://github.com"
+    gitlab_url = "https://gitlab.com"
     linkedin_url = "https://linkedin.com"
     twitter_url = "https://twitter.com"
+    mastodon_url = "https://mastodon.social"
+    tryhackme_url = "https://tryhackme.com"
     discord_url = "https://discord.com"
     youtube_url = "https://youtube.com"
     instagram_url = "https://instagram.com"
     facebook_url = "https://facebook.com"
+    email_url = "mailto://user@domain"
+
+    # NOTE: If you don't want to use RSS, comment or delete the following lines
+    # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
+    rss_icon = true
+    # Which section the RSS icon links to, defaults to all content. See https://gohugo.io/templates/rss/#section-rss
+    rss_section = "posts"
 
     # Hex colors for your sidebar.
     sidebar_bg_color = "#202020"            # default is #202020
@@ -221,18 +273,39 @@ pluralizelisttitles = false
     list_color = "#5a5a5a"          # default is #5a5a5a
     link_color = "#268bd2"          # default is #268bd2
     date_color = "#515151"          # default is #515151
+    table_border_color = "#E5E5E5"  # default is #E5E5E5
+    table_stripe_color = "#F9F9F9"  # default is #F9F9F9
 
     # Hex colors for your content in dark mode
-    text_color_dark = "#eee"            # default is #eee
-    content_bg_color_dark = "#121212"   # default is #121212
-    post_title_color_dark = "#DBE2E9"   # default is #DBE2E9
-    list_color_dark = "#9d9d9d"         # default is #9d9d9d
-    link_color_dark = "#268bd2"         # default is #268bd2
-    date_color_dark = "#9a9a9a"         # default is #9a9a9a
+    text_color_dark = "#eee"                # default is #eee
+    content_bg_color_dark = "#121212"       # default is #121212
+    post_title_color_dark = "#DBE2E9"       # default is #DBE2E9
+    list_color_dark = "#9d9d9d"             # default is #9d9d9d
+    link_color_dark = "#268bd2"             # default is #268bd2
+    date_color_dark = "#9a9a9a"             # default is #9a9a9a
+    table_border_color_dark = "#515151"     # default is #515151
+    table_stripe_color_dark = "#202020"     # default is #202020
+    code_color = "#bf616a"                  # default is #bf616a
+    code_background_color = "#E5E5E5"       # default is #E5E5E5
+    code_color_dark = "#ff7f7f"             # default is #ff7f7f
+    code_background_color_dark = "#393D47"  # default is #393D47
 
 [taxonomies]
     series = 'series'
     tags = 'tags'
+```
+
+### Custom CSS
+
+You can override any setting in Poison's static CSS files by adding your own
+`/static/css/custom.css` file. For example, if you want to override the title font and
+font size, you could add this:
+
+```css
+.sidebar-about h1 {
+  font-size: 1.4em;
+  font-family: "Monaco", monospace;
+}
 ```
 
 ## Author

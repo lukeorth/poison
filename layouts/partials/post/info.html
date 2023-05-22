@@ -18,7 +18,7 @@
     {{ $Site := .Site }}
     {{ if .Params.series }}
         <p class="seriesname">
-            Series: <a href="{{ $Site.BaseURL }}/series/{{ .Params.series | urlize }}">{{ .Params.series }}</a>
+            Series: <a href="{{ $Site.BaseURL }}series/{{ .Params.series | urlize }}">{{ .Params.series }}</a>
         </p>
     {{ end }}
     
