@@ -1,5 +1,14 @@
 {{ define "main" -}}
-<div class="posts">
+
+<div class="home">
+    {{ with .Site.GetPage "/home" }}
+        <h1 class="post-title">{{ .Title }}</h1>
+        {{ .Content }}
+    {{ end }}
+</div>
+
+
+<!--div class="posts">
     {{ range where .Paginator.Pages "Section" "eq" "posts" }}
     <article class="post">
         {{ partial "post/info.html" . }}
@@ -11,6 +20,5 @@
         {{ end }}
     </article>
     {{- end }}
-</div>
-{{ partial "pagination.html" . }}
+</div-->
 {{- end }}

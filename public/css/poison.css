@@ -1,0 +1,230 @@
+@media (min-width: 48em) {
+    .bullet {
+        margin-left: 1em;
+        text-decoration-line: underline;
+        text-decoration-style: dotted;
+        text-decoration-thickness: 1%;
+    }
+    .sub-heading {
+        margin-left: 1em;
+    }
+    .btn-light-dark svg {
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        color: black;
+    }
+}
+
+@media (max-width: 48em) {
+    .heading {
+        font-weight: 400;
+    }
+    .entries {
+        padding-left: 0em;
+    }
+    .btn-light-dark svg {
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        color: black;
+    }
+}
+
+ /* Handles dark/light themes */
+h1, h2, h3, h4, h5, strong {
+    color: var(--text-color);
+}
+.content p {
+    color: var(--text-color);
+}
+.page-title, .post-title, .post-title a {
+    color: var(--post-title-color);
+}
+.content li {
+    color: var(--list-color);
+}
+.content code {
+    color: var(--code-color);
+    background-color: var(--code-background-color);
+}
+.btn-light-dark .moon {
+    color: var(--moon-sun-color);
+}
+.btn-light-dark .sun {
+    color: var(--moon-sun-color);
+}
+.btn-light-dark {
+    padding: 0;
+    margin: 1em;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--moon-sun-background-color);
+}
+/* ************************** */
+.layout-reverse .content {
+    margin-left: 20em;
+}
+.sidebar {
+    background-color: var(--sidebar-bg-color);
+}
+.sidebar-about img {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 2px solid var(--sidebar-img-border-color);
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+}
+.social {
+    margin-right: 0.5em;
+    text-decoration: none !important;
+    color: var(--sidebar-socials-color) !important;
+}
+.heading {
+    margin-top: 1em;
+}
+.post-date {
+    display: inline-block;
+    color: var(--date-color);
+}
+.info span {
+    display: inline-block;
+}
+.info ul {
+    display: inline-block;
+    float: right;
+}
+.info ul li {
+    margin-left: 0.5em;
+}
+.tags {
+    padding-left: 0em;
+}
+.tags li {
+    display: inline;
+    text-decoration: none;
+}
+.tags li a {
+    color: white;
+    display: inline-block;
+    padding: 0em 0.7em;
+    text-align: center;
+    font-size: 0.7em;
+    background-color: var(--list-color);
+    border-radius: 0.2em;
+}
+.entries li {
+    display: flex;
+}
+.entries li .title {
+    order: 1;
+}
+.entries li .published {
+    order: 3;
+}
+.entries li::after {
+    background-image: radial-gradient(circle, currentcolor 1px, transparent 1.5px);
+    background-position: bottom;
+    background-size: 1ex 3.5px;
+    background-repeat: space no-repeat;
+    content: "";
+    flex-grow: 1;
+    height: 1.1em;
+    order: 2;
+}
+.article-toc {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 110px;
+    font-size: 0.9em;
+    width: 20em;
+    margin-left: 400px;
+    padding-left: 20px;
+    overflow-y: auto;
+    line-height: 1.4em;
+    max-height: 85%;
+}
+.article-toc nav {
+    margin-left: 5em;
+}
+.article-toc.layout-reverse {
+    display: none;
+    position: fixed;
+    left: 0%;
+    top: 110px;
+    font-size: 0.9em;
+    width: 20em;
+    margin-left: 0;
+    overflow-y: auto;
+    line-height: 1.4em;
+    max-height: 85%;
+}
+.article-toc.layout-reverse nav {
+    margin-left: 0;
+}
+.article-toc h4 {
+    margin-left: 6em;
+}
+.article-toc ul {
+    margin-bottom: 0;
+}
+.article-toc li {
+    list-style: none;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+.article-toc li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+.article-toc li.active {
+    font-weight: bold;
+}
+.article-toc li.inactive {
+    font-weight: 300;
+}
+@media screen and (min-width: 100em) {
+    .article-toc {
+        display: block;
+    }
+    .article-toc.layout-reverse {
+        display: block;
+    }
+}
+.next-post {
+    float: right;
+}
+.content pre code {
+    color: white;
+    white-space: pre;
+}
+div.highlight pre {
+    overflow-x: scroll;
+}
+#page-nav {
+    text-align: center;
+}
+#page-nav a {
+    margin: 0 0.2em;
+}
+#page-nav span {
+    margin: 0 0.2em;
+}
+.next {
+    float: right;
+    display: inline;
+}
+.prev {
+    float: left;
+    display: inline;
+}
+.current {
+    color: var(--text-color);
+}
