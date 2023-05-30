@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, strong {
 .page-title, .post-title, .post-title a {
     color: var(--post-title-color);
 }
-.content li {
+.content li, li > p {
     color: var(--list-color);
 }
 .content code {
