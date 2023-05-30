@@ -81,26 +81,26 @@ Some content is just better viewed in tabs.  Luckily we have a shortcode for tha
 Here's the code for the tabs shown above...
 
 ```
-{{</* tabs tabTotal="2" */>}}
+{{< tabs tabTotal="2" >}}
 
-{{%/* tab tabName="First Tab" */%}}
+{{% tab tabName="First Tab" %}}
 This is markdown content.
-{{%/* /tab */%}}
+{{% /tab %}}
 
-{{</* tab tabName="Second Tab" */>}}
-{{</* highlight text */>}}
+{{< tab tabName="Second Tab" >}}
+{{< highlight text >}}
 This is a code block.
-{{</* /highlight */>}}
-{{</* /tab */>}}
+{{< /highlight >}}
+{{< /tab >}}
 
-{{</* /tabs */>}}
+{{< /tabs >}}
 ```
  
 ### Mermaid diagrams
 You can embed rendered Mermaid diagrams using the provided shortcode:
 
 ```
-{{</* mermaid */>}}
+{{< mermaid >}}
 sequenceDiagram
     participant Alice
     participant Bob
@@ -112,17 +112,17 @@ sequenceDiagram
     John-->>Alice: Great!
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
-{{</* /mermaid */>}}
+{{< /mermaid >}}
 ```
 
 ### PlantUML diagrams
 You can add rendered PlantUML diagrams inline using the provided shortcode:
 
 ```
-{{</* plantuml id="foo" */>}}
+{{< plantuml id="foo" >}}
 a -> b
 b -> c
-{{</* /plantuml */>}}
+{{< /plantuml >}}
 ```
 
 ## Installation
