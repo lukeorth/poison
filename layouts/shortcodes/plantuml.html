@@ -1,3 +1,10 @@
+<!-- Locally hosted code for PlantUML diagrams -->
+{{ if ne (.Page.Scratch.Get "hasPlantUML") true }}
+<script language="javascript" type="text/javascript" src="{{ "js/plantuml-encoder.min.js" | absURL }}"></script>
+<!-- Personal/custom scripts for PlantUML diagrams -->
+<script language="javascript" type="text/javascript" src="{{ "js/plantuml-encoder.js" | absURL }}"></script>
+{{ .Page.Scratch.Set "hasPlantUML" true }}
+{{ end }}
+
 <span id="plantuml-{{ .Get "id" }}" style="display:none">{{ .Inner | safeHTML | htmlUnescape }}</span>
 <img class="plantuml" id="plantuml-{{ .Get "id" }}">
-{{ .Page.Store.Set "hasPlantUML" true }}
