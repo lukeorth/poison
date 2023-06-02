@@ -250,7 +250,11 @@ tbody tr:nth-child(odd) th {
     }
 }
 .next-post {
+    text-align: right;
     float: right;
+}
+.previous-post {
+    float: left;
 }
 .content pre code {
     color: white;

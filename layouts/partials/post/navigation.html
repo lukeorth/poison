@@ -24,12 +24,14 @@
     {{ else }}
 	    {{ if .PrevPage }}
             {{ if eq .PrevPage.Section "posts" }}
-	            <a class="previous-post" href="{{ .PrevPage.Permalink }}?ref=footer">« {{ .PrevPage.Title | truncate 50 "..."}}</a>
+	            <a class="previous-post" href="{{ .PrevPage.Permalink }}?ref=footer"><span style="font-weight:bold;">« Previous</span><br>{{ .PrevPage.Title | truncate 50 "..."}}</a>
 	        {{ end }}
         {{ end }}
 	    {{ if .NextPage }}
             {{ if eq .NextPage.Section "posts" }}
-	            <a class="next-post" href="{{ .NextPage.Permalink }}?ref=footer">{{ .NextPage.Title | truncate 50 "..." }} »</a>
+                <div class="next-post">
+                    <a href="{{ .NextPage.Permalink }}?ref=footer"><span style="font-weight:bold;">Next »</span><br>{{ .NextPage.Title | truncate 50 "..." }}</a>
+                </div>
 	        {{ end }}
         {{ end }}
     {{ end }}

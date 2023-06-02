@@ -333,6 +333,9 @@ img {
 .related-posts li a:hover small {
   color: inherit;
 }
+.comments {
+    margin-top: 6em;
+}
 
 
 /*

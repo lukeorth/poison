@@ -1,6 +1,6 @@
-<div class="article-toc {{if .Site.Params.layoutReverse}}layout-reverse{{end}}" {{ if .Site.Params.SmartToc }}style="display:none;"{{ end }}>
+<div class="article-toc {{if .Site.Params.layoutReverse}}layout-reverse{{end}}">
     <div class="toc-wrapper">
-      <h4>{{ "Contents" }}</h4>
+      <h4 id="contents"></h4>
       {{ .TableOfContents }}
     </div>
 </div>

@@ -3,6 +3,9 @@
   {{ partial "post/info.html" . }}
   {{ .Content }}
   {{ partial "post/navigation.html" . }}
+  {{ if .Site.Params.remark42 }}
+    {{ partial "post/comments.html" . }}
+  {{ end }}
 </div>
 {{- end }}
 {{ define "sidebar" }}

@@ -9,6 +9,9 @@
 let activeElement = null;
 window.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(entries => {
+        if (entries) {
+            document.getElementById("contents").innerHTML = "Contents";
+        }
         entries.forEach(entry => {
             if (activeElement) {
                 document.querySelectorAll("nav[id='TableOfContents'] li").forEach((node) => {

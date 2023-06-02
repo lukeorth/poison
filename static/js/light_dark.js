@@ -24,9 +24,11 @@ btn.addEventListener("click", function () {
         theme = "dark";
         moon.style.display = 'none';
         sun.style.display = 'block';
+        window.REMARK42.changeTheme("dark")
     } else {
         moon.style.display = 'block';
         sun.style.display = 'none';
+        window.REMARK42.changeTheme("light")
     }
     localStorage.setItem("theme", theme);
 });
