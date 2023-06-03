@@ -6,19 +6,6 @@
 <script defer language="javascript" type="text/javascript" src="{{ "js/katex.min.js" | absURL }}"></script>
 <script defer language="javascript" type="text/javascript" src="{{ "js/auto-render.min.js" | absURL }}"></script>
 
-<!-- Locally hosted code for PlantUML diagrams -->
-{{ if .Page.Store.Get "hasPlantUML" }}
-<script language="javascript" type="text/javascript" src="{{ "js/plantuml-encoder.min.js" | absURL }}"></script>
-<!-- Personal/custom scripts for PlantUML diagrams -->
-<script language="javascript" type="text/javascript" src="{{ "js/plantuml-encoder.js" | absURL }}"></script>
-{{ end }}
-
 <!-- Personal/custom scripts for KaTeX and table of contents -->
 <script defer language="javascript" type="text/javascript" src="{{ "js/katex.js" | absURL }}"></script>
 <script defer language="javascript" type="text/javascript" src="{{ "js/toc.js" | absURL }}"></script>
-
-<!-- To automatically render mermaid diagrams -->
-{{ if .Page.Store.Get "hasMermaid" }}
-<script defer language="javascript" type="text/javascript" src="{{ "js/mermaid.min.js" | absURL }}"></script>
-<script>mermaid.initialize({ startOnLoad: true });</script>
-{{ end }}
