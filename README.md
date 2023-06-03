@@ -97,33 +97,10 @@ This is a code block.
 ```
  
 ### Mermaid diagrams
-You can embed rendered Mermaid diagrams using the provided shortcode:
-
-```
-{{</* mermaid */>}}
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
-{{</* /mermaid */>}}
-```
+You can embed rendered Mermaid diagrams.  For an example of how to do this, please visit the [Poison demo site](https://poison.lukeorth.com/posts/introducing-poison/#mermaid-diagrams).
 
 ### PlantUML diagrams
-You can add rendered PlantUML diagrams inline using the provided shortcode:
-
-```
-{{</* plantuml id="foo" */>}}
-a -> b
-b -> c
-{{</* /plantuml */>}}
-```
+You can embed rendered PlantUML diagrams.  For an example of how to do this, please visit the [Poison demo site](https://poison.lukeorth.com/posts/introducing-poison/#plantuml-diagrams);
 
 ## Installation
 
