@@ -97,10 +97,18 @@ This is a code block.
 ```
  
 ### Mermaid diagrams
-You can embed rendered Mermaid diagrams.  For an example of how to do this, please visit the [Poison demo site](https://poison.lukeorth.com/posts/introducing-poison/#mermaid-diagrams).
+You can embed rendered Mermaid diagrams.  
+
+![image](https://github.com/lukeorth/poison/assets/35306887/e21041c3-528e-4941-88ba-310742d99c91)
+
+For an example of how to do this, please visit the [Poison demo site](https://poison.lukeorth.com/posts/introducing-poison/#mermaid-diagrams).
 
 ### PlantUML diagrams
-You can embed rendered PlantUML diagrams.  For an example of how to do this, please visit the [Poison demo site](https://poison.lukeorth.com/posts/introducing-poison/#plantuml-diagrams);
+You can embed rendered PlantUML diagrams.  
+
+![image](https://github.com/lukeorth/poison/assets/35306887/8093ff68-28e4-43c8-8f21-67a3d5615af4)
+
+For an example of how to do this, please visit the [Poison demo site](https://poison.lukeorth.com/posts/introducing-poison/#plantuml-diagrams);
 
 ## Installation
 
