@@ -29,6 +29,8 @@
   {{ $og_image_path := "" }}
   {{ if .Site.Params.og_image }}
     {{ $og_image_path = .Site.Params.og_image }}
+  {{ else if .Params.image }}
+    {{ $og_image_path = .Params.image }}
   {{ else }}
     {{ $og_image_path = .Site.Params.brand_image }}
   {{ end }}
