@@ -18,17 +18,22 @@ if (currentTheme == "dark") {
 
 btn.addEventListener("click", function () {
     document.body.classList.toggle("dark-theme");
-
+    let hasComments = document.getElementsByClassName("comments")[0];
     let theme = "light";
+
     if (document.body.classList.contains("dark-theme")) {
         theme = "dark";
         moon.style.display = 'none';
         sun.style.display = 'block';
-        window.REMARK42.changeTheme("dark")
+        if (hasComments) {
+            window.REMARK42.changeTheme("dark");
+        }
     } else {
         moon.style.display = 'block';
         sun.style.display = 'none';
-        window.REMARK42.changeTheme("light")
+        if (hasComments) {
+            window.REMARK42.changeTheme("light");
+        }
     }
     localStorage.setItem("theme", theme);
 });
