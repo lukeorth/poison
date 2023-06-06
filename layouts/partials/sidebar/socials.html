@@ -115,7 +115,7 @@ fill="#000000" stroke="none">
                 transform="scale(2.3,3)"
             >
                 <path
-                    stroke="{{ .Site.Params.sidebar_bg_color }}"
+                    stroke="{{ .Site.Params.sidebar_bg_color | default "#202020" }}"
                     stroke-width="8"
                     stroke-miterlimit="10"
                     d="m194.77 146.09c0 6.627-5.373 12-12 12h-166c-6.627 0-12-5.373-12-12v-96.226c0-6.627 5.373-12 12-12h166c6.627 0 12 5.373 12 12v96.226z"
@@ -125,7 +125,7 @@ fill="#000000" stroke="none">
             <g
                 id="Layer_3"
                 transform="scale(2.3,3)"
-                stroke="{{ .Site.Params.sidebar_bg_color }}"
+                stroke="{{ .Site.Params.sidebar_bg_color | default "#202020" }}"
                 stroke-width="8"
                 stroke-miterlimit="10"
                 fill="currentColor"
