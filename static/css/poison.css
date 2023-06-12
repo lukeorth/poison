@@ -73,6 +73,13 @@ h1, h2, h3, h4, h5, strong {
     color: var(--code-color);
     background-color: var(--code-background-color) !important;
 }
+.content pre {
+  color: var(--code-color);
+  background-color: var(--code-background-color);
+}
+.content pre code {
+  background-color: transparent !important;
+}
 .btn-light-dark .moon {
     color: var(--moon-sun-color);
 }
