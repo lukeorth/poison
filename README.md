@@ -2,7 +2,7 @@
 
 ![Poison screenshot](https://raw.githubusercontent.com/lukeorth/poison/master/images/screenshot.png)
 
-### DEMO - https://poison-theme.netlify.app/
+### DEMO - https://poison.lukeorth.com/
 
 *Poison* is a **clean**, **professional** Hugo theme designed to **captivate** your readers.
 
