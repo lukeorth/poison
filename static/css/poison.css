@@ -264,7 +264,6 @@ tbody tr:nth-child(odd) th {
     float: left;
 }
 .content pre code {
-    color: white;
     white-space: pre;
 }
 div.highlight pre {
