@@ -235,6 +235,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     instagram_url = "https://instagram.com"
     facebook_url = "https://facebook.com"
     flickr_url = "https://flickr.com"
+    telegram_url = "https://telegram.org"
     email_url = "mailto://user@domain"
 
     # NOTE: If you don't want to use RSS, comment or delete the following lines
