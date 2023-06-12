@@ -8,7 +8,7 @@ min_version = "0.41.0"
 homepage = "https://github.com/lukeorth/poison"
 
 # If you have a running demo of the theme.
-demosite = "https://poison-theme.netlify.app"
+demosite = "https://poison.lukeorth.com"
 
 tags = ["blog", "personal", "dark", "dark-mode", "light", "minimal"]
 features = ["blog", "katex", "table-of-contents", "tabs", "dark-mode", "series"]
