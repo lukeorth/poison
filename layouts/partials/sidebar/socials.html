@@ -69,6 +69,13 @@
         </svg>
     </a>
 {{ end }}
+{{ if .Site.Params.flickr_url }}
+    <a target="_blank" class="social" href="{{ .Site.Params.flickr_url }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 54 54">
+            <path fill="currentColor" d="M40,4.8c2.2,0,4.1,0.8,5.7,2.4c1.6,1.6,2.4,3.5,2.4,5.7v26.8c0,2.2-0.8,4.1-2.4,5.7c-1.6,1.6-3.5,2.4-5.7,2.4H13.3c-2.2,0-4.1-0.8-5.7-2.4c-1.6-1.6-2.4-3.5-2.4-5.7V12.9c0-2.2,0.8-4.1,2.4-5.7c1.6-1.6,3.5-2.4,5.7-2.4H40z M23,30.4c1.2-1.2,1.7-2.5,1.7-4.2s-0.6-3-1.7-4.2c-1.2-1.2-2.5-1.7-4.2-1.7s-3,0.6-4.2,1.7c-1.2,1.2-1.7,2.5-1.7,4.2s0.6,3,1.7,4.2s2.5,1.7,4.2,1.7S21.8,31.6,23,30.4z M38.7,30.4c1.2-1.2,1.7-2.5,1.7-4.2s-0.6-3-1.7-4.2c-1.2-1.2-2.5-1.7-4.2-1.7c-1.6,0-3,0.6-4.2,1.7c-1.2,1.2-1.7,2.5-1.7,4.2s0.6,3,1.7,4.2c1.2,1.2,2.5,1.7,4.2,1.7C36.1,32.2,37.5,31.6,38.7,30.4z">
+        </svg>
+    </a>
+{{ end }}
 {{ if .Site.Params.rss_icon }}
     <a target="_blank" class="social" href="{{ .Site.BaseURL }}{{ if .Site.Params.rss_section }}/{{ .Site.Params.rss_section }}{{ end }}/index.xml">
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 1280.000000 1280.000000" preserveAspectRatio="xMidYMid meet">
