@@ -3,7 +3,7 @@
   {{ partial "post/info.html" . }}
   {{ .Content }}
   {{ partial "post/navigation.html" . }}
-  {{ if .Site.Params.remark42 }}
+  {{ if or (.Site.Params.remark42) (.Site.DisqusShortname) }}
     {{ partial "post/comments.html" . }}
   {{ end }}
 </div>
