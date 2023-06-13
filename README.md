@@ -69,7 +69,7 @@ Even still, *Disqus* may be the best solution depending on your situation (we us
 
 ***Remark42*** is a lightweight, open source commenting engine that doesn't spy on your users.  The downside is that you must host it yourself.  Checkout the *Remark42* [documentation](https://remark42.com/) to get started.  I also found [this blog post](https://www.devbitsandbytes.com/setting-up-remark42-from-scratch/) helpful when setting it up on [my site](https://lukeorth.com).
 
-Once everything is set up, you can activate it in the *Poison* theme by including the following in the `[params]` in your `config.toml` file.
+Once everything is set up, you can activate it in the *Poison* theme by including the following in the `[params]` section of your `config.toml` file.
 
 ```
 [params]
