@@ -18,7 +18,7 @@ if (currentTheme == "dark") {
 
 btn.addEventListener("click", function () {
     document.body.classList.toggle("dark-theme");
-    let hasComments = document.getElementsByClassName("comments")[0];
+    let hasComments = document.getElementById("remark42");
     let theme = "light";
 
     if (document.body.classList.contains("dark-theme")) {
