@@ -1,8 +1,11 @@
 <!-- Locally hosted code for PlantUML diagrams -->
 {{ if ne (.Page.Scratch.Get "hasPlantUML") true }}
-<script language="javascript" type="text/javascript" src="{{ "js/plantuml-encoder.min.js" | absURL }}"></script>
-<!-- Personal/custom scripts for PlantUML diagrams -->
-<script language="javascript" type="text/javascript" src="{{ "js/plantuml-encoder.js" | absURL }}"></script>
+{{ $js_bundle :=
+    slice
+        (resources.Get "js/lib/plantuml-encoder.js")
+        (resources.Get "js/plantuml-encoder.js")
+    | resources.Concat "js/plantuml-bundle.js" | minify | fingerprint }}
+<script language="javascript" type="text/javascript" src="{{ $js_bundle.RelPermalink }}"></script>
 {{ .Page.Scratch.Set "hasPlantUML" true }}
 {{ end }}
 
