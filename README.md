@@ -6,11 +6,9 @@
 
 *Poison* is a **clean**, **professional** Hugo theme designed to **captivate** your readers.
 
-It's also **tiny** and **privacy conscious** with *no external dependencies* (unless you opt to include comments).  No JavaScript frameworks, icon packs, or Google fonts.  No ads or trackers polluting your console window (try it out and take a look).  
+It's also **tiny** and **privacy conscious** with *no external dependencies* (unless you opt to include comments).  No JavaScript frameworks, icon packs, or Google fonts.  No ads or trackers polluting your console window.  **We kept things simple**.  A little vanilla JavaScript, a dash of CSS, and the power of Hugo.
 
-**We kept things simple**.  A little vanilla JavaScript, a dash of CSS, and the power of Hugo.
-
-All of the static assets for the site (JS files, CSS, and fonts) are located within the theme's */static/* directory.  **That way you know *exactly* what's going on your site**.
+All the static assets for the site (JS files, CSS, and fonts) are located within the theme's */assets/* directory.  **That way you know *exactly* what's going on your site**.
 
 ---
 
@@ -239,18 +237,6 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     dark_mode = true                      # optional - defaults to false
     # favicon = "favicon.png"             # path to favicon (defaults to favicon.png)
 
-    # NOTE: If using Remark42 as commenting engine, uncomment and configure these lines
-    # remark42 = true
-    # remark42_host = "https://yourhost.com"
-    # remark42_site_id = "your_site_id"
-
-    # NOTE: The following three params are optional and are used to create meta tags + enhance SEO.
-    # og_image = ""                       # path to social icon - front matter: image takes precedent, then og_image, then brand_url
-                                          # this is also used in the schema output as well. Image is resized to max 1200x630
-                                          # For this to work though og_image and brand_url must be a path inside the assets directory
-                                          # e.g. /assets/images/site/og-image.png becomes images/site/og-image.png
-    # publisher_icon = ""                 # path to publisher icon - defaults to favicon, used in schema
-
     # MENU PLACEHOLDER
     # Menu dict keys:
         # Name:         The name to display on the menu.
@@ -317,6 +303,18 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     code_color_dark = "#ff7f7f"             # default is #ff7f7f
     code_background_color_dark = "#393D47"  # default is #393D47
 
+    # NOTE: If using Remark42 as commenting engine, uncomment and configure these lines
+    # remark42 = true
+    # remark42_host = "https://yourhost.com"
+    # remark42_site_id = "your_site_id"
+
+    # NOTE: The following three params are optional and are used to create meta tags + enhance SEO.
+    # og_image = ""                       # path to social icon - front matter: image takes precedent, then og_image, then brand_url
+                                          # this is also used in the schema output as well. Image is resized to max 1200x630
+                                          # For this to work though og_image and brand_url must be a path inside the assets directory
+                                          # e.g. /assets/images/site/og-image.png becomes images/site/og-image.png
+    # publisher_icon = ""                 # path to publisher icon - defaults to favicon, used in schema
+
 [taxonomies]
     series = 'series'
     tags = 'tags'
@@ -325,7 +323,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
 ### Custom CSS
 
 You can override any setting in Poison's static CSS files by adding your own
-`/static/css/custom.css` file. For example, if you want to override the title font and
+`/assets/css/custom.css` file. For example, if you want to override the title font and
 font size, you could add this:
 
 ```css
@@ -334,6 +332,18 @@ font size, you could add this:
   font-family: "Monaco", monospace;
 }
 ```
+
+## Suggestions / Contributions
+
+Please feel free to add suggestions for new features by opening a new issue in GitHub.  If you like the theme, let us know in the comments section on the [demo site](https://poison.lukeorth.com/posts/introducing-poison/#suggestions--contributions)!
+
+A big shout out and *thank you* to these top contributors:
+
+- [Darius Makovsky (traveltissues)](https://github.com/traveltissues)
+- [Pierre Bourdon (delroth)](https://github.com/delroth)
+- [Karl Austin (KarlAustin)](https://github.com/KarlAustin)
+- [Diogo Almeida (Diogo-Almeida3)](https://github.com/Diogo-Almeida3)
+- [Ayden Holmes (eyegog)](https://github.com/eyegog)
 
 ## Author
 **Mark Otto**
