@@ -10,7 +10,10 @@ let activeElement = null;
 window.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(entries => {
         if (entries) {
-            document.getElementById("contents").innerHTML = "Contents";
+            const contents = document.getElementById("contents");
+            if (contents) {
+                contents.innerHTML = "Contents";
+            }
         }
         entries.forEach(entry => {
             if (activeElement) {
