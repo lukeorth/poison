@@ -1,6 +1,6 @@
 <!-- To automatically render mermaid diagrams -->
 {{ if ne (.Page.Scratch.Get "hasMermaid") true }}
-<script defer language="javascript" type="text/javascript" src="{{ "js/mermaid.min.js" | absURL }}"></script>
+<script defer language="javascript" type="text/javascript" src="{{ (resources.Get "js/lib/mermaid.js" | minify | fingerprint).RelPermalink }}"></script>
 <script>mermaid.initialize({ startOnLoad: true });</script>
 {{ .Page.Scratch.Set "hasMermaid" true }}
 {{ end }}
