@@ -28,6 +28,7 @@ All the static assets for the site (JS files, CSS, and fonts) are located within
   - [The Sidebar Menu](#the-sidebar-menu)
   - [Example Config](#example-config)
   - [Custom CSS](#custom-css)
+- [Suggestions / Contributions](#suggestions--contributions)
 - [Author](#author)
 - [Ported by](#ported-by)
 - [License](#license)
