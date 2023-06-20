@@ -101,98 +101,19 @@
 {{ end }}
 {{ if .Site.Params.rss_icon }}
     <a target="_blank" class="social" title="RSS Feed" href="{{ .Site.BaseURL }}{{ if .Site.Params.rss_section }}/{{ .Site.Params.rss_section }}{{ end }}/index.xml">
-        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 1280.000000 1280.000000" preserveAspectRatio="xMidYMid meet">
-            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-                <path fill="currentColor" d="M2295 11929 c-284 -12 -642 -45 -707 -65 -17 -5 -18 -63 -18 -1039 0
--569 4 -1036 8 -1039 5 -3 74 6 153 19 510 86 1168 95 1789 25 1348 -153 2602
--677 3670 -1531 385 -308 820 -744 1126 -1129 842 -1060 1362 -2313 1514
--3650 70 -621 61 -1279 -25 -1789 -13 -79 -22 -148 -19 -153 3 -4 471 -8 1039
--8 l1035 0 5 23 c51 225 85 942 67 1419 -23 605 -77 1044 -198 1617 -294 1400
--927 2734 -1823 3846 -1043 1295 -2364 2259 -3909 2854 -1158 447 -2451 656
--3707 600z"/>
-                <path fill="currentColor" d="M2255 7845 c-269 -25 -620 -81 -667 -106 -17 -9 -18 -55 -18 -899 0
--706 3 -890 13 -890 6 0 66 18 132 41 130 44 288 79 467 105 154 21 577 30
-749 15 1207 -107 2267 -823 2814 -1902 166 -327 268 -637 330 -1001 38 -227
-48 -384 42 -662 -8 -348 -44 -590 -126 -831 -23 -66 -41 -126 -41 -132 0 -10
-184 -13 890 -13 844 0 890 1 899 18 27 50 88 452 110 725 14 162 14 624 1 782
--59 703 -233 1323 -545 1945 -481 956 -1313 1788 -2270 2268 -620 310 -1239
-483 -1940 542 -165 14 -669 10 -840 -5z"/>
-                <path fill="currentColor" d="M2519 3815 c-391 -66 -725 -336 -868 -703 -79 -201 -96 -462 -45
--677 83 -344 338 -641 666 -774 116 -47 205 -69 330 -80 412 -39 811 153 1040
-500 193 292 240 648 128 981 -135 403 -492 699 -914 757 -100 14 -241 12 -337
--4z"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 1280.000000 1280.000000">
+            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill="currentColor">
+                <path d="M2295 11929 c-284 -12 -642 -45 -707 -65 -17 -5 -18 -63 -18 -1039 0 -569 4 -1036 8 -1039 5 -3 74 6 153 19 510 86 1168 95 1789 25 1348 -153 2602 -677 3670 -1531 385 -308 820 -744 1126 -1129 842 -1060 1362 -2313 1514 -3650 70 -621 61 -1279 -25 -1789 -13 -79 -22 -148 -19 -153 3 -4 471 -8 1039 -8 l1035 0 5 23 c51 225 85 942 67 1419 -23 605 -77 1044 -198 1617 -294 1400 -927 2734 -1823 3846 -1043 1295 -2364 2259 -3909 2854 -1158 447 -2451 656 -3707 600z"/>
+                <path d="M2255 7845 c-269 -25 -620 -81 -667 -106 -17 -9 -18 -55 -18 -899 0 -706 3 -890 13 -890 6 0 66 18 132 41 130 44 288 79 467 105 154 21 577 30 749 15 1207 -107 2267 -823 2814 -1902 166 -327 268 -637 330 -1001 38 -227 48 -384 42 -662 -8 -348 -44 -590 -126 -831 -23 -66 -41 -126 -41 -132 0 -10 184 -13 890 -13 844 0 890 1 899 18 27 50 88 452 110 725 14 162 14 624 1 782 -59 703 -233 1323 -545 1945 -481 956 -1313 1788 -2270 2268 -620 310 -1239 483 -1940 542 -165 14 -669 10 -840 -5z"/>
+                <path d="M2519 3815 c-391 -66 -725 -336 -868 -703 -79 -201 -96 -462 -45 -677 83 -344 338 -641 666 -774 116 -47 205 -69 330 -80 412 -39 811 153 1040 500 193 292 240 648 128 981 -135 403 -492 699 -914 757 -100 14 -241 12 -337 -4z"/>
             </g>
         </svg>
     </a>
 {{ end }}
 {{ if .Site.Params.email_url }}
     <a target="_blank" class="social" title="Email" href="{{ .Site.Params.email_url }}">
-        <svg
-            width="1.2em" height="1.2em" viewBox="-2 -2.5 448 512"
-            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:dc="http://purl.org/dc/elements/1.1/"
-            xmlns:ns1="http://sozi.baierouge.fr"
-            xmlns:cc="http://web.resource.org/cc/"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-            version="1.1"
-        >
-            <g
-                id="Layer_2"
-                transform="scale(2.3,3)"
-            >
-                <path
-                    stroke="{{ .Site.Params.sidebar_bg_color | default "#202020" }}"
-                    stroke-width="8"
-                    stroke-miterlimit="10"
-                    d="m194.77 146.09c0 6.627-5.373 12-12 12h-166c-6.627 0-12-5.373-12-12v-96.226c0-6.627 5.373-12 12-12h166c6.627 0 12 5.373 12 12v96.226z"
-                    fill="currentColor"
-                />
-            </g>
-            <g
-                id="Layer_3"
-                transform="scale(2.3,3)"
-                stroke="{{ .Site.Params.sidebar_bg_color | default "#202020" }}"
-                stroke-width="8"
-                stroke-miterlimit="10"
-                fill="currentColor"
-            >
-                <polyline points="10.409 41.273 99.5 148 187.27 42.409"/>
-                <line
-                    y2="111.95"
-                    x1="9.318"
-                    x2="65.909"
-                    y1="153.32"
-                />
-                <line
-                    y2="153.32"
-                    x1="128.86"
-                    x2="189.32"
-                    y1="108.55"
-                />
-            </g>
-            <metadata>
-                <rdf:RDF>
-                    <cc:Work>
-                        <dc:format>image/svg+xml</dc:format>
-                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-                        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
-                        <dc:publisher>
-                            <cc:Agent rdf:about="http://openclipart.org/">
-                                <dc:title>Openclipart</dc:title>
-                            </cc:Agent>
-                        </dc:publisher>
-                    </cc:Work>
-                    <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
-                        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
-                        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
-                        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
-                    </cc:License>
-                </rdf:RDF>
-            </metadata>
-        </svg>
+       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 485.211 485.211">
+            <path fill="currentColor" d="M301.393,241.631L464.866,424.56H20.332l163.474-182.928l58.801,51.443L301.393,241.631z M462.174,60.651H23.027 l219.579,192.142L462.174,60.651z M324.225,221.67l160.986,180.151V80.792L324.225,221.67z M0,80.792v321.029L160.972,221.64 L0,80.792z"/>
+       </svg>
     </a>
 {{ end }}
