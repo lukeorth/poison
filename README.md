@@ -262,6 +262,8 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     facebook_url = "https://facebook.com"
     flickr_url = "https://flickr.com"
     telegram_url = "https://telegram.org"
+    matrix_url = "https://matrix.org"
+    xmpp_url = "https://xmpp.org"
     email_url = "mailto://user@domain"
 
     # NOTE: If you don't want to use RSS, comment or delete the following lines
