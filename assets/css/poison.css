@@ -173,7 +173,7 @@ body > .wrapper {
     text-decoration: none;
 }
 .tags li a {
-    color: white;
+    color: var(--table-stripe-color);
     display: inline-block;
     padding: 0em 0.7em;
     text-align: center;
