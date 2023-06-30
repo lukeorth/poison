@@ -1,6 +1,6 @@
 {{ define "main" -}}
 <div class="posts">
-    {{ range where .Paginator.Pages "Section" "eq" "posts" }}
+    {{ range (.Paginate (where .Site.RegularPages "Type" "posts")).Pages }}
     <article class="post">
         {{ partial "post/info.html" . }}
         {{ .Summary }}
