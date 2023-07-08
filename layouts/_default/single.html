@@ -9,5 +9,7 @@
 </div>
 {{- end }}
 {{ define "sidebar" }}
-  {{ partial "table_of_contents.html" . }}
+  {{ if not (.Params.hideToc) }}
+    {{ partial "table_of_contents.html" . }}
+  {{ end }}
 {{ end }}
