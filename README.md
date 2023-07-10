@@ -47,6 +47,25 @@ Give readers the choice to read in light or dark mode.  The user's preference is
 ### Table of Contents
 Provide a floating table of contents for readers with large enough screens (i.e. *screen-width > 1600 pixels*).
 
+If you prefer not to display a table of contents, you can disable them site-wide in your ```config.toml``` file.
+
+```
+[params]
+    hideToc: true
+```
+
+Alternatively, you can choose to disable the table of contents on a per-post basis by putting the flag in the frontmatter of an individual post.
+
+```yaml
+---
+title: "Example to demonstrate how to hide the table of contents on a single post"
+date: 2023-07-10
+draft: false
+hideToc: true
+tags: ["Hugo"]
+---
+```
+
 ### Comments
 
 Facilitate discourse by allowing users to comment on your posts.  *Poison* currently supports two different commenting engines for this purpose -- [Disqus](https://disqus.com/) and [Remark42](https://remark42.com/).
@@ -76,6 +95,28 @@ Once everything is set up, you can activate it in the *Poison* theme by includin
     remark42_host = "https://yourhost.com"
     remark42_site_id = "your_site_id"
 ```
+
+### Analytics
+
+Gain insights on who your users are.  Poison currently supports [Plausible](https://plausible.io) which is available via a paid service or by [self-hosting](https://github.com/plausible/analytics).
+
+**Note**: *Enabling analytics will add external dependencies.*
+
+Once you've established your Plausible instance, you can activate it by adding three lines to your ```config.toml``` file.
+
+```
+[params]
+    plausible = true
+    plausible_domain = "myblog.com"
+    plausible_script = "https://plausible.myblog.com/js/script.js"
+```
+
+This will insert the necessary code in the ```<head>``` on each page and will allow your Plausible instance collect a limited set of data on your users.
+
+For reference, the configuration above would add the following code to each page.  Adjust according to your specific environment.
+
+```<script defer data-domain="myblog.com" src="https://plausible.myblog.com/js/script.js"></script>```
+
 
 ### Series
 Sensibly link and display content into "series" (i.e. *Tutorial One*, *Tutorial Two*, etc.).
