@@ -8,10 +8,13 @@
       (resources.Get "js/lib/katex.js")
       (resources.Get "js/lib/auto-render.js") }}
 
-{{/* Personal/custom scripts for KaTeX and table of contents */}}
-{{ $js = $js | append
-      (resources.Get "js/katex.js")
-      (resources.Get "js/toc.js") }}
+{{/* Personal/custom scripts for KaTeX */}}
+{{ $js = $js | append (resources.Get "js/katex.js") }}
+
+{{/* Personal/custom scripts for table of contents */}}
+{{ if not .Site.Params.hideToc }}
+    {{ $js = $js | append (resources.Get "js/toc.js") }}
+{{ end }}
 
 {{ $js_bundle := $js | resources.Concat "js/bundle.js" | minify | fingerprint }}
 
