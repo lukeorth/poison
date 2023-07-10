@@ -111,7 +111,7 @@ Once you've established your Plausible instance, you can activate it by adding t
     plausible_script = "https://plausible.myblog.com/js/script.js"
 ```
 
-This will insert the necessary code in the ```<head>``` on each page and will allow your Plausible instance collect a limited set of data on your users.
+This will insert the necessary code in the ```<head>``` on each page and will allow your Plausible instance to collect a limited set of data on your users.
 
 For reference, the configuration above would add the following code to each page.  Adjust according to your specific environment.
 
