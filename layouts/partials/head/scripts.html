@@ -19,3 +19,8 @@
 {{ $js_bundle := $js | resources.Concat "js/bundle.js" | minify | fingerprint }}
 
 <script defer language="javascript" type="text/javascript" src="{{ $js_bundle.RelPermalink }}"></script>
+
+
+{{ if .Site.Params.plausible }}
+<script defer data-domain="{{ .Site.Params.plausible_domain }}" src="{{ .Site.Params.plausible_script }}"></script>
+{{ end }}
