@@ -34,7 +34,9 @@
   {{ else }}
     {{ $og_image_path = .Site.Params.brand_image }}
   {{ end }}
-  {{ $og_image = resources.Get $og_image_path }}
+  {{ if $og_image_path }}
+    {{ $og_image = resources.Get $og_image_path }}
+  {{ end }}
 {{ end }}
 {{ with $og_image }}
   {{ if or ( lt .Width 600 ) ( lt .Height 315 ) }}
