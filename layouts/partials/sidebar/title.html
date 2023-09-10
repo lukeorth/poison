@@ -12,6 +12,6 @@
         {{ end }}
     </h1>
     <p class="lead">
-    {{ with .Site.Params.description }}{{.}}{{end}}
+    {{ with .Site.Params.description }}{{. | safeHTML}}{{end}}
     </p>
 </div>
