@@ -10,19 +10,19 @@
   {{ .Scratch.Set "description" .Site.Params.Description }}
 {{ else }}
   {{ .Scratch.Set "description" .Description }}
-{{ end }} 
+{{ end }}
 
 {{ if .IsSection }}
   {{ .Scratch.Set "title" ($.Site.Params.brand | humanize | title) }}
   {{ .Scratch.Add "title" " - " }}
   {{ .Scratch.Add "title" .LinkTitle }}
-{{ end }} 
+{{ end }}
 
 {{ if .IsPage }}
   {{ .Scratch.Set "title" ($.Site.Params.brand | humanize | title) }}
   {{ .Scratch.Add "title" " - " }}
   {{ .Scratch.Add "title" .LinkTitle }}
-{{ end }} 
+{{ end }}
 
 {{ $og_image := .Resources.Get .Params.image }}
 {{ if not ( $og_image ) }}
@@ -105,7 +105,7 @@
 <!-- To make sure this renders only in the article page, we check the section -->
 {{ if eq .Section "posts" }}
 <!-- Pagination meta tags for list pages only -->
-{{ $paginator := .Paginate (where .Pages "Type" "posts") }} 
+{{ $paginator := .Paginate (where .Pages "Type" "posts") }}
 {{ if $paginator }}
   <link rel="first" href="{{ $paginator.First.URL }}" />
   <link rel="last" href="{{ $paginator.Last.URL }}" />
@@ -137,14 +137,14 @@
   {
     "@context": "http://schema.org",
     "@type": "Article",
-    "headline": {{ .Title }},
+    "headline": "{{ .Title }}",
     "author": {
       "@type": "Person",
       "name": "{{ .Site.Params.github_url }}"
     },
     "datePublished": "{{ .Date.Format "2006-01-02" }}",
-    "description": {{ .Description }},
-    "wordCount": {{ .WordCount }},
+    "description": "{{ .Description }}",
+    "wordCount": "{{ .WordCount }}",
     "mainEntityOfPage": "True",
     "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
     "image": {
@@ -168,31 +168,29 @@
 <meta name="author" content="{{ .Site.Params.author }}" />
 <script defer type="application/ld+json">
   {
-    {
-        "@context": "http://schema.org",
-        "@type": "Article",
-        "headline": {{ .Title }},
-        "author": {
-            "@type": "Person",
-            "name": "{{ .Site.Params.github }}"
-        },
-        "datePublished": "{{ .Date.Format "2006-01-02" }}",
-        "description": {{ .Description }},
-        "wordCount": {{ .WordCount }},
-        "mainEntityOfPage": "True",
-        "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
-        "image": {
-            "@type": "imageObject",
-            "url": "{{ with $og_image }}{{ .Permalink }}{{ end }}"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "{{ .Site.Title }}",
-            "logo": {
-            "@type": "imageObject",
-            "url": "{{ .Scratch.Get "publisherIcon" }}"
-            }
-        }
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "{{ .Title }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ .Site.Params.github }}"
+    },
+    "datePublished": "{{ .Date.Format "2006-01-02" }}",
+    "description": "{{ .Description }}",
+    "wordCount": "{{ .WordCount }}",
+    "mainEntityOfPage": "True",
+    "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+    "image": {
+      "@type": "imageObject",
+      "url": "{{ with $og_image }}{{ .Permalink }}{{ end }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ .Site.Title }}",
+      "logo": {
+        "@type": "imageObject",
+        "url": "{{ .Scratch.Get "publisherIcon" }}"
+      }
     }
   }
 </script>
