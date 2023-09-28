@@ -24,28 +24,26 @@
   {{ .Scratch.Add "title" .LinkTitle }}
 {{ end }}
 
-{{ $og_image := .Resources.Get .Params.image }}
-{{ if not ( $og_image ) }}
-  {{ $og_image_path := "" }}
-  {{ if .Site.Params.og_image }}
-    {{ $og_image_path = .Site.Params.og_image }}
-  {{ else if .Params.image }}
-    {{ $og_image_path = .Params.image }}
-  {{ else }}
-    {{ $og_image_path = .Site.Params.brand_image }}
-  {{ end }}
-  {{ if $og_image_path }}
-    {{ $og_image = resources.Get $og_image_path }}
-  {{ end }}
-{{ end }}
-{{ with $og_image }}
-  {{ if or ( lt .Width 600 ) ( lt .Height 315 ) }}
-    {{ warnf "og:image less than recommended size of 600x315 to 1200x630" }}
-  {{ else if or ( gt .Width 1200 ) ( gt .Height 630 ) }}
-    {{ warnf "og:image over recommended size of 600x315 to 1200x630" }}
-    {{ $og_image = $og_image.Fit "1200x630" }}
-  {{ end }}
-{{ end }}
+{{ "<!-- Open Graph image and Twitter Card metadata -->" | safeHTML }}
+{{ $image_path := .Params.image | default .Site.Params.og_image -}}
+{{ $image_path_local :=  printf "assets/%s" $image_path -}}
+{{ $image_ext := trim (path.Ext $image_path | lower) "." -}}
+{{ if fileExists $image_path_local -}}
+{{ $image_path:= resources.Get $image_path}}
+  <meta property="og:image" content="{{ $image_path.RelPermalink }}" />
+  {{/* If not SVG, read image aspect ratio and define Twitter Card and Open Graph width and height  */ -}}
+  {{ if ne $image_ext "svg" -}}
+    {{ with (imageConfig $image_path_local) -}}
+    {{ if (and (gt .Width 144) (gt .Height 144)) -}}
+      <meta name="twitter:image" content="{{ $image_path.RelPermalink }}"/>
+      <meta name="twitter:card" content="summary{{ if (and (gt .Width 300) (gt .Height 157) (not (eq .Width .Height))) }}_large_image{{ end }}">
+    {{ end -}}
+    <meta property="og:image:width" content="{{ .Width }}">
+    <meta property="og:image:height" content="{{ .Height }}">
+    {{ end -}}
+  {{ end -}}
+  <meta property="og:image:type" content="image/{{ if eq $image_ext `svg` }}svg+xml{{ else }}{{ replaceRE `^jpg$` `jpeg` $image_ext }}{{ end }}">
+{{ end -}}
 
 <!-- Title Tags -->
 <title itemprop="name">{{ .Scratch.Get "title" }}</title>
@@ -67,16 +65,6 @@
 <meta name="url" content="{{ .Permalink }}" />
 <meta name="twitter:url" content="{{ .Permalink }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
-
-<!-- Image Tags -->
-{{ if $og_image }}
-<meta itemprop="image" content="{{ $og_image.Permalink }}" />
-<meta property="og:image" content="{{ $og_image.Permalink }}" />
-<meta property="og:image:width" content="{{ $og_image.Width }}" />
-<meta property="og:image:height" content="{{ $og_image.Height }}" />
-<meta name="twitter:image" content="{{ $og_image.Permalink }}" />
-<meta name="twitter:image:src" content="{{ $og_image.Permalink }}" />
-{{ end }}
 
 <!-- Date Tags -->
 <meta property="og:updated_time" content={{ .Lastmod.Format "2001-02-03T14:05:06Z0700" | safeHTML }} />
@@ -133,67 +121,6 @@
   <meta property="article:section" content="{{ index . 0 }}" />
 {{ end }}
 
-<script defer type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Article",
-    "headline": "{{ .Title }}",
-    "author": {
-      "@type": "Person",
-      "name": "{{ .Site.Params.github_url }}"
-    },
-    "datePublished": "{{ .Date.Format "2006-01-02" }}",
-    "description": "{{ .Description }}",
-    "wordCount": "{{ .WordCount }}",
-    "mainEntityOfPage": "True",
-    "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
-    "image": {
-      "@type": "imageObject",
-      "url": "{{ with $og_image }}{{ .Permalink }}{{ end }}"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "{{ .Site.Title }}",
-      "logo": {
-        "@type": "imageObject",
-        "url": "{{ .Scratch.Get "publisherIcon" }}"
-      }
-    }
-  }
-</script>
-{{ else }}
-
-<!-- Content (non-blog/article) specific tags, for pages such as /contact or /about -->
-<meta property="og:type" content="website" />
-<meta name="author" content="{{ .Site.Params.author }}" />
-<script defer type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Article",
-    "headline": "{{ .Title }}",
-    "author": {
-      "@type": "Person",
-      "name": "{{ .Site.Params.github }}"
-    },
-    "datePublished": "{{ .Date.Format "2006-01-02" }}",
-    "description": "{{ .Description }}",
-    "wordCount": "{{ .WordCount }}",
-    "mainEntityOfPage": "True",
-    "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
-    "image": {
-      "@type": "imageObject",
-      "url": "{{ with $og_image }}{{ .Permalink }}{{ end }}"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "{{ .Site.Title }}",
-      "logo": {
-        "@type": "imageObject",
-        "url": "{{ .Scratch.Get "publisherIcon" }}"
-      }
-    }
-  }
-</script>
 {{ end }}
 
 <!-- Hugo Generator Attribution -->
