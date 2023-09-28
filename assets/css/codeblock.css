@@ -1,3 +1,36 @@
+/* Styling for the copy button displayed in code blocks */
+.copy-button {
+  color: white;
+  background: none;
+  border: none;
+
+  width: 24px;
+  height: 24px;
+  background-image: url("/icons/content_copy.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 10;
+
+  padding: 10px;
+  cursor: pointer;
+}
+
+.copy-button:hover {
+  opacity: 0.8;
+}
+
+.code-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Syntax highlighting styling*/
 .hll { background-color: #ffffcc }
  /*{ background: #f0f3f3; }*/
 .c { color: #999; } /* Comment */
