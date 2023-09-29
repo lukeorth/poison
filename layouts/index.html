@@ -1,6 +1,7 @@
 {{ define "main" -}}
 <div class="posts">
-    {{ range (.Paginate (where .Site.RegularPages "Type" "posts")).Pages }}
+    {{ $frontPageTypes := default (slice "posts") .Site.Params.front_page_content }}
+    {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
     <article class="post">
         {{ partial "post/info.html" . }}
         {{ .Summary }}

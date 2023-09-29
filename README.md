@@ -14,24 +14,29 @@ All the static assets for the site (JS files, CSS, and fonts) are located within
 
 ## Contents
 
-- [Features](#features)
-  - [Light and Dark mode](#light-and-dark-mode)
-  - [Table of contents](#table-of-contents)
-  - [Comments](#comments)
-  - [Series](#series)
-  - [KaTeX](#katex)
-  - [Tabs](#tabs)
-  - [Mermaid diagrams](#mermaid-diagrams)
-  - [PlantUML diagrams](#plantuml-diagrams)
-- [Installation](#installation)
-- [How to Configure](#how-to-configure)
-  - [The Sidebar Menu](#the-sidebar-menu)
-  - [Example Config](#example-config)
-  - [Custom CSS](#custom-css)
-- [Suggestions / Contributions](#suggestions--contributions)
-- [Author](#author)
-- [Ported by](#ported-by)
-- [License](#license)
+- [Poison](#poison)
+    - [DEMO - https://poison.lukeorth.com/](#demo---httpspoisonlukeorthcom)
+  - [Contents](#contents)
+  - [Features](#features)
+    - [Light and Dark Mode](#light-and-dark-mode)
+    - [Table of Contents](#table-of-contents)
+    - [Comments](#comments)
+    - [Analytics](#analytics)
+    - [Series](#series)
+    - [KaTeX](#katex)
+    - [Tabs](#tabs)
+    - [Mermaid diagrams](#mermaid-diagrams)
+    - [PlantUML diagrams](#plantuml-diagrams)
+  - [Installation](#installation)
+  - [How to Configure](#how-to-configure)
+    - [The Sidebar Menu](#the-sidebar-menu)
+    - [The Front Page](#the-front-page)
+    - [Example Config](#example-config)
+    - [Custom CSS](#custom-css)
+  - [Suggestions / Contributions](#suggestions--contributions)
+  - [Author](#author)
+  - [Ported By](#ported-by)
+  - [License](#license)
 
 ## Features
 
@@ -49,7 +54,7 @@ Provide a floating table of contents for readers with large enough screens (i.e.
 
 If you prefer not to display a table of contents, you can disable them site-wide in your ```config.toml``` file.
 
-```
+```toml
 [params]
     hideToc: true
 ```
@@ -89,7 +94,7 @@ Even still, *Disqus* may be the best solution depending on your situation (we us
 
 Once everything is set up, you can activate it in the *Poison* theme by including the following in the `[params]` section of your `config.toml` file.
 
-```
+```toml
 [params]
     remark42 = true
     remark42_host = "https://yourhost.com"
@@ -104,7 +109,7 @@ Gain insights on who your users are.  Poison currently supports [Plausible](http
 
 Once you've established your Plausible instance, you can activate it by adding three lines to your ```config.toml``` file.
 
-```
+```toml
 [params]
     plausible = true
     plausible_domain = "myblog.com"
@@ -120,9 +125,9 @@ For reference, the configuration above would add the following code to each page
 
 ### Series
 Sensibly link and display content into "series" (i.e. *Tutorial One*, *Tutorial Two*, etc.).
-   
-   This is done with a custom taxonomy, so just add `series` to the frontmatter on the content you'd like to group together.
-   
+
+This is done with a custom taxonomy, so just add `series` to the frontmatter on the content you'd like to group together.
+
 ```yaml
 ---
 title: "Example to demonstrate how to use series"
@@ -185,19 +190,19 @@ For an example of how to do this, please visit the [Poison demo site](https://po
 
 First, clone this repository into your `themes` directory:
 
-```
+```sh
 git clone https://github.com/lukeorth/poison.git themes/poison --depth=1
 ```
 
 Next, specify `poison` as the default theme in your config.toml file by adding the following line:
 
-```
+```toml
 theme = "poison"
 ```
 
 Lastly, if there are any future updates to this repository that you wish to include in your local copy, these can be retrieved by running:
 
-```
+```sh
 cd themes/poison
 
 git pull
@@ -257,6 +262,14 @@ menu = [
     ]
 ```
 
+### The Front Page
+When visiting the base url for the site, i.e. `your.domain.com/`, a paginated feed of your recently added content is displayed in reverse chronological order. By default, only content in the "posts" [page bundle](https://gohugo.io/content-management/page-bundles/) is displayed. You can configure a list of page bundle names to be included on this page by adding the `front_page_content` parameter to your config.toml file.
+
+```toml
+[params]
+  front_page_content = ["posts", "projects"]
+```
+
 ### Example Config
 I recommend starting by copying/pasting the following code into your config.toml file.  Once you see how it looks, play with the settings as needed.
 
@@ -278,6 +291,8 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     description = "Update this description..." # Used as default meta description if not specified in front matter
     dark_mode = true                      # optional - defaults to false
     # favicon = "favicon.png"             # path to favicon (defaults to favicon.png)
+
+    front_page_content = ["posts"] # Equivalent to the default value, add page bundle names to include them on the front page.
 
     # MENU PLACEHOLDER
     # Menu dict keys:
