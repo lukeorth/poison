@@ -1,6 +1,22 @@
 /* Styling for the copy button displayed in code blocks */
+.copy-success {
+  background: none;
+  border: none;
+
+  background-image: url("/icons/copy_success.svg");
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 10;
+}
+
 .copy-button {
-  color: white;
   background: none;
   border: none;
 
