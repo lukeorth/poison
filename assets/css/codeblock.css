@@ -1,3 +1,58 @@
+/* Styling for the copy button displayed in code blocks */
+.copy-success {
+  background: none;
+  border: none;
+
+  background-image: url("/icons/copy_success.svg");
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 10;
+}
+
+.copy-button {
+  background: none;
+  border: none;
+
+  width: 24px;
+  height: 24px;
+  background-image: url("/icons/copy_content.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 10;
+
+  padding: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.copy-button:hover {
+  opacity: 0.8;
+}
+
+.copy-button:active {
+  transform: scale(0.95);
+  opacity: 0.7; 
+}
+
+.code-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Syntax highlighting styling*/
 .hll { background-color: #ffffcc }
  /*{ background: #f0f3f3; }*/
 .c { color: #999; } /* Comment */

@@ -16,6 +16,9 @@
     {{ $js = $js | append (resources.Get "js/toc.js") }}
 {{ end }}
 
+{{/* Personal/custom scripts for codeblocks */}}
+{{ $js = $js | append (resources.Get "js/codeblock.js") }}
+
 {{ $js_bundle := $js | resources.Concat "js/bundle.js" | minify | fingerprint }}
 
 <script defer language="javascript" type="text/javascript" src="{{ $js_bundle.RelPermalink }}"></script>
