@@ -88,7 +88,7 @@ disqusShortname = 'yourDisqusShortname'
 
 This is a great option for people that don't want to bother with self-hosting their own commenting engine; however, it has some drawbacks.  Because *Disqus* provides this service for free, they recoup any financial loss by injecting third-party ad trackers onto your website.  These trackers help to collect and sell information about your users, while also negatively affecting your site's speed.
 
-Even still, *Disqus* may be the best solution depending on your situation (we use it on this demo site).  The above paragraph is only meant to highlight its trade-offs and not meant to discourage its use entirely.
+Even still, *Disqus* may be the best solution depending on your situation.  The above paragraph is only meant to highlight its trade-offs and not meant to discourage its use entirely.
 
 ***Remark42*** is a lightweight, open source commenting engine that doesn't spy on your users.  The downside is that you must host it yourself.  Checkout the *Remark42* [documentation](https://remark42.com/) to get started.  I also found [this blog post](https://www.devbitsandbytes.com/setting-up-remark42-from-scratch/) helpful when setting it up on [my site](https://lukeorth.com).
 
@@ -394,7 +394,7 @@ font size, you could add this:
 
 ## Suggestions / Contributions
 
-Please feel free to add suggestions for new features by opening a new issue in GitHub.  If you like the theme, let us know in the comments section on the [demo site](https://poison.lukeorth.com/posts/introducing-poison/#suggestions--contributions)!
+Please feel free to add suggestions for new features by opening a new issue in [GitHub](https://github.com/lukeorth/poison).
 
 A big shout out and *thank you* to these top contributors:
 
