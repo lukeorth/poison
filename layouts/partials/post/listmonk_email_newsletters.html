@@ -1,0 +1,50 @@
+<hr>
+<div class="newsletters">
+    <div class="help-block-for-success"></div>
+    <div class="help-block-for-error"></div>
+    <form id="email-subscription-form">
+        <label for="email-subscription-input">{{ .Site.Params.listmonk_subscription_form_text | default "Subscribe to my newsletters" }}</label>
+        <input type="email" id="email-subscription-input" name="email-subscription-input" placeholder="Email address" />
+        <button type="submit">Subscribe</button>
+    </form>
+
+    <script>
+      const listmonkHost = {{ .Site.Params.listmonk_host }};
+      const listmonkSubscriptionSuccessMessage = {{ .Site.Params.listmonk_subscription_success_message | default "Thanks for subscribing" }};
+      const listmonkSubscriptionErrorMessage = {{ .Site.Params.listmonk_subcription_error_message | default "Sorry, something went wrong. Please, try again" }};
+
+      const form = document.getElementById("email-subscription-form");
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = form.querySelector("#email-subscription-input").value;
+        const data = {
+          email: email,
+          list_uuids: [
+            {{ .Site.Params.listmonk_subscription_list_uiid }}
+          ]
+      };
+        fetch(`${listmonkHost}/api/public/subscription`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }).then((response) => {
+          if (response.status === 200) {
+            const successBlock = document.getElementsByClassName('help-block-for-success')[0];
+            successBlock.classList.add('help-block-show');
+            successBlock.textContent = listmonkSubscriptionSuccessMessage;
+            document.getElementById('email-subscription-form').classList.add('email-subscription-form-hide');
+          } else {
+            const errorBlock = document.getElementsByClassName('help-block-for-error')[0];
+            errorBlock.classList.add('help-block-show');
+            errorBlock.textContent = listmonkSubscriptionErrorMessage;
+          }
+        }).catch(() => {
+          const errorBlock = document.getElementsByClassName('help-block-for-error')[0];
+          errorBlock.classList.add('help-block-show');
+          errorBlock.textContent = listmonkSubscriptionErrorMessage;
+        });
+      })
+    </script>
+</div>
