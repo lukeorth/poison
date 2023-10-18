@@ -306,21 +306,21 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     ]
 
     # Links to your socials.  Comment or delete any you don't need/use. 
-    github_url = "https://github.com"
-    gitlab_url = "https://gitlab.com"
-    linkedin_url = "https://linkedin.com"
-    twitter_url = "https://twitter.com"
-    mastodon_url = "https://mastodon.social"
-    tryhackme_url = "https://tryhackme.com"
     discord_url = "https://discord.com"
-    youtube_url = "https://youtube.com"
-    instagram_url = "https://instagram.com"
+    email_url = "mailto://user@domain"
     facebook_url = "https://facebook.com"
     flickr_url = "https://flickr.com"
-    telegram_url = "https://telegram.org"
+    github_url = "https://github.com"
+    gitlab_url = "https://gitlab.com"
+    instagram_url = "https://instagram.com"
+    linkedin_url = "https://linkedin.com"
+    mastodon_url = "https://mastodon.social"
     matrix_url = "https://matrix.org"
+    telegram_url = "https://telegram.org"
+    tryhackme_url = "https://tryhackme.com"
+    twitter_url = "https://twitter.com"
     xmpp_url = "https://xmpp.org"
-    email_url = "mailto://user@domain"
+    youtube_url = "https://youtube.com"
 
     # NOTE: If you don't want to use RSS, comment or delete the following lines
     # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
@@ -329,38 +329,42 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     rss_section = "posts"
 
     # Hex colors for your sidebar.
+    moon_sun_background_color = "#515151"   # default is #515151
+    moon_sun_color = "#FFF"                 # default is #FFF
+    sidebar_a_color = "#FFF"                # default is #FFF
     sidebar_bg_color = "#202020"            # default is #202020
+    sidebar_h1_color = "#FFF"               # default is #FFF
     sidebar_img_border_color = "#515151"    # default is #515151
     sidebar_p_color = "#909090"             # default is #909090
-    sidebar_h1_color = "#FFF"               # default is #FFF
-    sidebar_a_color = "#FFF"                # default is #FFF
     sidebar_socials_color = "#FFF"          # default is #FFF
-    moon_sun_color = "#FFF"                 # default is #FFF
-    moon_sun_background_color = "#515151"   # default is #515151
 
     # Hex colors for your content in light mode.
-    text_color = "#222"             # default is #222
-    content_bg_color = "#FAF9F6"    # default is #FAF9F6
-    post_title_color = "#303030"    # default is #303030
-    list_color = "#5a5a5a"          # default is #5a5a5a
-    link_color = "#268bd2"          # default is #268bd2
-    date_color = "#515151"          # default is #515151
-    table_border_color = "#E5E5E5"  # default is #E5E5E5
-    table_stripe_color = "#F9F9F9"  # default is #F9F9F9
+    code_color = "#000"                     # default is #000
+    code_background_color = "#E5E5E5"       # default is #E5E5E5
+    code_block_color = "#FFF"               # default is #FFF
+    code_block_background_color = "#272822" # default is #272822
+    content_bg_color = "#FAF9F6"            # default is #FAF9F6
+    date_color = "#515151"                  # default is #515151
+    link_color = "#268BD2"                  # default is #268BD2
+    list_color = "#5A5A5A"                  # default is #5A5A5A
+    post_title_color = "#303030"            # default is #303030
+    table_border_color = "#E5E5E5"          # default is #E5E5E5
+    table_stripe_color = "#F9F9F9"          # default is #F9F9F9
+    text_color = "#222"                     # default is #222
 
     # Hex colors for your content in dark mode
-    text_color_dark = "#eee"                # default is #eee
-    content_bg_color_dark = "#121212"       # default is #121212
-    post_title_color_dark = "#DBE2E9"       # default is #DBE2E9
-    list_color_dark = "#9d9d9d"             # default is #9d9d9d
-    link_color_dark = "#268bd2"             # default is #268bd2
-    date_color_dark = "#9a9a9a"             # default is #9a9a9a
-    table_border_color_dark = "#515151"     # default is #515151
-    table_stripe_color_dark = "#202020"     # default is #202020
-    code_color = "#bf616a"                  # default is #bf616a
-    code_background_color = "#E5E5E5"       # default is #E5E5E5
-    code_color_dark = "#ff7f7f"             # default is #ff7f7f
-    code_background_color_dark = "#393D47"  # default is #393D47
+    code_color_dark = "#FFF"                        # default is #FFF
+    code_background_color_dark = "#515151"          # default is #515151
+    code_block_color_dark = "#FFF"                  # default is #FFF
+    code_block_background_color_dark = "#272822"    # default is #272822
+    content_bg_color_dark = "#121212"               # default is #121212
+    date_color_dark = "#9A9A9A"                     # default is #9A9A9A
+    link_color_dark = "#268BD2"                     # default is #268BD2
+    list_color_dark = "#9D9D9D"                     # default is #9D9D9D
+    post_title_color_dark = "#DBE2E9"               # default is #DBE2E9
+    table_border_color_dark = "#515151"             # default is #515151
+    table_stripe_color_dark = "#202020"             # default is #202020
+    text_color_dark = "#EEE"                        # default is #EEE
 
     # NOTE: If using Remark42 as commenting engine, uncomment and configure these lines
     # remark42 = true
