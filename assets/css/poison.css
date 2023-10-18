@@ -77,10 +77,11 @@ h1, h2, h3, h4, h5, strong {
     color: var(--link-color);
 }
 .content pre {
-  color: var(--code-color);
-  background-color: var(--code-background-color);
+  color: var(--code-block-color);
+  background-color: var(--code-block-background-color) !important;
 }
 .content pre code {
+  color: var(--code-block-color);
   background-color: transparent !important;
 }
 .btn-light-dark .moon {
