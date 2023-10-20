@@ -22,6 +22,7 @@ All the static assets for the site (JS files, CSS, and fonts) are located within
     - [Table of Contents](#table-of-contents)
     - [Comments](#comments)
     - [Analytics](#analytics)
+    - [Email Newsletters Subscription](#email-newsletters-subscription)
     - [Series](#series)
     - [KaTeX](#katex)
     - [Tabs](#tabs)
@@ -122,6 +123,27 @@ For reference, the configuration above would add the following code to each page
 
 ```<script defer data-domain="myblog.com" src="https://plausible.myblog.com/js/script.js"></script>```
 
+### Email Newsletters Subscription
+
+Allow users to subscribe to your blog newsletters via email. 
+Poison currently supports [Listmonk](https://listmonk.app/) which is available via [self-hosting](https://github.com/knadh/listmonk).
+Listmonk is a standalone, self-hosted, newsletter and mailing list manager.
+The downside is that you must host it yourself. 
+Checkout the Listmonk [documentation](https://listmonk.app/docs/) to get started.
+
+Once you've established your Listmonk instance, you can activate it by adding these lines to your ```config.toml``` file.
+
+```toml
+[params]
+    listmonk = true
+    listmonk_host = "https://listmonk.your_domain.tld"
+    listmonk_subscription_list_uiid = "YOUR_NEWSLETTERS_LIST_UIID"
+    listmonk_subscription_form_text = "Subscribe to my newsletters"       # default: Subscribe to my newsletters
+    listmonk_subscription_success_message = "Thanks for subscribing"     # default: Thanks for subscribing
+    listmonk_subscription_error_message = "Something went wrong"           # default: Sorry, something went wrong. Please, try again
+```
+This will insert a form to the bottom of each post content. 
+The user will be subscribed to the newsletter list you specified in the `listmonk_subscription_list_uiid` parameter.
 
 ### Series
 Sensibly link and display content into "series" (i.e. *Tutorial One*, *Tutorial Two*, etc.).
