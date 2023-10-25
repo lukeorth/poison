@@ -6,9 +6,9 @@
 
 *Poison* is a **clean**, **professional** Hugo theme designed to **captivate** your readers.
 
-It's also **tiny** and **privacy conscious** with *no external dependencies* (unless you opt to include comments).  No JavaScript frameworks, icon packs, or Google fonts.  No ads or trackers polluting your console window.  **We kept things simple**.  A little vanilla JavaScript, a dash of CSS, and the power of Hugo.
+It's also **tiny** and **privacy conscious** with *no external dependencies*.  No JavaScript frameworks, icon packs, or Google fonts.  No ads or trackers polluting your console window.  **We kept things simple**.  A little vanilla JavaScript, a dash of CSS, and the power of Hugo.
 
-All the static assets for the site (JS files, CSS, and fonts) are located within the theme's */assets/* directory.  **That way you know *exactly* what's going on your site**.
+All the static assets for the site (JS files, CSS, and fonts) are located within the theme's */assets/* directory.  **That way you know *exactly* what's going onto your site**.
 
 ---
 
@@ -18,7 +18,7 @@ All the static assets for the site (JS files, CSS, and fonts) are located within
     - [DEMO - https://poison.lukeorth.com/](#demo---httpspoisonlukeorthcom)
   - [Contents](#contents)
   - [Features](#features)
-    - [Light and Dark Mode](#light-and-dark-mode)
+    - [Light & Dark Mode](#light-and-dark-mode)
     - [Table of Contents](#table-of-contents)
     - [Comments](#comments)
     - [Analytics](#analytics)
@@ -43,7 +43,7 @@ All the static assets for the site (JS files, CSS, and fonts) are located within
 
 In addition to the standard Built-in templates and shortcodes that come with Hugo, *Poison* offers some unique features of its own.
 
-### Light and Dark Mode
+### Light & Dark Mode
 Give readers the choice to read in light or dark mode.  The user's preference is stored in local storage.  Light mode is the default for first time visitors, but you can change this in your config file.
 <p float="left">
   <img src="https://user-images.githubusercontent.com/35306887/210615342-ab3e0b88-fbd2-405a-bad1-2fa8b21982be.png" width="700" />
@@ -123,7 +123,7 @@ For reference, the configuration above would add the following code to each page
 
 ```<script defer data-domain="myblog.com" src="https://plausible.myblog.com/js/script.js"></script>```
 
-### Email Newsletters Subscription
+### Email Newsletters
 
 Allow users to subscribe to your blog newsletters via email. 
 Poison currently supports [Listmonk](https://listmonk.app/) which is available via [self-hosting](https://github.com/knadh/listmonk).
@@ -131,7 +131,7 @@ Listmonk is a standalone, self-hosted, newsletter and mailing list manager.
 The downside is that you must host it yourself. 
 Checkout the Listmonk [documentation](https://listmonk.app/docs/) to get started.
 
-Once you've established your Listmonk instance, you can activate it by adding these lines to your ```config.toml``` file.
+Once you've established your Listmonk instance, activate it by adding these lines to your ```config.toml``` file.
 
 ```toml
 [params]
@@ -142,8 +142,9 @@ Once you've established your Listmonk instance, you can activate it by adding th
     listmonk_subscription_success_message = "Thanks for subscribing"      # default: Thanks for subscribing
     listmonk_subscription_error_message = "Something went wrong"          # default: Sorry, something went wrong. Please, try again
 ```
-This will insert a form to the bottom of each post content. 
-The user will be subscribed to the newsletter list you specified in the `listmonk_subscription_list_uiid` parameter.
+
+This will insert a form at the bottom of each post's content. 
+The user will be subscribed to the newsletter specified in the ``listmonk_subscription_list_uiid`` parameter.
 
 ### Series
 Sensibly link and display content into "series" (i.e. *Tutorial One*, *Tutorial Two*, etc.).
@@ -168,6 +169,8 @@ For notations that should appear on their own line, use the block quotes `$$ ...
 $$ 5 \times 5 = 25 $$
 
 For notations that should appear on the same line, use the inline quotes `$ ... $`
+
+**Note**: *Enabling KaTeX will add external dependencies.*
     
 ### Tabs
 Some content is just better viewed in tabs.  Luckily we have a shortcode for that.
@@ -197,12 +200,16 @@ This is a code block.
 ### Mermaid diagrams
 You can embed rendered Mermaid diagrams.  
 
+**Note**: *Enabling Mermaid diagrams will add external dependencies.*
+
 ![image](https://github.com/lukeorth/poison/assets/35306887/e21041c3-528e-4941-88ba-310742d99c91)
 
 For an example of how to do this, please visit the [Poison demo site](https://poison.lukeorth.com/posts/introducing-poison/#mermaid-diagrams).
 
 ### PlantUML diagrams
 You can embed rendered PlantUML diagrams.  
+
+**Note**: *Enabling PlantUML diagrams will add external dependencies.*
 
 ![image](https://github.com/lukeorth/poison/assets/35306887/8093ff68-28e4-43c8-8f21-67a3d5615af4)
 
