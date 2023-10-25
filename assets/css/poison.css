@@ -166,6 +166,55 @@ body > .wrapper {
 .info ul li {
     margin-left: 0.5em;
 }
+.newsletters .help-block-for-success {
+    display: none;
+    margin: 0.25rem 1rem 0.25rem 0;
+    text-align: center;
+    color: green;
+}
+.newsletters .help-block-for-error {
+    display: none;
+    margin: 0.25rem 1rem 0.25rem 0;
+    text-align: center;
+    color: #de0928;
+}
+.newsletters .help-block-show {
+    display: block;
+}
+.newsletters form {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+.newsletters .email-subscription-form-hide {
+    display: none;
+}
+.newsletters label {
+    margin: 0.25rem 1rem 0.25rem 0;
+    text-align: center;
+}
+.newsletters input {
+    margin: 0.25rem 1rem 0.25rem 0;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--text-color);
+    border-radius: 0.25rem;
+}
+.newsletters input:focus-visible {
+    outline: none;
+}
+.newsletters button {
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--text-color);
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin: 0.25rem 0;
+}
 .tags {
     padding-left: 0em;
 }

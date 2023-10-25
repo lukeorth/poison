@@ -2,6 +2,9 @@
 <div class="post">
   {{ partial "post/info.html" . }}
   {{ .Content }}
+  {{ if (.Site.Params.listmonk) }}
+    {{ partial "post/listmonk_email_newsletters.html" . }}
+  {{ end }}
   {{ partial "post/navigation.html" . }}
   {{ if or (.Site.Params.remark42) (.Site.DisqusShortname) }}
     {{ partial "post/comments.html" . }}
