@@ -239,7 +239,7 @@ git pull
 
 For more information on how to get started with Hugo and themes, read the official [quick start guide](https://gohugo.io/getting-started/quick-start/).
 
-## How to configure
+## How to Configure
 
 After successfully installing *Poison*, the last step is to configure it.
 
