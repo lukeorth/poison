@@ -10,6 +10,8 @@ It's also **tiny** and **privacy conscious** with *no external dependencies*.  N
 
 All the static assets for the site (JS files, CSS, and fonts) are located within the theme's */assets/* directory.  **That way you know *exactly* what's going onto your site**.
 
+Check out our demo site's analytics [here](https://plausible.lukeorth.com/poison.lukeorth.com) to gauge community interest in the theme.
+
 ---
 
 ## Contents
@@ -22,7 +24,7 @@ All the static assets for the site (JS files, CSS, and fonts) are located within
     - [Table of contents](#table-of-contents)
     - [Comments](#comments)
     - [Analytics](#analytics)
-    - [Email newsletters](#email-newsletters-subscription)
+    - [Email newsletters](#email-newsletters)
     - [Series](#series)
     - [KaTeX](#katex)
     - [Tabs](#tabs)
@@ -43,7 +45,7 @@ All the static assets for the site (JS files, CSS, and fonts) are located within
 
 In addition to the standard Built-in templates and shortcodes that come with Hugo, *Poison* offers some unique features of its own.
 
-### Light & dark mode
+### Light and dark mode
 Give readers the choice to read in light or dark mode.  The user's preference is stored in local storage.  Light mode is the default for first time visitors, but you can change this in your config file.
 <p float="left">
   <img src="https://user-images.githubusercontent.com/35306887/210615342-ab3e0b88-fbd2-405a-bad1-2fa8b21982be.png" width="700" />
@@ -104,7 +106,7 @@ Once everything is set up, you can activate it in the *Poison* theme by includin
 
 ### Analytics
 
-Gain insights on who your users are.  Poison currently supports [Plausible](https://plausible.io) which is available via a paid service or by [self-hosting](https://github.com/plausible/analytics).  Take a look at the Poison demo site's 
+Gain insights on your users.  Poison currently supports [Plausible](https://plausible.io) which is available via a paid service or by [self-hosting](https://github.com/plausible/analytics).  Take a look at the Poison demo site's 
 
 **Note**: *Enabling analytics will add external dependencies.*
 
