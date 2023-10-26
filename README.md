@@ -104,9 +104,11 @@ Once everything is set up, you can activate it in the *Poison* theme by includin
 
 ### Analytics
 
-Gain insights on who your users are.  Poison currently supports [Plausible](https://plausible.io) which is available via a paid service or by [self-hosting](https://github.com/plausible/analytics).
+Gain insights on who your users are.  Poison currently supports [Plausible](https://plausible.io) which is available via a paid service or by [self-hosting](https://github.com/plausible/analytics).  Take a look at the Poison demo site's 
 
 **Note**: *Enabling analytics will add external dependencies.*
+
+#### Check out our demo site's Plausible analytics [here](https://plausible.lukeorth.com/poison.lukeorth.com)!
 
 Once you've established your Plausible instance, you can activate it by adding three lines to your ```config.toml``` file.
 
