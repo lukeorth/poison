@@ -1,15 +1,22 @@
 <div class="sidebar-about">
     <h1 class="brand">
-        {{ if .Site.Params.brand_image }}
+        {{ if .Site.Params.remote_brand_image }}
             <a href="{{ .Site.BaseURL }}">
-                <img src="{{ .Site.Params.brand_image }}" alt="brand image">
+                <img src="{{ .Site.Params.remote_brand_image }}" alt="brand image">
             </a>
+        {{ else }}
+            {{ if .Site.Params.brand_image }}
+                <a href="{{ .Site.BaseURL }}">
+                    <img src="{{ .Site.Params.brand_image }}" alt="brand image">
+                </a>
+            {{ end }}
+            {{ if .Site.Params.brand }}
+                <a href="{{ .Site.BaseURL }}">
+                    <h1>{{ .Site.Params.brand }}</h1>
+                </a>
+            {{ end }}
         {{ end }}
-        {{ if .Site.Params.brand }}
-            <a href="{{ .Site.BaseURL }}">
-                <h1>{{ .Site.Params.brand }}</h1>
-            </a>
-        {{ end }}
+
     </h1>
     <p class="lead">
     {{ with .Site.Params.description }}{{. | safeHTML}}{{end}}
