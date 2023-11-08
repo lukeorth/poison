@@ -306,7 +306,7 @@ When visiting the base url for the site, i.e. `your.domain.com/`, a paginated fe
 ### Example config
 I recommend starting by copying/pasting the following code into your config.toml file.  Once you see how it looks, play with the settings as needed.
 
-**NOTE**: To display an image in your sidebar, you'll need to uncomment the `brand_image` path below and have it point to an image file in your project.  The path is relative to the `static` directory.  If you don't have an image, just leave this line commented out.
+**NOTE**: To display an image in your sidebar, you'll need to uncomment the `remote_brand_image` and set a image URL or the `brand_image` path below and have it point to an image file in your project.  The path is relative to the `static` directory.  If you don't have an image, just leave both lines commented out.
 
 ```toml
 baseURL = "/"
@@ -320,6 +320,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
 
 [params]
     brand = "Poison"                      # name of your site - appears in the sidebar
+    # remote_brand_image = 'https://github.com/USERNAME.png' # path to a remote file
     # brand_image = "/images/test.jpg"    # path to the image shown in the sidebar
     description = "Update this description..." # Used as default meta description if not specified in front matter
     dark_mode = true                      # optional - defaults to false
