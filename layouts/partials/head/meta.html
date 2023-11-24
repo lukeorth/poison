@@ -13,13 +13,13 @@
 {{ end }}
 
 {{ if .IsSection }}
-  {{ .Scratch.Set "title" ($.Site.Params.brand | humanize | title) }}
+  {{ .Scratch.Set "title" ($.Site.Params.brand) }}
   {{ .Scratch.Add "title" " - " }}
   {{ .Scratch.Add "title" .LinkTitle }}
 {{ end }}
 
 {{ if .IsPage }}
-  {{ .Scratch.Set "title" ($.Site.Params.brand | humanize | title) }}
+  {{ .Scratch.Set "title" ($.Site.Params.brand) }}
   {{ .Scratch.Add "title" " - " }}
   {{ .Scratch.Add "title" .LinkTitle }}
 {{ end }}
