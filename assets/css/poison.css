@@ -166,6 +166,16 @@ body > .wrapper {
 .info ul li {
     margin-left: 0.5em;
 }
+.headline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+.reading-time {
+    color: gray;
+    font-style: italic;
+}
 .newsletters .help-block-for-success {
     display: none;
     margin: 0.25rem 1rem 0.25rem 0;
