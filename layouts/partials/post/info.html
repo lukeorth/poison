@@ -13,9 +13,9 @@
       <span> - </span>
       <span class="reading-time">
         {{ if gt .ReadingTime 1 }}
-          {{ .Scratch.Set "readingTime" "minutes" }}
+          {{ .Scratch.Set "readingTime" "mins" }}
         {{ else }}
-          {{ .Scratch.Set "readingTime" "minute" }}
+          {{ .Scratch.Set "readingTime" "min" }}
         {{ end }}
 
         <span>{{ .ReadingTime }} {{ .Scratch.Get "readingTime" }} read</span>
