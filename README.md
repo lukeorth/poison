@@ -10,7 +10,7 @@ It's also **tiny** and **privacy conscious** with *no external dependencies*.  N
 
 All the static assets for the site (JS files, CSS, and fonts) are located within the theme's */assets/* directory.  **That way you know *exactly* what's going onto your site**.
 
-Check out our demo site's analytics [here](https://plausible.lukeorth.com/poison.lukeorth.com) to gauge community interest in the theme.
+Check out our demo site's [analytics](https://plausible.lukeorth.com/poison.lukeorth.com) to gauge community interest in the theme.
 
 ---
 
