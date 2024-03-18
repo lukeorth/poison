@@ -67,7 +67,7 @@
 <meta property="og:url" content="{{ .Permalink }}" />
 
 <!-- Date Tags -->
-<meta property="og:updated_time" content={{ .Lastmod.Format "2001-02-03T14:05:06Z0700" | safeHTML }} />
+<meta property="og:updated_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" />
 
 <!-- Sitemap & Alternate Outputs -->
 <link rel="sitemap" type="application/xml" title="Sitemap" href='{{ "sitemap.xml" | absURL }}' />
@@ -107,13 +107,13 @@
 
 <meta property="og:type" content="article" />
 <meta property="article:publisher" content="{{ .Site.Params.facebook_url }}" />
-<meta property="og:article:published_time" content={{ .Date.Format "2001-02-03T14:05:06Z0700" | safeHTML }} />
-<meta property="article:published_time" content={{ .Date.Format "2001-02-03T14:05:06Z0700" | safeHTML }} />
+<meta property="og:article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" />
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00"  }}" />
 
-{{ with.Params.author }}
-  <meta property="og:article:author" content="{{humanize . }}" />
-  <meta property="article:author" content="{{humanize . }}" />
-  <meta name="author" content="{{humanize . }}" />
+{{ with (or (.Params.Author) (.Site.Language.Params.Author.Name)) }}
+  <meta property="og:article:author" content="{{ . }}" />
+  <meta property="article:author" content="{{ . }}" />
+  <meta name="author" content="{{ . }}" />
 {{ end }}
 
 {{ with.Params.category }}
