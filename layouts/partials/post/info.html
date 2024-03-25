@@ -6,10 +6,12 @@
   <div class="headline">
     <div>
       {{ if .Params.author }}
-        {{ if .Site.Taxonomies.author }}
-          <span><a href="{{ .Site.BaseURL }}author/{{ .Params.author | urlize }}">{{ .Params.author }}</a> - </span>
+        {{ $author := .Params.author }}
+        {{ $authorURLized := ($author | urlize) }}
+        {{ with .Site.GetPage "author" }}
+          <span><a href="{{ (.GetPage $authorURLized).Permalink }}">{{ $author }}</a> - </span>
         {{ else }}
-          <span>{{ .Params.author }} - </span>
+          <span>{{ $author }} - </span>
         {{ end }}
       {{ end }}
       {{ if .Date }}
