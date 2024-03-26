@@ -5,13 +5,11 @@
 
   <div class="headline">
     <div>
-      {{ if .Params.author }}
-        {{ $author := .Params.author }}
-        {{ $authorURLized := ($author | urlize) }}
-        {{ with .Site.GetPage "author" }}
-          <span><a href="{{ (.GetPage $authorURLized).Permalink }}">{{ $author }}</a> - </span>
+      {{ with .Params.author }}
+        {{ with site.Taxonomies.author.Get . }}
+          <span><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a> - </span>
         {{ else }}
-          <span>{{ $author }} - </span>
+          <span>{{ . }} - </span>
         {{ end }}
       {{ end }}
       {{ if .Date }}
