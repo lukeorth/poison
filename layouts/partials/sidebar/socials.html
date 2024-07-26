@@ -117,3 +117,11 @@
        </svg>
     </a>
 {{ end }}
+{{ if .Site.Params.orcid }}
+<a target="_blank" class="social" title="ORCID" href="{{ .Site.Params.orcid }}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 512 512">
+        <path fill="currentColor"
+            d="M294.8 188.2h-45.9V342h47.5c67.6 0 83.1-51.3 83.1-76.9 0-41.6-26.5-76.9-84.7-76.9zM256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm-80.8 360.8h-29.8v-207.5h29.8zm-14.9-231.1a19.6 19.6 0 1 1 19.6-19.6 19.6 19.6 0 0 1 -19.6 19.6zM300 369h-81V161.3h80.6c76.7 0 110.4 54.8 110.4 103.9C410 318.4 368.4 369 300 369z" />
+    </svg>
+</a>
+{{ end }}
