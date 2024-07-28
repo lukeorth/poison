@@ -6,7 +6,7 @@
     {{ partial "post/listmonk_email_newsletters.html" . }}
   {{ end }}
   {{ partial "post/navigation.html" . }}
-  {{ if or (.Site.Params.remark42) (.Site.DisqusShortname) }}
+  {{ if or (.Site.Params.remark42) (.Site.Config.Services.Disqus.Shortname) }}
     {{ partial "post/comments.html" . }}
   {{ end }}
 </div>
