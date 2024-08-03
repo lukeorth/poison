@@ -41,8 +41,9 @@
   {{ end }}
 
   {{ if .Params.featuredImage }}
+  {{ $image := .Resources.Get .Params.featuredImage }}
   <p>
-    <img src="{{.Params.featuredImage}}"><br>
+    <img src="{{ $image.RelPermalink }}"><br>
   </p>
   {{ end }}
 </div>
