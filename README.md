@@ -30,6 +30,7 @@ Check out our demo site's [analytics](https://plausible.lukeorth.com/poison.luke
     - [Tabs](#tabs)
     - [Mermaid diagrams](#mermaid-diagrams)
     - [PlantUML diagrams](#plantuml-diagrams)
+    - [Details](#details)
   - [Installation](#installation)
   - [How to Configure](#how-to-configure)
     - [The sidebar menu](#the-sidebar-menu)
