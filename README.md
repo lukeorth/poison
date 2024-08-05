@@ -20,7 +20,7 @@ Check out our demo site's [analytics](https://plausible.lukeorth.com/poison.luke
     - [DEMO - https://poison.lukeorth.com/](#demo---httpspoisonlukeorthcom)
   - [Contents](#contents)
   - [Features](#features)
-    - [Light & dark mode](#light-and-dark-mode)
+    - [Light and dark mode](#light-and-dark-mode)
     - [Table of contents](#table-of-contents)
     - [Comments](#comments)
     - [Analytics](#analytics)
@@ -30,6 +30,7 @@ Check out our demo site's [analytics](https://plausible.lukeorth.com/poison.luke
     - [Tabs](#tabs)
     - [Mermaid diagrams](#mermaid-diagrams)
     - [PlantUML diagrams](#plantuml-diagrams)
+    - [Details](#details)
   - [Installation](#installation)
   - [How to Configure](#how-to-configure)
     - [The sidebar menu](#the-sidebar-menu)
@@ -110,7 +111,7 @@ Gain insights on your users.  Poison currently supports [Plausible](https://plau
 
 **Note**: *Enabling analytics will add external dependencies.*
 
-#### Check out our demo site's Plausible analytics [here](https://plausible.lukeorth.com/poison.lukeorth.com)!
+**Check out our demo site's Plausible analytics [here](https://plausible.lukeorth.com/poison.lukeorth.com)!**
 
 Once you've established your Plausible instance, you can activate it by adding three lines to your ```config.toml``` file.
 
@@ -218,6 +219,20 @@ You can embed rendered PlantUML diagrams.
 ![image](https://github.com/lukeorth/poison/assets/35306887/8093ff68-28e4-43c8-8f21-67a3d5615af4)
 
 For an example of how to do this, please visit the [Poison demo site](https://poison.lukeorth.com/posts/introducing-poison/#plantuml-diagrams);
+
+### Details
+
+There's a shortcode for encoding detail dropdowns into your pages.
+
+![image](https://github.com/user-attachments/assets/ce2390c1-e4f0-4f70-a65d-7a319f14a859)
+
+Here's the code for the detail dropdown above:
+
+```
+{{</* details summary="A detail dropdown" */>}}
+Markdown content
+{{</* /details */>}}
+```
 
 ## Installation
 
@@ -353,8 +368,11 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     telegram_url = "https://telegram.org"
     tryhackme_url = "https://tryhackme.com"
     twitter_url = "https://twitter.com"
+    x_url = "https://x.com"
     xmpp_url = "https://xmpp.org"
     youtube_url = "https://youtube.com"
+    signal_url = "https://signal.org"
+    bluesky_url = "https://bsky.app"
 
     # NOTE: If you don't want to use RSS, comment or delete the following lines
     # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
