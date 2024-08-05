@@ -219,6 +219,17 @@ You can embed rendered PlantUML diagrams.
 
 For an example of how to do this, please visit the [Poison demo site](https://poison.lukeorth.com/posts/introducing-poison/#plantuml-diagrams);
 
+### Details
+
+Embed details in your pages, as follows:
+
+```
+{{< details summary="A summary" >}}
+Markdown content
+{{< /details >}}
+```
+
+
 ## Installation
 
 First, clone this repository into your `themes` directory:
