@@ -356,6 +356,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     x_url = "https://x.com"
     xmpp_url = "https://xmpp.org"
     youtube_url = "https://youtube.com"
+    signal_url = "https://signal.org"
     bluesky_url = "https://bsky.app"
 
     # NOTE: If you don't want to use RSS, comment or delete the following lines
