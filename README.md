@@ -224,6 +224,8 @@ For an example of how to do this, please visit the [Poison demo site](https://po
 
 There's a shortcode for encoding detail dropdowns into your pages.
 
+![image](https://github.com/user-attachments/assets/ce2390c1-e4f0-4f70-a65d-7a319f14a859)
+
 Here's the code for the detail dropdown above:
 
 ```
