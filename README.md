@@ -221,14 +221,15 @@ For an example of how to do this, please visit the [Poison demo site](https://po
 
 ### Details
 
-Embed details in your pages, as follows:
+There's a shortcode for encoding detail dropdowns into your pages.
+
+Here's the code for the detail dropdown above:
 
 ```
-{{< details summary="A summary" >}}
+{{</* details summary="A summary" */>}}
 Markdown content
-{{< /details >}}
+{{</* /details */>}}
 ```
-
 
 ## Installation
 
