@@ -20,7 +20,7 @@ Check out our demo site's [analytics](https://plausible.lukeorth.com/poison.luke
     - [DEMO - https://poison.lukeorth.com/](#demo---httpspoisonlukeorthcom)
   - [Contents](#contents)
   - [Features](#features)
-    - [Light & dark mode](#light-and-dark-mode)
+    - [Light and dark mode](#light-and-dark-mode)
     - [Table of contents](#table-of-contents)
     - [Comments](#comments)
     - [Analytics](#analytics)
@@ -110,7 +110,7 @@ Gain insights on your users.  Poison currently supports [Plausible](https://plau
 
 **Note**: *Enabling analytics will add external dependencies.*
 
-#### Check out our demo site's Plausible analytics [here](https://plausible.lukeorth.com/poison.lukeorth.com)!
+**Check out our demo site's Plausible analytics [here](https://plausible.lukeorth.com/poison.lukeorth.com)!**
 
 Once you've established your Plausible instance, you can activate it by adding three lines to your ```config.toml``` file.
 
@@ -353,9 +353,11 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     telegram_url = "https://telegram.org"
     tryhackme_url = "https://tryhackme.com"
     twitter_url = "https://twitter.com"
+    x_url = "https://x.com"
     xmpp_url = "https://xmpp.org"
     youtube_url = "https://youtube.com"
     signal_url = "https://signal.org"
+    bluesky_url = "https://bsky.app"
 
     # NOTE: If you don't want to use RSS, comment or delete the following lines
     # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
