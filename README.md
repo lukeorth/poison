@@ -229,7 +229,7 @@ There's a shortcode for encoding detail dropdowns into your pages.
 Here's the code for the detail dropdown above:
 
 ```
-{{</* details summary="A summary" */>}}
+{{</* details summary="A detail dropdown" */>}}
 Markdown content
 {{</* /details */>}}
 ```
