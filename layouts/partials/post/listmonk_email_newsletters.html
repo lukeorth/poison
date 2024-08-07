@@ -20,7 +20,7 @@
         const data = {
           email: email,
           list_uuids: [
-            {{ .Site.Params.listmonk_subscription_list_uiid }}
+            {{ .Site.Params.listmonk_subscription_list_uuid }}
           ]
       };
         fetch(`${listmonkHost}/api/public/subscription`, {
