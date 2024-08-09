@@ -40,11 +40,12 @@
     {{ end }}
   </div>
 
-  {{ $Site := .Site }}
-  {{ if .Params.series }}
-  <p class="seriesname">
-    Series: <a href="{{ $Site.BaseURL }}series/{{ .Params.series | urlize }}">{{ .Params.series }}</a>
-  </p>
+  {{ with .Params.series }}
+    {{ with site.Taxonomies.series.Get . }}
+      <p class="seriesname">
+        Series: <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
+      </p>
+    {{ end }}
   {{ end }}
 
   {{ if .Params.featuredImage }}
