@@ -6,11 +6,11 @@
   <div class="headline">
     <div>
       {{ with .Params.author }}
-        {{ with site.Taxonomies.author.Get . }}
-          <span><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a> - </span>
-        {{ else }}
-          <span>{{ . }} - </span>
-        {{ end }}
+      {{ with site.Taxonomies.author.Get . }}
+      <span><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a> - </span>
+      {{ else }}
+      <span>{{ . }} - </span>
+      {{ end }}
       {{ end }}
       {{ if .Date }}
       <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z0700" }}" class="post-date">
@@ -20,9 +20,9 @@
       <span> - </span>
       <span class="reading-time">
         {{ if gt .ReadingTime 1 }}
-          {{ .Scratch.Set "readingTime" "mins" }}
+        {{ .Scratch.Set "readingTime" "mins" }}
         {{ else }}
-          {{ .Scratch.Set "readingTime" "min" }}
+        {{ .Scratch.Set "readingTime" "min" }}
         {{ end }}
 
         <span>{{ .ReadingTime }} {{ .Scratch.Get "readingTime" }} read</span>
@@ -49,8 +49,10 @@
 
   {{ if .Params.featuredImage }}
   {{ $image := .Resources.Get .Params.featuredImage }}
-  <p>
-    <img src="{{ $image.RelPermalink }}">
-  </p>
+  <a href="{{ .Page.RelPermalink }}">
+    <p>
+      <img src="{{ $image.RelPermalink }}">
+    </p>
+  </a>
   {{ end }}
 </div>
