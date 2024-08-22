@@ -33,7 +33,7 @@
     <ul class="tags">
       {{ range .Params.tags }}
       <li class="tag-{{ . }}">
-        <a href="{{ " tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a>
+        <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a>
       </li>
       {{ end }}
     </ul>
