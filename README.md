@@ -142,14 +142,14 @@ Once you've established your Listmonk instance, activate it by adding these line
 [params]
     listmonk = true
     listmonk_host = "https://listmonk.your_domain.tld"
-    listmonk_subscription_list_uiid = "YOUR_NEWSLETTERS_LIST_UIID"
+    listmonk_subscription_list_uuid = "YOUR_NEWSLETTERS_LIST_UUID"
     listmonk_subscription_form_text = "Subscribe to my newsletters"       # default: Subscribe to my newsletters
     listmonk_subscription_success_message = "Thanks for subscribing"      # default: Thanks for subscribing
     listmonk_subscription_error_message = "Something went wrong"          # default: Sorry, something went wrong. Please, try again
 ```
 
 This will insert a form at the bottom of each post's content. 
-The user will be subscribed to the newsletter specified in the ``listmonk_subscription_list_uiid`` parameter.
+The user will be subscribed to the newsletter specified in the ``listmonk_subscription_list_uuid`` parameter.
 
 ### Series
 Sensibly link and display content into "series" (i.e. *Tutorial One*, *Tutorial Two*, etc.).
