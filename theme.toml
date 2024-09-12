@@ -1,11 +1,11 @@
-name = "Poison"
+name = "Elixir"
 license = "GPL-3.0 License"
-licenselink = "https://github.com/lukeorth/poison/blob/master/LICENSE.md"
+licenselink = "https://github.com/nunnsy/elixir/blob/master/LICENSE.md"
 description = "A pragmatic Hugo theme for bloggers.  Based on the classic \"Hyde\" design by mdo."
 min_version = "0.101.0"
 
 # The home page of the theme, where the source can be found.
-homepage = "https://github.com/lukeorth/poison"
+homepage = "https://github.com/nunnsy/elixir"
 
 # If you have a running demo of the theme.
 demosite = "https://poison.lukeorth.com"

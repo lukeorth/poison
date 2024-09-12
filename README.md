@@ -1,10 +1,12 @@
-# Poison
+# Elixir (fork of [Poison](https://github.com/lukeorth/poison))
+
+*This fork is a WIP and a slight customisation layer over the original. It also attempts to keep more up-to-date to remove deprecation warnings*
 
 ![Poison screenshot](https://raw.githubusercontent.com/lukeorth/poison/master/images/screenshot.png)
 
 ### DEMO - https://poison.lukeorth.com/
 
-*Poison* is a **clean**, **professional** Hugo theme designed to **captivate** your readers.
+*Elixir* is a **clean**, **professional** Hugo theme designed to **captivate** your readers.
 
 It's also **tiny** and **privacy conscious** with *no external dependencies*.  No JavaScript frameworks, icon packs, or Google fonts.  No ads or trackers polluting your console window.  **We kept things simple**.  A little vanilla JavaScript, a dash of CSS, and the power of Hugo.
 
@@ -327,14 +329,14 @@ I recommend starting by copying/pasting the following code into your config.toml
 baseURL = "/"
 languageCode = "en-us"
 theme = "poison"
-paginate = 10
+pagination.pagerSize = 10
 pluralizelisttitles = false   # removes the automatically appended "s" on sidebar entries
 
 # NOTE: If using Disqus as commenting engine, uncomment and configure this line
 # disqusShortname = "yourDisqusShortname"
 
 [params]
-    brand = "Poison"                      # name of your site - appears in the sidebar
+    brand = "Elixir"                      # name of your site - appears in the sidebar
     # remote_brand_image = 'https://github.com/USERNAME.png' # path to a remote file
     # brand_image = "/images/test.jpg"    # path to the image shown in the sidebar
     description = "Update this description..." # Used as default meta description if not specified in front matter
