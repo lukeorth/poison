@@ -1,8 +1,18 @@
-{{ if .Title }}
-  <figure>
-    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
-    <figcaption>{{ .Title | markdownify }}</figcaption>
-  </figure>
-{{ else }}
-  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
-{{ end }}
+{{/*  Solution sourced from: https://discourse.gohugo.io/t/summary-using-images-from-page-bundles/42187/4  */}}
+
+{{- $u := urls.Parse .Destination -}}
+{{- $src := $u.String -}}
+{{- if not $u.IsAbs -}}
+  {{- with or (.Page.Resources.Get $u.Path) (resources.Get $u.Path) -}}
+    {{- $src = .RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+{{- $attributes := dict "alt" .Text "src" $src "title" .Title -}}
+<img
+  {{- range $k, $v := $attributes -}}
+    {{- if $v -}}
+      {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
+    {{- end -}}
+  {{- end -}}
+>
+{{- /**/ -}}
