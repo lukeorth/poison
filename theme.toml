@@ -1,8 +1,8 @@
 name = "Elixir"
 license = "GPL-3.0 License"
 licenselink = "https://github.com/nunnsy/elixir/blob/master/LICENSE.md"
-description = "A pragmatic Hugo theme for bloggers.  Based on the classic \"Hyde\" design by mdo."
-min_version = "0.101.0"
+description = "A pragmatic Hugo theme for bloggers.  Based on the classic \"Hyde\" design by mdo.  Forked from \"Poison\" by lukeorth"
+min_version = "0.134.2"
 
 # The home page of the theme, where the source can be found.
 homepage = "https://github.com/nunnsy/elixir"
@@ -14,11 +14,11 @@ tags = ["blog", "personal", "dark", "dark-mode", "light", "minimal"]
 features = ["blog", "katex", "table-of-contents", "tabs", "dark-mode", "series"]
 
 [author]
-    name = "Luke Orth"
-    homepage = "https://lukeorth.com"
+    name = "Daniel Nunns"
+    homepage = "https://github.com/nunnsy"
 
 # If Porting existing theme
 [original]
-    author =  "mdo"
-    homepage = "http://markdotto.com/"
-    repo = "https://www.github.com/mdo/hyde"
+    author =  "Luke Orth"
+    homepage = "https://lukeorth.com"
+    repo = "https://github.com/lukeorth/poison"
