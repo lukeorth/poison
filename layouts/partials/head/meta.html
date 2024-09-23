@@ -1,27 +1,20 @@
-{{ .Scratch.Set "title" .Site.Title }}
-
-{{ .Scratch.Set "publisherIcon" .Site.Params.favicon }}
-{{ if .Site.Params.publisherIcon }}
-    {{ .Scratch.Set "publisherIcon" .Site.Params.publisher_icon }}
-{{ end }}
+{{/*  If the user sets a different 'title', use this where appropriate - otherwise fall back on brand  */}}
+{{ .Scratch.Set "title" (default $.Site.Params.brand .Site.Title) }}
 
 {{ if eq .Kind "home" }}
-  {{ .Scratch.Set "title" $.Site.Params.brand }}
   {{ .Scratch.Set "description" .Site.Params.Description }}
 {{ else }}
   {{ .Scratch.Set "description" .Description }}
 {{ end }}
 
-{{ if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") }}
-  {{ .Scratch.Set "title" ($.Site.Params.brand) }}
+{{ if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") (eq .Kind "page") }}
   {{ .Scratch.Add "title" " - " }}
   {{ .Scratch.Add "title" .LinkTitle }}
 {{ end }}
 
-{{ if eq .Kind "page" }}
-  {{ .Scratch.Set "title" ($.Site.Params.brand) }}
-  {{ .Scratch.Add "title" " - " }}
-  {{ .Scratch.Add "title" .LinkTitle }}
+{{ .Scratch.Set "publisherIcon" .Site.Params.favicon }}
+{{ if .Site.Params.publisherIcon }}
+    {{ .Scratch.Set "publisherIcon" .Site.Params.publisher_icon }}
 {{ end }}
 
 {{ "<!-- Open Graph image and Twitter Card metadata -->" | safeHTML }}
