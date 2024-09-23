@@ -12,19 +12,13 @@
   {{ .Scratch.Set "description" .Description }}
 {{ end }}
 
-{{ if .IsSection }}
+{{ if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") }}
   {{ .Scratch.Set "title" ($.Site.Params.brand) }}
   {{ .Scratch.Add "title" " - " }}
   {{ .Scratch.Add "title" .LinkTitle }}
 {{ end }}
 
-<!-- TODO this is debug -->
-{{ .Site.Title | default "not-set" }}
-{{ .Kind }}
-{{ .IsPage }}
-{{ .IsSection }}
-
-{{ if .IsPage }}
+{{ if eq .Kind "page" }}
   {{ .Scratch.Set "title" ($.Site.Params.brand) }}
   {{ .Scratch.Add "title" " - " }}
   {{ .Scratch.Add "title" .LinkTitle }}

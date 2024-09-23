@@ -9,7 +9,6 @@
 TO FIX:
 - [ ] Fix brand/title confusion
 - [ ] TOC issue w/ script / appearing
-- [ ] Kind is buggy
 
 *Elixir* is a **clean**, **professional** Hugo theme designed to **captivate** your readers.
 
