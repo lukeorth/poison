@@ -12,8 +12,7 @@
 </div>
 {{- end }}
 
-{{ define "sidebarx" }}
-<!--- TODO why is this here? not a partial? -->
+{{ define "table_of_contents" }}
 {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
 {{ partial "table_of_contents.html" . }}
 {{ end }}

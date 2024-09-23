@@ -11,6 +11,8 @@
     <main class="content container">
       {{ block "main" . }}{{ end }}
     </main>
+    {{/*  A block is used here so the table_of_contents is only rendered if defined in the respective template  */}}
+    {{ block "table_of_contents" . }}{{ end }}
   </div>
 </body>
 
