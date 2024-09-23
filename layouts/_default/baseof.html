@@ -1,11 +1,17 @@
-{{ partial "head/head.html" . }}
-    <body class="{{if .Site.Params.layoutReverse}}layout-reverse {{end}}{{if .Site.Params.dark_mode}}dark-theme{{end}}">
-        <div class="wrapper">
-            {{ partial "sidebar/sidebar.html" . }}
-            <main class="content container">
-                {{ block "main" . -}}{{- end }}
-            </main>
-            {{ block "sidebar" . }}{{ end }}
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+
+<head>
+  {{ partial "head.html" . }}
+</head>
+
+<body class="{{if .Site.Params.layoutReverse}}layout-reverse {{end}}{{if .Site.Params.dark_mode}}dark-theme{{end}}">
+  <div class="wrapper">
+    {{ partial "sidebar.html" . }}
+    <main class="content container">
+      {{ block "main" . }}{{ end }}
+    </main>
+  </div>
+</body>
+
 </html>

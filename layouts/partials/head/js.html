@@ -1,0 +1,30 @@
+{{ $js := slice
+(resources.Get "js/codeblock.js")
+(resources.Get "js/light_dark.js")
+(resources.Get "js/katex.js")
+(resources.Get "js/tabs.js")
+}}
+
+{{ if not .Site.Params.hideToc }}
+{{ $js = $js | append (resources.Get "js/toc.js") }}
+{{ end }}
+
+{{- if eq hugo.Environment "development" }}
+
+{{ $js_bundle := $js | resources.Concat "js/bundle.js" }}
+<script defer language="javascript" type="text/javascript" src="{{ $js_bundle.RelPermalink }}"></script>
+
+{{- else }}
+
+{{- $opts := dict "minify" true }}
+{{ $js_bundle := $js | resources.Concat "js/bundle.js" | js.Build $opts | fingerprint }}
+<script src="{{ $js_bundle.RelPermalink }}" integrity="{{- $js_bundle.Data.Integrity }}"
+  crossorigin="anonymous"></script>
+
+{{- end }}
+
+
+
+{{ if .Site.Params.plausible }}
+<script defer data-domain="{{ .Site.Params.plausible_domain }}" src="{{ .Site.Params.plausible_script }}"></script>
+{{ end }}

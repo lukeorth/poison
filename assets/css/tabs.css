@@ -5,10 +5,11 @@
 }
 
 @media (min-width: 48em) {
-    /* Style the buttons that are used to open the tabs content */
-    .tabs button {
-        font-family: Menlo, Monaco, "Courier New", monospace;
-        font-size: 0.8em;
+
+  /* Style the buttons that are used to open the tabs content */
+  .tabs button {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    font-size: 0.8em;
     background-color: var(--bkg-color);
     color: var(--text-color);
     float: left;
@@ -22,14 +23,15 @@
     cursor: pointer;
     padding: 0.5em 1em;
     transition: 0.3s;
-    }
+  }
 }
 
 @media (max-width: 48em) {
-    /* Style the buttons that are used to open the tabs content */
-    .tabs button {
-        font-family: Menlo, Monaco, "Courier New", monospace;
-        font-size: 0.8em;
+
+  /* Style the buttons that are used to open the tabs content */
+  .tabs button {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    font-size: 0.8em;
     background-color: var(--bkg-color);
     color: var(--text-color);
     float: left;
@@ -43,7 +45,7 @@
     cursor: pointer;
     padding: 0.7em 1.3em;
     transition: 0.3s;
-    }
+  }
 
 }
 

@@ -18,6 +18,12 @@
   {{ .Scratch.Add "title" .LinkTitle }}
 {{ end }}
 
+<!-- TODO this is debug -->
+{{ .Site.Title | default "not-set" }}
+{{ .Kind }}
+{{ .IsPage }}
+{{ .IsSection }}
+
 {{ if .IsPage }}
   {{ .Scratch.Set "title" ($.Site.Params.brand) }}
   {{ .Scratch.Add "title" " - " }}

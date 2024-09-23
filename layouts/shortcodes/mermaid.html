@@ -1,18 +1,17 @@
 <!-- To automatically render mermaid diagrams -->
 {{ if ne (.Page.Scratch.Get "hasMermaid") true }}
 <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
-    const lsTheme = localStorage.getItem("theme")
-    const hugoTheme = document.body.classList.contains("dark-theme") ? "dark" : null
-    const currTheme = lsTheme ? lsTheme : hugoTheme;
-    const mermaidTheme = currTheme == "light" ? "default" : "dark"
+  const hugoTheme = document.body.classList.contains("dark-theme") ? "dark" : "light"
+  const mermaidTheme = hugoTheme == "light" ? "default" : "dark"
 
-    mermaid.initialize({theme: mermaidTheme});
+  mermaid.initialize({ theme: mermaidTheme });
 </script>
 
 {{ .Page.Scratch.Set "hasMermaid" true }}
 {{ end }}
+
 <div class="mermaid">
   {{- .Inner | safeHTML }}
 </div>
