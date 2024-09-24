@@ -6,12 +6,16 @@
   const hugoTheme = document.body.classList.contains("dark-theme") ? "dark" : "light"
   const mermaidTheme = hugoTheme == "light" ? "default" : "dark"
 
-  mermaid.initialize({ theme: mermaidTheme });
+  const config = {
+    theme: mermaidTheme,
+    startOnLoad: true,
+  };
+
+  mermaid.initialize(config);
 </script>
 
 {{ .Page.Scratch.Set "hasMermaid" true }}
 {{ end }}
-
 <div class="mermaid">
   {{- .Inner | safeHTML }}
 </div>
