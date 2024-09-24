@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-
     // provides an escape for dollar sign chars if KaTeX is not desired
     let posts = document.getElementsByClassName("post");
 

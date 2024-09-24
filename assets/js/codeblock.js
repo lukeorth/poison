@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-
   // Get code blocks
   const codeblocks = document.querySelectorAll("pre code");
 
