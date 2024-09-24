@@ -1,41 +1,63 @@
+{{ $css := slice
+  (resources.Get "css/fonts.css")
+  (resources.Get "css/poole.css")
+  (resources.Get "css/codeblock.css")
+  (resources.Get "css/hyde.css")
+  (resources.Get "css/elixir.css")
+  (resources.Get "css/tabs.css")
+  (resources.Get "css/custom.css")
+  }}
+
+{{- if eq hugo.Environment "development" }}
+
+{{ $css_bundle := $css | resources.Concat "css/bundle.css" }}
+<link rel="stylesheet" href="{{ $css_bundle.RelPermalink }}">
+
+{{- else }}
+
+{{ $css_bundle := $css | resources.Concat "css/bundle.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css_bundle.RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+
+{{- end }}
+
 <style>
-    body {
-        --sidebar-bg-color: {{ with .Site.Params.sidebar_bg_color }}{{ . }}{{ else }}#202020{{ end }};
-        --sidebar-img-border-color: {{ with .Site.Params.sidebar_img_border_color }}{{ . }}{{ else }}#515151{{ end }};
-        --sidebar-p-color: {{ with .Site.Params.sidebar_p_color }}{{ . }}{{ else }}#909090{{ end }};
-        --sidebar-h1-color: {{ with .Site.Params.sidebar_h1_color }}{{ . }}{{ else }}#FFF{{ end }};
-        --sidebar-a-color: {{ with .Site.Params.sidebar_a_color }}{{ . }}{{ else }}#FFF{{ end }};
-        --sidebar-socials-color: {{ with .Site.Params.sidebar_socials_color }}{{ . }}{{ else }}#FFF{{ end }};
-        --text-color: {{ with .Site.Params.text_color }}{{ . }}{{ else }}#222{{ end }};
-        --bkg-color: {{ with .Site.Params.content_bg_color }}{{ . }}{{ else }}#FAF9F6{{ end }};
-        --post-title-color: {{ with .Site.Params.post_title_color }}{{ . }}{{ else }}#303030{{ end }};
-        --list-color: {{ with .Site.Params.list_color }}{{ . }}{{ else }}#5a5a5a{{ end }};
-        --link-color: {{ with .Site.Params.link_color }}{{ . }}{{ else }}#268bd2{{ end }};
-        --date-color: {{ with .Site.Params.date_color }}{{ . }}{{ else }}#515151{{ end }};
-        --table-border-color: {{ with .Site.Params.table_border_color }}{{ . }}{{ else }}#E5E5E5{{ end }};
-        --table-stripe-color: {{ with .Site.Params.table_stripe_color }}{{ . }}{{ else }}#F9F9F9{{ end }};
-        --code-color: {{ with .Site.Params.code_color }}{{ . }}{{ else }}#000{{ end }};
-        --code-background-color: {{ with .Site.Params.code_background_color }}{{ . }}{{ else }}#E5E5E5{{ end }};
-        --code-block-color: {{ with .Site.Params.code_block_color }}{{ . }}{{ else }}#fff{{ end }};
-        --code-block-background-color: {{ with .Site.Params.code_block_background_color }}{{ . }}{{ else }}#272822{{ end }};
-        --moon-sun-color: {{ with .Site.Params.moon_sun_color }}{{ . }}{{ else }}#FFF{{ end }};
-        --moon-sun-background-color: {{ with .Site.Params.moon_sun_background_color }}{{ . }}{{ else }}#515151{{ end }};
-    }
-    body.dark-theme {
-        --text-color: {{ with .Site.Params.text_color_dark }}{{ . }}{{ else }}#eee{{ end }};
-        --bkg-color: {{ with .Site.Params.content_bg_color_dark }}{{ . }}{{ else }}#121212{{ end }};
-        --post-title-color: {{ with .Site.Params.post_title_color_dark }}{{ . }}{{ else }}#DBE2E9{{ end }};
-        --list-color: {{ with .Site.Params.list_color_dark }}{{ . }}{{ else }}#9d9d9d{{ end }};
-        --link-color: {{ with .Site.Params.link_color_dark }}{{ . }}{{ else }}#268bd2{{ end }};
-        --date-color: {{ with .Site.Params.date_color_dark }}{{ . }}{{ else }}#9a9a9a{{ end }};
-        --table-border-color: {{ with .Site.Params.table_border_color_dark }}{{ . }}{{ else }}#515151{{ end }};
-        --table-stripe-color: {{ with .Site.Params.table_stripe_color_dark }}{{ . }}{{ else }}#202020{{ end }};
-        --code-color: {{ with .Site.Params.code_color_dark }}{{ . }}{{ else }}#fff{{ end }};
-        --code-background-color: {{ with .Site.Params.code_background_color_dark }}{{ . }}{{ else }}#515151{{ end }};
-        --code-block-color: {{ with .Site.Params.code_block_color_dark }}{{ . }}{{ else }}#fff{{ end }};
-        --code-block-background-color: {{ with .Site.Params.code_block_background_color_dark }}{{ . }}{{ else }}#272822{{ end }};
-    }
-    body {
-        background-color: var(--bkg-color);
-    }
+  body {
+      --sidebar-bg-color: {{ with .Site.Params.sidebar_bg_color }}{{ . }}{{ else }}#202020{{ end }};
+      --sidebar-img-border-color: {{ with .Site.Params.sidebar_img_border_color }}{{ . }}{{ else }}#515151{{ end }};
+      --sidebar-p-color: {{ with .Site.Params.sidebar_p_color }}{{ . }}{{ else }}#909090{{ end }};
+      --sidebar-h1-color: {{ with .Site.Params.sidebar_h1_color }}{{ . }}{{ else }}#FEFBF6{{ end }};
+      --sidebar-a-color: {{ with .Site.Params.sidebar_a_color }}{{ . }}{{ else }}#FEFBF6{{ end }};
+      --sidebar-socials-color: {{ with .Site.Params.sidebar_socials_color }}{{ . }}{{ else }}#FEFBF6{{ end }};
+      --text-color: {{ with .Site.Params.text_color }}{{ . }}{{ else }}#242424{{ end }};
+      --bkg-color: {{ with .Site.Params.content_bg_color }}{{ . }}{{ else }}#FAF9F6{{ end }};
+      --post-title-color: {{ with .Site.Params.post_title_color }}{{ . }}{{ else }}#303030{{ end }};
+      --list-color: {{ with .Site.Params.list_color }}{{ . }}{{ else }}#5A5A5A{{ end }};
+      --link-color: {{ with .Site.Params.link_color }}{{ . }}{{ else }}#268BD2{{ end }};
+      --date-color: {{ with .Site.Params.date_color }}{{ . }}{{ else }}#515151{{ end }};
+      --table-border-color: {{ with .Site.Params.table_border_color }}{{ . }}{{ else }}#E5E5E5{{ end }};
+      --table-stripe-color: {{ with .Site.Params.table_stripe_color }}{{ . }}{{ else }}#F9F9F9{{ end }};
+      --code-color: {{ with .Site.Params.code_color }}{{ . }}{{ else }}#242424{{ end }};
+      --code-background-color: {{ with .Site.Params.code_background_color }}{{ . }}{{ else }}#E5E5E5{{ end }};
+      --code-block-color: {{ with .Site.Params.code_block_color }}{{ . }}{{ else }}#FEFBF6{{ end }};
+      --code-block-background-color: {{ with .Site.Params.code_block_background_color }}{{ . }}{{ else }}#272822{{ end }};
+      --moon-sun-color: {{ with .Site.Params.moon_sun_color }}{{ . }}{{ else }}#FEFBF6{{ end }};
+      --moon-sun-background-color: {{ with .Site.Params.moon_sun_background_color }}{{ . }}{{ else }}#515151{{ end }};
+  }
+  body.dark-theme {
+      --text-color: {{ with .Site.Params.text_color_dark }}{{ . }}{{ else }}#EEEEEE{{ end }};
+      --bkg-color: {{ with .Site.Params.content_bg_color_dark }}{{ . }}{{ else }}#242424{{ end }};
+      --post-title-color: {{ with .Site.Params.post_title_color_dark }}{{ . }}{{ else }}#DBE2E9{{ end }};
+      --list-color: {{ with .Site.Params.list_color_dark }}{{ . }}{{ else }}#9A9A9A{{ end }};
+      --link-color: {{ with .Site.Params.link_color_dark }}{{ . }}{{ else }}#268BD2{{ end }};
+      --date-color: {{ with .Site.Params.date_color_dark }}{{ . }}{{ else }}#9A9A9A{{ end }};
+      --table-border-color: {{ with .Site.Params.table_border_color_dark }}{{ . }}{{ else }}#515151{{ end }};
+      --table-stripe-color: {{ with .Site.Params.table_stripe_color_dark }}{{ . }}{{ else }}#202020{{ end }};
+      --code-color: {{ with .Site.Params.code_color_dark }}{{ . }}{{ else }}#FEFBF6{{ end }};
+      --code-background-color: {{ with .Site.Params.code_background_color_dark }}{{ . }}{{ else }}#515151{{ end }};
+      --code-block-color: {{ with .Site.Params.code_block_color_dark }}{{ . }}{{ else }}#FEFBF6{{ end }};
+      --code-block-background-color: {{ with .Site.Params.code_block_background_color_dark }}{{ . }}{{ else }}#272822{{ end }};
+  }
+  body {
+      background-color: var(--bkg-color);
+  }
 </style>

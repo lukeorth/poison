@@ -1,25 +1,16 @@
-# Elixir (fork of [Poison](https://github.com/lukeorth/poison))
+# Elixir (fork of [Elixir](https://github.com/lukeorth/elixir)) - [Demo](https://nunnsy.github.io/elixir-example)
 
-*This fork is a WIP and a slight customisation layer over the original. It also attempts to keep more up-to-date to remove deprecation warnings*
-
-![Poison screenshot](https://raw.githubusercontent.com/lukeorth/poison/master/images/screenshot.png)
-
-### DEMO - https://poison.lukeorth.com/
+> [!NOTE]
+> This fork attempts to simplify components by leveraging CDNs, given my personal usecase required features which imported external dependencies anyway. I've also attempted to remove warnings from Hugo and JavaScript.
 
 *Elixir* is a **clean**, **professional** Hugo theme designed to **captivate** your readers.
-
-It's also **tiny** and **privacy conscious** with *no external dependencies*.  No JavaScript frameworks, icon packs, or Google fonts.  No ads or trackers polluting your console window.  **We kept things simple**.  A little vanilla JavaScript, a dash of CSS, and the power of Hugo.
-
-All the static assets for the site (JS files, CSS, and fonts) are located within the theme's */assets/* directory.  **That way you know *exactly* what's going onto your site**.
-
-Check out our demo site's [analytics](https://plausible.lukeorth.com/poison.lukeorth.com) to gauge community interest in the theme.
 
 ---
 
 ## Contents
 
-- [Poison](#poison)
-    - [DEMO - https://poison.lukeorth.com/](#demo---httpspoisonlukeorthcom)
+- [Elixir](#elixir)
+    - [DEMO - https://elixir.lukeorth.com/](#demo---httpselixirlukeorthcom)
   - [Contents](#contents)
   - [Features](#features)
     - [Light and dark mode](#light-and-dark-mode)
@@ -31,7 +22,6 @@ Check out our demo site's [analytics](https://plausible.lukeorth.com/poison.luke
     - [KaTeX](#katex)
     - [Tabs](#tabs)
     - [Mermaid diagrams](#mermaid-diagrams)
-    - [PlantUML diagrams](#plantuml-diagrams)
     - [Details](#details)
   - [Installation](#installation)
   - [How to Configure](#how-to-configure)
@@ -46,19 +36,15 @@ Check out our demo site's [analytics](https://plausible.lukeorth.com/poison.luke
 
 ## Features
 
-In addition to the standard Built-in templates and shortcodes that come with Hugo, *Poison* offers some unique features of its own.
+In addition to the standard Built-in templates and shortcodes that come with Hugo, *Elixir* offers some unique features of its own.
 
 ### Light and dark mode
-Give readers the choice to read in light or dark mode.  The user's preference is stored in local storage.  Light mode is the default for first time visitors, but you can change this in your config file.
-<p float="left">
-  <img src="https://user-images.githubusercontent.com/35306887/210615342-ab3e0b88-fbd2-405a-bad1-2fa8b21982be.png" width="700" />
-  <img src="https://user-images.githubusercontent.com/35306887/210615432-7484c310-0b0d-46eb-b491-4b50c2e8a2aa.png" width="700" />
-</p>
+Give readers the choice to read in light or dark mode. The user's preference is stored in local storage. Light mode is the default for first time visitors, but you can change this in your config (`hugo.toml`) file.
 
 ### Table of contents
 Provide a floating table of contents for readers with large enough screens (i.e. *screen-width > 1600 pixels*).
 
-If you prefer not to display a table of contents, you can disable them site-wide in your ```config.toml``` file.
+If you prefer not to display a table of contents, you can disable them site-wide in your config file.
 
 ```toml
 [params]
@@ -79,26 +65,24 @@ tags: ["Hugo"]
 
 ### Comments
 
-Facilitate discourse by allowing users to comment on your posts.  *Poison* currently supports two different commenting engines for this purpose -- [Disqus](https://disqus.com/) and [Remark42](https://remark42.com/).
-
-**Note**: *Enabling comments will add external dependencies.*
+Facilitate discourse by allowing users to comment on your posts. *Elixir* currently supports two different commenting engines for this purpose -- [Disqus](https://disqus.com/) and [Remark42](https://remark42.com/).
 
 - [Disqus Demo Site](https://about.disqus.com/disqus-demo-page) 
 - [Remark42 Demo Site](https://remark42.com/demo/)
 
-***Disqus*** is free and easy to use.  Checkout the [Hugo docs](https://gohugo.io/content-management/comments/) to get started.  Once you've created a *Disqus* account, you can activate it in the *Poison* theme by adding a single line to your `config.toml` file.
+***Disqus*** is free and easy to use. Checkout the [Hugo docs](https://gohugo.io/content-management/comments/) to get started. Once you've created a *Disqus* account, you can activate it in the *Elixir* theme by adding a single line to your config file.
 
-```
+```toml
 disqusShortname = 'yourDisqusShortname'
 ```
 
-This is a great option for people that don't want to bother with self-hosting their own commenting engine; however, it has some drawbacks.  Because *Disqus* provides this service for free, they recoup any financial loss by injecting third-party ad trackers onto your website.  These trackers help to collect and sell information about your users, while also negatively affecting your site's speed.
+This is a great option for people that don't want to bother with self-hosting their own commenting engine; however, it has some drawbacks. Because *Disqus* provides this service for free, they recoup any financial loss by injecting third-party ad trackers onto your website. These trackers help to collect and sell information about your users, while also negatively affecting your site's speed.
 
-Even still, *Disqus* may be the best solution depending on your situation.  The above paragraph is only meant to highlight its trade-offs and not meant to discourage its use entirely.
+Even still, *Disqus* may be the best solution depending on your situation. The above paragraph is only meant to highlight its trade-offs and not meant to discourage its use entirely.
 
-***Remark42*** is a lightweight, open source commenting engine that doesn't spy on your users.  The downside is that you must host it yourself.  Checkout the *Remark42* [documentation](https://remark42.com/) to get started.  I also found [this blog post](https://www.devbitsandbytes.com/setting-up-remark42-from-scratch/) helpful when setting it up on [my site](https://lukeorth.com).
+***Remark42*** is a lightweight, open source commenting engine that doesn't spy on your users. The downside is that you must host it yourself. Checkout the *Remark42* [documentation](https://remark42.com/) to get started. [This blog post](https://www.devbitsandbytes.com/setting-up-remark42-from-scratch/) has known to be helpful when setting it up on personal sites.
 
-Once everything is set up, you can activate it in the *Poison* theme by including the following in the `[params]` section of your `config.toml` file.
+Once everything is set up, you can activate it in the *Elixir* theme by including the following in the `[params]` section of your config file.
 
 ```toml
 [params]
@@ -109,13 +93,9 @@ Once everything is set up, you can activate it in the *Poison* theme by includin
 
 ### Analytics
 
-Gain insights on your users.  Poison currently supports [Plausible](https://plausible.io) which is available via a paid service or by [self-hosting](https://github.com/plausible/analytics).  Take a look at the Poison demo site's 
+Gain insights on your users. Elixir currently supports [Plausible](https://plausible.io) which is available via a paid service or by [self-hosting](https://github.com/plausible/analytics).
 
-**Note**: *Enabling analytics will add external dependencies.*
-
-**Check out our demo site's Plausible analytics [here](https://plausible.lukeorth.com/poison.lukeorth.com)!**
-
-Once you've established your Plausible instance, you can activate it by adding three lines to your ```config.toml``` file.
+Once you've established your Plausible instance, you can activate it by adding three lines to your config file.
 
 ```toml
 [params]
@@ -124,21 +104,19 @@ Once you've established your Plausible instance, you can activate it by adding t
     plausible_script = "https://plausible.myblog.com/js/script.js"
 ```
 
-This will insert the necessary code in the ```<head>``` on each page and will allow your Plausible instance to collect a limited set of data on your users.
+This will insert the necessary code in the `<head>` on each page and will allow your Plausible instance to collect a limited set of data on your users.
 
-For reference, the configuration above would add the following code to each page.  Adjust according to your specific environment.
+For reference, the configuration above would add the following code to each page. Adjust according to your specific environment.
 
-```<script defer data-domain="myblog.com" src="https://plausible.myblog.com/js/script.js"></script>```
+```html
+<script defer data-domain="myblog.com" src="https://plausible.myblog.com/js/script.js"></script>
+```
 
-### Email newsletters
+### Email Newsletters
 
-Allow users to subscribe to your blog newsletters via email. 
-Poison currently supports [Listmonk](https://listmonk.app/) which is available via [self-hosting](https://github.com/knadh/listmonk).
-Listmonk is a standalone, self-hosted, newsletter and mailing list manager.
-The downside is that you must host it yourself. 
-Checkout the Listmonk [documentation](https://listmonk.app/docs/) to get started.
+Allow users to subscribe to your blog newsletters via email. Elixir currently supports [Listmonk](https://listmonk.app/) which is available via [self-hosting](https://github.com/knadh/listmonk). Listmonk is a standalone, self-hosted, newsletter and mailing list manager. The downside is that you must host it yourself. Checkout the Listmonk [documentation](https://listmonk.app/docs/) to get started.
 
-Once you've established your Listmonk instance, activate it by adding these lines to your ```config.toml``` file.
+Once you've established your Listmonk instance, activate it by adding these lines to your config file.
 
 ```toml
 [params]
@@ -150,7 +128,7 @@ Once you've established your Listmonk instance, activate it by adding these line
     listmonk_subscription_error_message = "Something went wrong"          # default: Sorry, something went wrong. Please, try again
 ```
 
-This will insert a form at the bottom of each post's content. 
+This will insert a form at the bottom of each post's content.
 The user will be subscribed to the newsletter specified in the ``listmonk_subscription_list_uiid`` parameter.
 
 ### Series
@@ -163,7 +141,7 @@ This is done with a custom taxonomy, so just add `series` to the frontmatter on 
 title: "Example to demonstrate how to use series"
 date: 2022-10-04
 draft: false
-series: "How to use poison"
+series: "How to use elixir"
 tags: ["Hugo"]
 ---
 ```
@@ -172,23 +150,15 @@ tags: ["Hugo"]
 Make your mathematical notations pop.
 
 For notations that should appear on their own line, use the block quotes `$$ ... $$`
-    
+
 $$ 5 \times 5 = 25 $$
 
 For notations that should appear on the same line, use the inline quotes `$ ... $`
 
-**Note**: *Enabling KaTeX will add external dependencies.*
-    
 ### Tabs
-Some content is just better viewed in tabs.  Luckily we have a shortcode for that.
-<p float="left">
-  <img src="https://user-images.githubusercontent.com/35306887/210614932-5b2e53e7-8f8e-436a-b3c6-905f33018688.png" width="700" />
-  <img src="https://user-images.githubusercontent.com/35306887/210615011-b9d4e670-1713-43fe-b285-a33ca285df73.png" width="700" />
-</p>
+Some content is just better viewed in tabs. Luckily we have a shortcode for that.
 
-Here's the code for the tabs shown above...
-
-```
+```markdown
 {{</* tabs tabTotal="2" */>}}
 
 {{%/* tab tabName="First Tab" */%}}
@@ -203,32 +173,17 @@ This is a code block.
 
 {{</* /tabs */>}}
 ```
+
+<!-- TODO: Add example from website -->
  
 ### Mermaid diagrams
-You can embed rendered Mermaid diagrams.  
+You can embed rendered Mermaid diagrams.
 
-**Note**: *Enabling Mermaid diagrams will add external dependencies.*
-
-![image](https://github.com/lukeorth/poison/assets/35306887/e21041c3-528e-4941-88ba-310742d99c91)
-
-For an example of how to do this, please visit the [Poison demo site](https://poison.lukeorth.com/posts/introducing-poison/#mermaid-diagrams).
-
-### PlantUML diagrams
-You can embed rendered PlantUML diagrams.  
-
-**Note**: *Enabling PlantUML diagrams will add external dependencies.*
-
-![image](https://github.com/lukeorth/poison/assets/35306887/8093ff68-28e4-43c8-8f21-67a3d5615af4)
-
-For an example of how to do this, please visit the [Poison demo site](https://poison.lukeorth.com/posts/introducing-poison/#plantuml-diagrams);
+<!-- TODO: Add example from website -->
 
 ### Details
 
 There's a shortcode for encoding detail dropdowns into your pages.
-
-![image](https://github.com/user-attachments/assets/ce2390c1-e4f0-4f70-a65d-7a319f14a859)
-
-Here's the code for the detail dropdown above:
 
 ```
 {{</* details summary="A detail dropdown" */>}}
@@ -238,22 +193,28 @@ Markdown content
 
 ## Installation
 
-First, clone this repository into your `themes` directory:
+First, if your website has its own git repository, then clone this via submodule:
 
 ```sh
-git clone https://github.com/lukeorth/poison.git themes/poison --depth=1
+git submodule add https://github.com/nunnsy/elixir.git themes/elixir --depth=1
 ```
 
-Next, specify `poison` as the default theme in your config.toml file by adding the following line:
+Otherwise, clone it normally:
+
+```sh
+git clone https://github.com/nunnsy/elixir.git themes/elixir --depth=1
+```
+
+Next, specify `elixir` as the default theme in your hugo.toml file by adding the following line:
 
 ```toml
-theme = "poison"
+theme = "elixir"
 ```
 
 Lastly, if there are any future updates to this repository that you wish to include in your local copy, these can be retrieved by running:
 
 ```sh
-cd themes/poison
+cd themes/elixir
 
 git pull
 ```
@@ -262,21 +223,21 @@ For more information on how to get started with Hugo and themes, read the offici
 
 ## How to Configure
 
-After successfully installing *Poison*, the last step is to configure it.
+After successfully installing *Elixir*, the last step is to configure it.
 
 ### The sidebar menu
 
-Any items you want displayed in your sidebar menu *must* satisfy two requirements.  They must:
+Any items you want displayed in your sidebar menu *must* satisfy two requirements. They must:
 
 1. Have a corresponding markdown file in your */content/* directory.
-2. Be declared in your *config.toml* file (example below).
+2. Be declared in your *hugo.toml* file (example below).
 
 There are two types of menu items:
 
-1. **Single Page** -- The *About* menu item (to the left) is a good example of this.  It displays a direct link to an individual page. For arbitrary single pages, the page content must be located at `content/<foo>/_index.md` and the front matter of `_index.md` must contain `layout: single`.
-2. **List** -- The *Posts* menu item is a good example of this.  It displays a directory and dynamically lists the contents (i.e. pages) contained by date.  List items have two optional configurations: a subheading (like the *Recent* subheading that appears on the menu to the left), and a maximum number of items to display.
+1. **Single Page** -- The *About* menu item (to the left) is a good example of this. It displays a direct link to an individual page. For arbitrary single pages, the page content must be located at `content/<foo>/_index.md` and the front matter of `_index.md` must contain `layout: single`.
+2. **List** -- The *Posts* menu item is a good example of this. It displays a directory and dynamically lists the contents (i.e. pages) contained by date. List items have two optional configurations: a subheading (like the *Recent* subheading that appears on the menu to the left), and a maximum number of items to display.
 
-The sidebar menu items are configured with a dictionary value in your *config.toml* file.  I've included an example below.  Additionally, there is a placeholder for this in the *config.toml* file shown in the next section.
+The sidebar menu items are configured with a dictionary value in your *hugo.toml* file. I've included an example below. Additionally, there is a placeholder for this in the *hugo.toml* file shown in the next section.
 
 **Important**: You *must* have a markdown file present at the path specified in order for your menu item to be displayed.
 
@@ -285,7 +246,7 @@ menu = [
         # Dict keys:
             # Name:         The name to display on the menu.
             # URL:          The directory relative to the content directory.
-            # HasChildren:  If the directory's files should be listed.  Default is true.
+            # HasChildren:  If the directory's files should be listed. Default is true.
             # Limit:        If the files should be listed, how many should be shown.
 
         # SINGLE PAGE
@@ -304,7 +265,7 @@ menu = [
         # and will display up to 5 items.
 
         # Example:
-        # ... /content/posts/introducing-poison.md
+        # ... /content/posts/introducing-elixir.md
         {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
 
         # Example of a list without a subheading or limit.
@@ -313,7 +274,7 @@ menu = [
 ```
 
 ### The front page
-When visiting the base url for the site, i.e. `your.domain.com/`, a paginated feed of your recently added content is displayed in reverse chronological order. By default, only content in the "posts" [page bundle](https://gohugo.io/content-management/page-bundles/) is displayed. You can configure a list of page bundle names to be included on this page by adding the `front_page_content` parameter to your config.toml file.
+When visiting the base url for the site, i.e. `your.domain.com/`, a paginated feed of your recently added content is displayed in reverse chronological order. By default, only content in the "posts" [page bundle](https://gohugo.io/content-management/page-bundles/) is displayed. You can configure a list of page bundle names to be included on this page by adding the `front_page_content` parameter to your `hugo.toml` file.
 
 ```toml
 [params]
@@ -321,14 +282,14 @@ When visiting the base url for the site, i.e. `your.domain.com/`, a paginated fe
 ```
 
 ### Example config
-I recommend starting by copying/pasting the following code into your config.toml file.  Once you see how it looks, play with the settings as needed.
+I recommend starting by copying/pasting the following code into your hugo.toml file. Once you see how it looks, play with the settings as needed.
 
-**NOTE**: To display an image in your sidebar, you'll need to uncomment the `remote_brand_image` and set a image URL or the `brand_image` path below and have it point to an image file in your project.  The path is relative to the `static` directory.  If you don't have an image, just leave both lines commented out.
+**NOTE**: To display an image in your sidebar, you'll need to uncomment the `remote_brand_image` and set a image URL or the `brand_image` path below and have it point to an image file in your project. The path is relative to the `static` directory. If you don't have an image, just leave both lines commented out.
 
 ```toml
 baseURL = "/"
-languageCode = "en-us"
-theme = "poison"
+languageCode = "en-gb"
+theme = "elixir"
 pagination.pagerSize = 10
 pluralizelisttitles = false   # removes the automatically appended "s" on sidebar entries
 
@@ -349,14 +310,14 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     # Menu dict keys:
         # Name:         The name to display on the menu.
         # URL:          The directory relative to the content directory.
-        # HasChildren:  If the directory's files should be listed.  Default is true.
+        # HasChildren:  If the directory's files should be listed. Default is true.
         # Limit:        If the files should be listed, how many should be shown.
     menu = [
         {Name = "About", URL = "/about/", HasChildren = false},
         {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
     ]
 
-    # Links to your socials.  Comment or delete any you don't need/use. 
+    # Links to your socials. Comment or delete any you don't need/use.
     discord_url = "https://discord.com"
     email_url = "mailto://user@domain"
     facebook_url = "https://facebook.com"
@@ -439,9 +400,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
 
 ### Custom CSS
 
-You can override any setting in Poison's static CSS files by adding your own
-`/assets/css/custom.css` file. For example, if you want to override the title font and
-font size, you could add this:
+You can override any setting in Elixir's static CSS files by adding your own `/assets/css/custom.css` file. For example, if you want to override the title font and font size, you could add this:
 
 ```css
 .sidebar-about h1 {
@@ -452,7 +411,7 @@ font size, you could add this:
 
 ## Suggestions / Contributions
 
-Please feel free to add suggestions for new features by opening a new issue in [GitHub](https://github.com/lukeorth/poison).
+Please feel free to add suggestions for new features by opening a new issue in [GitHub](https://github.com/nunnsy/elixir).
 
 A big shout out and *thank you* to these top contributors:
 
@@ -471,6 +430,10 @@ A big shout out and *thank you* to these top contributors:
 **Luke Orth**
 - <https://github.com/lukeorth>
 
+## Forked By
+**Daniel Nunns**
+- <https://github.com/nunnsy>
+
 ## License
 
-Open sourced under the [GNU General Public License v3.0](LICENSE.md).
+Open sourced under the [GNU General Public License v3.0](LICENSE).

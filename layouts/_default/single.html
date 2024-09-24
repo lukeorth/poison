@@ -3,16 +3,17 @@
   {{ partial "post/info.html" . }}
   {{ .Content }}
   {{ if (.Site.Params.listmonk) }}
-    {{ partial "post/listmonk_email_newsletters.html" . }}
+  {{ partial "post/listmonk_email_newsletters.html" . }}
   {{ end }}
   {{ partial "post/navigation.html" . }}
   {{ if or (.Site.Params.remark42) (.Site.Config.Services.Disqus.Shortname) }}
-    {{ partial "post/comments.html" . }}
+  {{ partial "post/comments.html" . }}
   {{ end }}
 </div>
 {{- end }}
-{{ define "sidebar" }}
-  {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
-    {{ partial "table_of_contents.html" . }}
-  {{ end }}
+
+{{ define "table_of_contents" }}
+{{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
+{{ partial "table_of_contents.html" . }}
+{{ end }}
 {{ end }}

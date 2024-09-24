@@ -2,9 +2,7 @@
     {{ if .Site.Params.remark42 }}
         <div id="remark42"></div>
         <script>
-            themeFromLS = localStorage.getItem("theme")
-            themeFromHugo = document.body.classList.contains("dark-theme") ? "dark" : "light"
-            currentTheme = themeFromLS ? themeFromLS : themeFromHugo;
+            currentTheme = document.body.classList.contains("dark-theme") ? "dark" : "light";
 
             var remark_config = {
                 host: {{ site.Params.remark42_host }},

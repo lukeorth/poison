@@ -1,24 +1,26 @@
-name = "Elixir"
-license = "GPL-3.0 License"
-licenselink = "https://github.com/nunnsy/elixir/blob/master/LICENSE.md"
-description = "A pragmatic Hugo theme for bloggers.  Based on the classic \"Hyde\" design by mdo.  Forked from \"Poison\" by lukeorth"
-min_version = "0.134.2"
+name = 'Elixir'
+license = 'GPL-3.0 License'
+licenselink = 'hhttps://github.com/nunnsy/elixir/LICENSE'
+description = 'A pragmatic Hugo theme for bloggers.  Based on the classic "Hyde" design by mdo.  Forked from "Poison" by lukeorth'
+min_version = '0.134.2'
 
-# The home page of the theme, where the source can be found.
-homepage = "https://github.com/nunnsy/elixir"
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/nunnsy/elixir'
 
-# If you have a running demo of the theme.
-demosite = "https://poison.lukeorth.com"
+# If you have a running demo of the theme
+demosite = 'https://nunnsy.github.io/elixir-example/'
 
-tags = ["blog", "personal", "dark", "dark-mode", "light", "minimal"]
-features = ["blog", "katex", "table-of-contents", "tabs", "dark-mode", "series"]
+# Taxonomy terms
+tags = ['blog', 'personal', 'dark', 'dark-mode', 'light', 'minimal']
+features = ['blog', 'katex', 'table-of-contents', 'tabs', 'dark-mode', 'series']
 
+# If the theme has a single author
 [author]
-    name = "Daniel Nunns"
-    homepage = "https://github.com/nunnsy"
+  name = 'Daniel Nunns'
+  homepage = 'https://github.com/nunnsy'
 
-# If Porting existing theme
+# If porting an existing theme
 [original]
-    author =  "Luke Orth"
-    homepage = "https://lukeorth.com"
-    repo = "https://github.com/lukeorth/poison"
+  author = 'Luke Orth'
+  homepage = 'https://lukeorth.com'
+  repo = 'https://github.com/lukeorth/poison'
