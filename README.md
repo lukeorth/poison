@@ -373,6 +373,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     youtube_url = "https://youtube.com"
     signal_url = "https://signal.org"
     bluesky_url = "https://bsky.app"
+    kofi_url = "https://ko-fi.com"
 
     # NOTE: If you don't want to use RSS, comment or delete the following lines
     # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
