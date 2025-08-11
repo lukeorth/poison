@@ -12,10 +12,10 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
 
 [params]
     brand = "Graham Taggart"                      # name of your site - appears in the sidebar
-    # brand_image = "enso.png"    # path to the image shown in the sidebar
+    brand_image = "enso.png"    # path to the image shown in the sidebar
     description = "Books, software, productivity." # Used as default meta description if not specified in front matter
     dark_mode = true                      # optional - defaults to false
-    # favicon = "enso.png"             # path to favicon (defaults to favicon.png)
+    favicon = "images/enso.png"             # path to favicon (defaults to favicon.png)
 
     front_page_content = ["posts", "readings"]
     # MENU PLACEHOLDER
