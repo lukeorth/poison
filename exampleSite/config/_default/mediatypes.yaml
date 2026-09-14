@@ -1,0 +1,4 @@
+# atom.xml feautre: https://gist.github.com/lpar/7ded35d8f52fef7490a5be92e6cd6937
+"application/atom+xml":
+  suffixes:
+    - xml

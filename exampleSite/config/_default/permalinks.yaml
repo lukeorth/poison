@@ -1,0 +1,4 @@
+page:
+  blog: /blog/:year/:month/:title/
+section:
+  blog: /blog/

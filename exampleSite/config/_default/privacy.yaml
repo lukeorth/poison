@@ -1,0 +1,22 @@
+disqus:
+  disable: true
+googleAnalytics:
+  anonymizeIP: true
+  disable: true
+  respectDoNotTrack: true
+  useSessionStorage: true
+instagram:
+  disable: true
+  simple: true
+  disableInlineCSS: true
+vimeo:
+  disable: true
+  simple: true
+x:
+  disable: true
+  enableDNT: true
+  simple: true
+  disableInlineCSS: true
+youtube:
+  disable: true
+  privacyEnhanced: true

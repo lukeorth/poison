@@ -1,0 +1,21 @@
+home:
+  - html
+  - rss
+  - atom
+# page:
+#   - html
+rss:
+  - rss
+  - atom
+section:
+  - html
+  - rss
+  - atom
+taxonomy:
+  - html
+  - rss
+  - atom
+term:
+  - html
+  - rss
+  - atom

@@ -1,0 +1,33 @@
+baseURL: /
+title: Sequr
+
+defaultContentLanguage: en
+locale: en-US
+timeZone: Europe/Brussels
+theme: "github.com/TheGroundZero/poison"
+pluralizelisttitles: false
+
+archetypeDir: archetypes
+contentDir: content
+dataDir: data
+layoutDir: layouts
+assetDir: assets
+publishDir: public
+
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+enableRobotsTXT: false # use static robots.txt instead of template
+enableGitInfo: true
+enableEmoji: true
+enableMissingTranslationPlaceholders: false
+disableHugoGeneratorInject: true
+
+pagination:
+  pagerSize: 10
+
+module:
+  hugoVersion:
+    extended: false
+    min: 0.146.0
