@@ -1,0 +1,11 @@
+rss:
+  baseName: "rss"
+  mediatype: "application/rss+xml"
+  noUgly: true
+  rel: alternate
+# atom.xml feautre: https://gist.github.com/lpar/7ded35d8f52fef7490a5be92e6cd6937
+atom:
+  baseName: "atom"
+  mediaType: "application/atom+xml"
+  noUgly: true
+  rel: alternate

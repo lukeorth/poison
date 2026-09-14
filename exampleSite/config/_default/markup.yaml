@@ -1,0 +1,41 @@
+---
+# https://gohugo.io/getting-started/configuration-markup
+#
+defaultMarkdownHandler: goldmark
+goldmark:
+  extensions:
+    definitionList: true
+    footnote: true
+    linkify: true
+    linkifyProtocol: https
+    strikethrough: true
+    table: true
+    taskList: true
+    typographer: true
+  parser:
+    attribute:
+      block: false
+      title: true
+    autoHeadingID: true
+    autoHeadingIDType: github
+  renderer:
+    hardWraps: false
+    unsafe: false
+    xhtml: false
+  renderHooks:
+    link:
+      useEmbedded: auto
+blackfriday:
+  angledQuotes: true
+  hrefTargetBlank: true
+  noreferrerLinks: true
+highlight:
+  codeFences: true
+  guessSyntax: false
+  lineNos: false
+  style: monokai
+  tabWidth: 2
+tableOfContents:
+  startLevel: 2
+  endLevel: 4
+  ordered: false

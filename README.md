@@ -1,13 +1,8 @@
 > [!CAUTION]
 > This is a fork of https://github.com/lukeorth/poison with personal modifications
 > These modifications are purely to fit my needs and may not be backwards compatible with upstream
-> The README below has not been updated since the fork
 
 # Poison
-
-![Poison screenshot](https://raw.githubusercontent.com/lukeorth/poison/master/images/screenshot.png)
-
-### DEMO - https://poison.lukeorth.com/
 
 *Poison* is a **clean**, **professional** Hugo theme designed to **captivate** your readers.
 
@@ -15,21 +10,20 @@ It's also **tiny** and **privacy conscious** with *no external dependencies*.  N
 
 All the static assets for the site (JS files, CSS, and fonts) are located within the theme's */assets/* directory.  **That way you know *exactly* what's going onto your site**.
 
-Check out our demo site's [analytics](https://plausible.lukeorth.com/poison.lukeorth.com) to gauge community interest in the theme.
+## DEMO
+
+See `exampleSite`.
 
 ---
 
 ## Contents
 
 - [Poison](#poison)
-    - [DEMO - https://poison.lukeorth.com/](#demo---httpspoisonlukeorthcom)
+  - [DEMO](#demo)
   - [Contents](#contents)
   - [Features](#features)
     - [Light and dark mode](#light-and-dark-mode)
     - [Table of contents](#table-of-contents)
-    - [Comments](#comments)
-    - [Analytics](#analytics)
-    - [Email newsletters](#email-newsletters)
     - [Series](#series)
     - [KaTeX](#katex)
     - [Tabs](#tabs)
@@ -43,8 +37,6 @@ Check out our demo site's [analytics](https://plausible.lukeorth.com/poison.luke
     - [Example config](#example-config)
     - [Custom CSS](#custom-css)
   - [Suggestions / Contributions](#suggestions--contributions)
-  - [Author](#author)
-  - [Ported By](#ported-by)
   - [License](#license)
 
 ## Features
@@ -53,12 +45,7 @@ In addition to the standard Built-in templates and shortcodes that come with Hug
 
 ### Light and dark mode
 
-Give readers the choice to read in light or dark mode.  The user's preference is stored in local storage.  Light mode is the default for first time visitors, but you can change this in your config file.
-
-<p float="left">
-  <img src="https://user-images.githubusercontent.com/35306887/210615342-ab3e0b88-fbd2-405a-bad1-2fa8b21982be.png" width="700" />
-  <img src="https://user-images.githubusercontent.com/35306887/210615432-7484c310-0b0d-46eb-b491-4b50c2e8a2aa.png" width="700" />
-</p>
+Give readers the choice to read in light or dark mode.  The user's preference is stored in local storage.  Dark mode is the default for first time visitors, but you can change this in your config file.
 
 ### Table of contents
 
@@ -104,16 +91,17 @@ tags: ["Hugo"]
 Make your mathematical notations pop.
 
 For notations that should appear on their own line, use the block quotes `$$ ... $$`
-    
+
 $$ 5 \times 5 = 25 $$
 
 For notations that should appear on the same line, use the inline quotes `$ ... $`
 
 **Note**: *Enabling KaTeX will add external dependencies.*
-    
+
 ### Tabs
 
 Some content is just better viewed in tabs.  Luckily we have a shortcode for that.
+
 <p float="left">
   <img src="https://user-images.githubusercontent.com/35306887/210614932-5b2e53e7-8f8e-436a-b3c6-905f33018688.png" width="700" />
   <img src="https://user-images.githubusercontent.com/35306887/210615011-b9d4e670-1713-43fe-b285-a33ca285df73.png" width="700" />
@@ -121,7 +109,7 @@ Some content is just better viewed in tabs.  Luckily we have a shortcode for tha
 
 Here's the code for the tabs shown above...
 
-```
+```md
 {{</* tabs tabTotal="2" */>}}
 
 {{%/* tab tabName="First Tab" */%}}
@@ -136,7 +124,7 @@ This is a code block.
 
 {{</* /tabs */>}}
 ```
- 
+
 ### Mermaid diagrams
 
 You can embed rendered Mermaid diagrams.  
@@ -165,7 +153,7 @@ There's a shortcode for encoding detail dropdowns into your pages.
 
 Here's the code for the detail dropdown above:
 
-```
+```md
 {{</* details summary="A detail dropdown" */>}}
 Markdown content
 {{</* /details */>}}
@@ -391,16 +379,6 @@ font size, you could add this:
 ## Suggestions / Contributions
 
 Please feel free to add suggestions for new features by opening a new issue in [GitHub](https://github.com/TheGroundZero/poison).
-
-## Author
-**Mark Otto**
-- <https://github.com/mdo>
-- <https://twitter.com/mdo>
-
-## Ported By
-**Luke Orth**
-- <https://github.com/lukeorth>
-- <https://github.com/TheGroundZero>
 
 ## License
 
