@@ -2,18 +2,20 @@
 name: Lint
 
 on: # yamllint disable-line rule:truthy
-  push: null
-  pull_request: null
+  push:
+  pull_request:
 
 permissions:
   contents: read
 
 jobs:
   lint:
+    name: lint check
     # Super-linter workflow running in check only mode
     # See https://github.com/super-linter/super-linter#get-started
 
   fix-lint-issues:
+    name: lint fix
     permissions:
       # To write linting fixes
       contents: write
