@@ -2,34 +2,41 @@
 name: Lint
 
 on: # yamllint disable-line rule:truthy
-  push:
-  pull_request:
+  push: null
+  pull_request: null
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
-  lint:
-    name: lint check
-    # Super-linter workflow running in check only mode
-    # See https://github.com/super-linter/super-linter#get-started
-
-  fix-lint-issues:
-    name: lint fix
-    permissions:
-      # To write linting fixes
-      contents: write
-      # To write Super-linter status checks
-      statuses: write
+  build:
+    name: Lint
     runs-on: ubuntu-latest
+
+    permissions:
+      # contents permission to clone the repository
+      contents: read
+      packages: read
+      # issues and pull-requests permissions to write results as pull
+      # request comments. Omit them if you don't need summary comments
+      issues: write
+      pull-requests: write
+      # To report GitHub Actions status checks. Omit if you don't need
+      # to update commit status
+      statuses: write
+
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout code
+        uses: actions/checkout@v6
         with:
+          # super-linter needs the full git history to get the
+          # list of files that changed across commits
           fetch-depth: 0
           persist-credentials: false
-      - name: Super-Linter
-        uses: super-linter/super-linter@v8
+
+      - name: Super-linter
+        uses: super-linter/super-linter@v8.7.0 # x-release-please-version
         env:
+          # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Set your fix mode variables to true
           FIX_CSS: true
