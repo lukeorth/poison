@@ -2,42 +2,53 @@
 name: Lint
 
 on: # yamllint disable-line rule:truthy
-  push:
-  pull_request:
+  push: null
+  pull_request: null
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
-  lint:
-    name: lint check
-    # Super-linter workflow running in check only mode
-    # See https://github.com/super-linter/super-linter#get-started
-
-  fix-lint-issues:
-    name: lint fix
-    permissions:
-      # To write linting fixes
-      contents: write
-      # To write Super-linter status checks
-      statuses: write
+  build:
+    name: Lint
     runs-on: ubuntu-latest
+
+    permissions:
+      # contents permission to clone the repository
+      contents: read
+      packages: read
+      # issues and pull-requests permissions to write results as pull
+      # request comments. Omit them if you don't need summary comments
+      issues: write
+      pull-requests: write
+      # To report GitHub Actions status checks. Omit if you don't need
+      # to update commit status
+      statuses: write
+
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout code
+        uses: actions/checkout@v6
         with:
+          # super-linter needs the full git history to get the
+          # list of files that changed across commits
           fetch-depth: 0
           persist-credentials: false
-      - name: Super-Linter
-        uses: super-linter/super-linter@v8
+
+      - name: Super-linter
+        uses: super-linter/super-linter/slim@v8
         env:
+          # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Set your fix mode variables to true
+          VALIDATE_ALL_CODEBASE: false
           FIX_CSS: true
           FIX_CSS_PRETTIER: true
           FIX_HTML_PRETTIER: true
           FIX_MARKDOWN_PRETTIER: true
           FIX_MARKDOWN: true
           FIX_YAML_PRETTIER: true
+          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: true
+          UPDATE_EXISTING_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: true
+          SAVE_SUPER_LINTER_SUMMARY: true
           # To reuse the same Super-linter configuration that you use in the
           # lint job without duplicating it, see
           # https://github.com/super-linter/super-linter/blob/main/docs/run-linter-locally.md#share-environment-variables-between-environments
