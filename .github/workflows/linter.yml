@@ -39,12 +39,16 @@ jobs:
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Set your fix mode variables to true
+          VALIDATE_ALL_CODEBASE: false
           FIX_CSS: true
           FIX_CSS_PRETTIER: true
           FIX_HTML_PRETTIER: true
           FIX_MARKDOWN_PRETTIER: true
           FIX_MARKDOWN: true
           FIX_YAML_PRETTIER: true
+          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: true
+          UPDATE_EXISTING_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: true
+          SAVE_SUPER_LINTER_SUMMARY: true
           # To reuse the same Super-linter configuration that you use in the
           # lint job without duplicating it, see
           # https://github.com/super-linter/super-linter/blob/main/docs/run-linter-locally.md#share-environment-variables-between-environments
